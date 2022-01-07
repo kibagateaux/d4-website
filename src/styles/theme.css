@@ -1,0 +1,54 @@
+:root {
+    --font-size-md: 0.9rem;
+    --border-radius: 0rem;
+
+    --color-primary: #f11238;
+    --color-primary-focus: #b70a28;
+    --color-primary-content: #000000;
+    --color-primary-muted: #eb546e;
+
+    --color-secondary: #ff9f1c;
+    --color-secondary-focus: #e08300;
+    --color-secondary-content: #ffffff;
+
+    --color-accent: #ca7df9;
+    --color-accent-focus: #bf63f8;
+    --color-accent-content: #ffffff;
+
+    --color-neutral: #564592;
+    --color-neutral-focus: #493b7d;
+    --color-neutral-content: #ffffff;
+
+    --color-base-100: #ffffff;
+    --color-base-200: #ebebeb;
+    --color-base-300: #d6d6d6;
+    --color-base-400: #c2c2c2;
+    --color-base-content: #000000;
+    --color-base-content-muted: #616060;
+
+    --color-info: #5f57f7;
+    --color-success: #009485;
+    --color-warning: #fff900;
+    --color-error: #dd2660;
+}
+
+@font-face {
+    font-family: GT-Sectra;
+    src: url("/fonts/GT-Sectra/GT-Sectra-Display-Light-Italic.ttf");
+}
+
+@font-face {
+    font-family: GT-America;
+    src: url("/fonts/GT-America/GT-America-Extended-Light.otf") format("opentype");
+}
+
+body {
+    background-color: var(--color-base-100);
+    color: var(--color-base-content);
+    font-family: GT-Sectra;
+    font-size: 100%;
+}
+
+.font-alt {
+    font-family: GT-America;
+}

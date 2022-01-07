@@ -3,7 +3,9 @@ import { useTranslation } from "next-i18next";
 import type { NextPage, NextPageContext } from "next";
 import Head from "next/head";
 
-const Home: NextPage = () => {
+import { LandingHomeTemplate } from "components/templates";
+
+const Home = () => {
   const { t } = useTranslation(["landing-home"]);
   return (
     <>
@@ -11,7 +13,7 @@ const Home: NextPage = () => {
         <title>{t("landing-home.head")}</title>
       </Head>
 
-      <p className="bg-red-500">Home</p>
+      <LandingHomeTemplate />
     </>
   );
 };
@@ -25,3 +27,5 @@ export const getServerSideProps = async ({
     ...(await serverSideTranslations(locale, ["common", "landing-home"])),
   },
 });
+
+Home.layout = 'Landing';
