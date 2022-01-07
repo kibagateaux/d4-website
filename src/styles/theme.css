@@ -48,6 +48,11 @@
     src: url("/fonts/GT-America/GT-America-Extended-Black.otf") format("opentype");
 }
 
+@font-face {
+    font-family: GT-Mono;
+    src: url("/fonts/GT-America/GT-America-Mono-Black.otf") format("opentype");
+}
+
 body {
     background-color: var(--color-base-100);
     color: var(--color-base-content);
@@ -57,4 +62,8 @@ body {
 
 .font-alt {
     font-family: GT-America;
+}
+
+.font-monospace {
+    font-family: GT-Mono;
 }
