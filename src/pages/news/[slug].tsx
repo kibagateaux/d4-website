@@ -1,15 +1,15 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import type { NextPageContext } from "next";
 import Head from "next/head";
-import { useRouter } from 'next/router'
+import type { NextPageContext } from "next";
 
 import { BlogPageTemplate } from "components/templates";
 
 const Page = () => {
-  const router = useRouter()
+  const router = useRouter();
   const { t } = useTranslation(["news"]);
-  const { slug } = router.query
+  const { slug } = router.query;
 
   return (
     <>
@@ -17,7 +17,7 @@ const Page = () => {
         <title>{t("news.head")}</title>
       </Head>
 
-      <BlogPageTemplate slug={slug} />
+      <BlogPageTemplate slug={`${slug}`} />
     </>
   );
 };
@@ -32,4 +32,4 @@ export const getServerSideProps = async ({
   },
 });
 
-Page.layout = 'Landing';
+Page.layout = "Landing";

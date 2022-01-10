@@ -1,49 +1,56 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import type { NextPageContext } from "next";
 import Head from "next/head";
-import { useRouter } from 'next/router'
+import type { NextPageContext } from "next";
 
 import { BlogTemplate } from "components/templates";
 import { GhostFilterPost } from "components/modules";
 
 interface composeFilterProps {
-  filter: string | string[] | undefined
-  limit: string | string[] | undefined
-  page: string | string[] | undefined
-  order: string | string[] | undefined
+  filter: string | string[] | undefined;
+  limit: string | string[] | undefined;
+  page: string | string[] | undefined;
+  order: string | string[] | undefined;
 }
 
-const composeFilter = ({ filter, limit, page, order } : composeFilterProps) : GhostFilterPost => {
-  const hasValue = (value: string | string[] | undefined) : boolean => value || (Array.isArray(value) && value[0])
-  const getValue = (value: string | string[] | undefined) : string => Array.isArray(value) ? value[0] : value
+const composeFilter = ({
+  filter,
+  limit,
+  page,
+  order,
+}: composeFilterProps): GhostFilterPost => {
+  const hasValue = (value: string | string[] | undefined): boolean =>
+    value || (Array.isArray(value) && value[0]);
+  const getValue = (value: string | string[] | undefined): string =>
+    Array.isArray(value) ? value[0] : value || "";
 
-  const result = {}
+  const result: any = {};
   if (hasValue(filter)) {
-    result.filter = getValue(filter)
+    result.filter = getValue(filter);
   }
   if (hasValue(limit)) {
-    result.limit = parseInt(getValue(limit))
+    result.limit = parseInt(getValue(limit));
   }
   if (hasValue(page)) {
-    result.page = parseInt(getValue(page))
+    result.page = parseInt(getValue(page));
   }
   if (hasValue(order)) {
-    result.order = getValue(order)
+    result.order = getValue(order);
   }
 
-  return result
-}
+  return result;
+};
 
 const Page = () => {
-  const router = useRouter()
+  const router = useRouter();
   const { t } = useTranslation(["news"]);
-  const { filter, limit, page, order } = router.query
-  console.log('router.query', router.query)
+  const { filter, limit, page, order } = router.query;
+  console.log("router.query", router.query);
 
-  const ghostFilter = composeFilter({ filter, limit, page, order })
+  const ghostFilter = composeFilter({ filter, limit, page, order });
 
-  console.log('ghostFilter', ghostFilter)
+  console.log("ghostFilter", ghostFilter);
 
   return (
     <>
@@ -66,4 +73,4 @@ export const getServerSideProps = async ({
   },
 });
 
-Page.layout = 'Landing';
+Page.layout = "Landing";
