@@ -60,13 +60,13 @@ const DataToken = () => {
                   <div className="w-32 h-6 bg-theme-base-content"></div>
                   <div className="w-16 h-6 bg-theme-base-content"></div>
                 </div>
-                <div className="px-12 flex-1 max-w-xl">
+                <div className="px-12 flex-1 max-w-xl 2xl:max-w-3xl">
                   <Message />
                 </div>
               </div>
             </div>
             <div className="px-12 py-20">
-              <div className="flex items-center justify-end space-x-2 max-w-2xl cursor-pointer hover:opacity-80">
+              <div className="flex items-center justify-end space-x-2 max-w-2xl 2xl:max-w-3xl cursor-pointer hover:opacity-80">
                 <div className="w-6 h-6 bg-white"></div>
                 <div className="font-alt">learn more</div>
               </div>
