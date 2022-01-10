@@ -13,7 +13,7 @@ const Home = () => {
         <title>{t("landing-home.head")}</title>
       </Head>
 
-      <LandingHomeTemplate />
+      <LandingHomeTemplate t={t} />
     </>
   );
 };

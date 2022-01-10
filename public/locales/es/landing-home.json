@@ -1,5 +1,26 @@
 {
   "landing-home": {
-    "head": "D4Data (ES)"
+    "d4-dao": {
+      "details": "Chainlink is a secret ingredient to unlocking the potencial of smart contract platforms and revolutionizing business and society",
+      "header": "Following the path of day"
+    },
+    "data-token": {
+      "details": "Single token exposure with automated rebalancing and additions",
+      "header": "Token",
+      "simple": "Simple"
+    },
+    "head": "D4Data (ES)",
+    "header": {
+      "play": "play",
+      "title": "We show the Path of the Data"
+    },
+    "learn-more": "learn more",
+    "what-is": {
+      "details": "We are crypto kids, asset investors with in-depth DeFi knowledge. Our value proposition? To help you identity the opportunities that Web3 has to offer.",
+      "header-1": "What is D4DATA",
+      "header-2": "Centric chain Agnostic",
+      "slogan-1": "The Power of",
+      "slogan-2": "People"
+    }
   }
 }

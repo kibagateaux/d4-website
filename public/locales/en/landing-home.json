@@ -1,5 +1,9 @@
 {
   "landing-home": {
-    "head": "D4Data (EN)"
+    "head": "D4Data (EN)",
+    "header": {
+      "play": "play",
+      "title": "We show the Path of the Data"
+    }
   }
 }

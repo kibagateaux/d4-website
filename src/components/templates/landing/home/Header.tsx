@@ -1,3 +1,4 @@
+import { TFunction } from "next-i18next";
 import { useState } from "react";
 import Lottie from "react-lottie";
 
@@ -10,7 +11,11 @@ const VIDEO =
 const POSTER = "https://d2gvzqttsr1gma.cloudfront.net/images/intro/poster.png";
 const isYoutubeVideo = true;
 
-const Header = () => {
+interface HeaderProps {
+  t: TFunction;
+}
+
+const Header = ({ t }: HeaderProps) => {
   const [showPlayer, setShowPlayer] = useState(false);
   const defaultOptions = {
     loop: true,
@@ -33,7 +38,7 @@ const Header = () => {
           <div className="relative">
             <img className="w-full" src="/images/header-desktop-2.svg" alt="" />
             <p className="text-2xl lg:text-3xl xl:text-4xl absolute top-0 w-full mx-auto text-center">
-              We show the Path of the Data
+              {t("landing-home.header.title")}
             </p>
             <div
               className="absolute -bottom-4 lg:bottom-0 left-32 lg:left-52 xl:left-64 cursor-pointer flex items-center justify-center"
@@ -42,7 +47,9 @@ const Header = () => {
               }}
             >
               <Lottie options={defaultOptions} width={90} />
-              <p className="font-bold font-alt uppercase">Play</p>
+              <p className="font-bold font-alt uppercase">
+                {t("landing-home.header.play")}
+              </p>
             </div>
           </div>
           <img className="w-full" src="/images/header-desktop-3.svg" alt="" />
@@ -71,7 +78,6 @@ const Header = () => {
           </div>
           <img className="w-full" src="/images/header-mobile-3.svg" alt="" />
         </div>
-
       </Container>
 
       {/* video player */}
