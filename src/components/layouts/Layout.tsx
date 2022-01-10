@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import { RecoilRoot } from "recoil";
 import { LandingLayout } from "./Landing/LandingLayout";
 
 export enum LayoutTypes {
@@ -21,7 +21,7 @@ const renderWithLayout = ({ name, children }: LayoutProps) => {
 };
 
 export const Layout = ({ name, children }: LayoutProps) => (
-  <>
+  <RecoilRoot>
     <Head>
       <meta charSet="utf-8" />
       <meta content="text/html;charset=utf-8" httpEquiv="Content-Type" />
@@ -30,5 +30,5 @@ export const Layout = ({ name, children }: LayoutProps) => (
       <link rel="preconnect" href="https://fonts.gstatic.com" />
     </Head>
     <div data-theme="d4data">{renderWithLayout({ name, children })}</div>
-  </>
+  </RecoilRoot>
 );
