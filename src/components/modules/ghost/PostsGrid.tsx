@@ -12,7 +12,6 @@ interface PostsGridProps {
 }
 
 export const PostsGrid = ({
-  className,
   title,
   description,
   filter = {},
@@ -23,7 +22,7 @@ export const PostsGrid = ({
   } = useAsyncRecoilValue(postsBrowserSelector, [filter]);
 
   return (
-    <Container className={className}>
+    <Container className="max-w-4xl py-20 px-4">
       <h2 className="mb-4 text-3xl font-bold text-center sm:leading-none lg:text-4xl xl:text-5xl">
         {title}
       </h2>

@@ -24,7 +24,7 @@ const MenuLinks = (props: any) => (
     <Link href="#data-token">
       <a>$DATA Token</a>
     </Link>
-    <Link href="#news">
+    <Link href="/news">
       <a>News</a>
     </Link>
   </div>
