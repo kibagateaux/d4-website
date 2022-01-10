@@ -2,13 +2,13 @@ import { FingerPrintIcon, MenuAlt4Icon } from "@heroicons/react/outline";
 import { useState } from "react";
 import Link from "next/link";
 
-import { Container, DiscordIcon, TwitterIcon } from "components/elements";
+import { Container, DiscordIcon, Logo, TwitterIcon } from "components/elements";
 import { LandingHeaderMobileMenu } from "./LandingHeaderMobileMenu";
 
 const LogoLink = () => (
   <Link href="#">
     <a>
-      <img src="/images/logo.png" alt="" />
+      <Logo />
     </a>
   </Link>
 );
