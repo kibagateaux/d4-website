@@ -24,7 +24,7 @@ const Header = ({ t }: { t: TFunction }) => (
       style={{ backgroundColor: "#303030" }}
     >
       <p className="absolute font-alt font-bold text-4xl lg:text-6xl truncate tracking-widest">
-        {t("landing-home.what-is.header-1")}
+        {t("landing-home.what-is.header-2")}
       </p>
     </div>
   </div>
