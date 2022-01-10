@@ -59,7 +59,7 @@ const D4Dao = () => {
         >
           <div className="flex flex-col items-end divide-y divide-theme-primary">
             {/* Main content */}
-            <div className="px-12 py-20 flex-1 max-w-xl">
+            <div className="px-12 py-20 flex-1 max-w-xl 2xl:max-w-4xl">
               <Message />
             </div>
             <div className="px-12 py-12 w-full flex justify-end">
