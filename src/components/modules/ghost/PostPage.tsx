@@ -13,6 +13,7 @@ interface PostProps {
   authorImage: string;
   authorName: string;
   date: string;
+  featureImage: string;
   html: string;
   readingTime: number;
   title: string;
@@ -23,6 +24,7 @@ const Post = (post: PostProps) => (
   <>
     <div className="space-y-3 lg:space-y-6 pb-20">
       <Title title={post.title} />
+      <img src={post.featureImage} className="object-cover w-full max-w-3xl mx-auto" alt="" />
       <Metadata date={post.date} readingTime={post.readingTime} />
       <Content html={post.html} />
       <div className="py-8">
@@ -62,6 +64,7 @@ export const PostPage = ({ slug }: PostPageProps) => {
             authorImage={author.profile_image || post.twitter_image}
             authorName={author.name}
             date={post.published_at}
+            featureImage={post.feature_image}
             html={post.html}
             readingTime={post.reading_time}
             title={post.title}
