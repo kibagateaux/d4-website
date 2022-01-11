@@ -63,7 +63,12 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
         </div>
 
         <Message t={t} />
-        <AnimatedLink text={t("landing-home.learn-more")} href="/" />
+        <div className="w-full flex justify-end pt-8 pr-8">
+          <AnimatedLink
+            text={t("landing-home.learn-more")}
+            href="/what-is-d4data"
+          />
+        </div>
       </div>
 
       {/* Desktop view */}
@@ -76,7 +81,10 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
           <div className="flex flex-col items-start divide-y divide-theme-primary">
             <div className="py-20 px-4 flex-1 max-w-xl 2xl:max-w-4xl space-y-12">
               <Message t={t} />
-              <AnimatedLink text={t("landing-home.learn-more")} href="/" />
+              <AnimatedLink
+                text={t("landing-home.learn-more")}
+                href="/what-is-d4data"
+              />
             </div>
             {/* Main content */}
             <div className="w-full py-12">

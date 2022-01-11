@@ -43,7 +43,7 @@ const D4Dao = ({ t }: D4DaoProps) => {
       className="bg-theme-base-100 text-theme-base-content pt-12"
     >
       {/* Mobile view */}
-      <div className="flex flex-col justify-center xl:hidden space-y-6 pt-12 mx-auto">
+      <div className="flex flex-col justify-center xl:hidden space-y-6 py-12 mx-auto">
         <Header t={t} />
         <Message t={t} />
 
@@ -53,6 +53,10 @@ const D4Dao = ({ t }: D4DaoProps) => {
             alt=""
             className="w-full max-w-xl mx-auto"
           />
+        </div>
+
+        <div className="w-full flex justify-end py-8 pr-8">
+          <AnimatedLink text={t("landing-home.learn-more")} href="/d4-dao" />
         </div>
       </div>
 
@@ -69,7 +73,10 @@ const D4Dao = ({ t }: D4DaoProps) => {
               <Message t={t} />
             </div>
             <div className="px-12 py-12 w-full flex justify-end">
-              <AnimatedLink text={t("landing-home.learn-more")} href="/" />
+              <AnimatedLink
+                text={t("landing-home.learn-more")}
+                href="/d4-dao"
+              />
             </div>
           </div>
         </div>

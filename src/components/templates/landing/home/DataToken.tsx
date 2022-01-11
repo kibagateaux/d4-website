@@ -46,7 +46,7 @@ const DataToken = ({ t }: DataTokenProps) => {
     >
       <Container>
         {/* Mobile view */}
-        <div className="flex flex-col justify-center xl:hidden  max-w-xl mx-auto">
+        <div className="flex flex-col justify-center xl:hidden max-w-xl mx-auto">
           <Header t={t} />
           <div className="relative -mt-24 lg:mt-0 z-0 mb-8">
             <img
@@ -57,6 +57,12 @@ const DataToken = ({ t }: DataTokenProps) => {
             <SimpleTag className="absolute bottom-0 left-0 mb-10 -ml-4" t={t} />
           </div>
           <Message t={t} />
+          <div className="w-full flex justify-end pt-8 pr-8">
+            <AnimatedLink
+              text={t("landing-home.learn-more")}
+              href="/data-token"
+            />
+          </div>
         </div>
 
         {/* Desktop view */}
@@ -83,7 +89,10 @@ const DataToken = ({ t }: DataTokenProps) => {
               </div>
             </div>
             <div className="px-12 py-20">
-              <AnimatedLink text={t("landing-home.learn-more")} href="/" />
+              <AnimatedLink
+                text={t("landing-home.learn-more")}
+                href="/data-token"
+              />
             </div>
           </div>
         </div>

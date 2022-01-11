@@ -13,8 +13,10 @@ const NewsItem = ({
   align: "right" | "left";
 }) => (
   <div
-    className={`flex flex-col md:flex-row items-start md:items-center w-full hover:opacity-80 ${
-      align === "right" ? "justify-end" : "justify-start"
+    className={`flex flex-col md:flex-row w-full md:items-center hover:opacity-80 ${
+      align === "right"
+        ? "items-end md:justify-end"
+        : "items-start md:justify-start"
     }`}
   >
     {children}

@@ -3,29 +3,29 @@ import { useTranslation } from "next-i18next";
 import type { NextPageContext } from "next";
 import Head from "next/head";
 
-import { LandingHomeTemplate } from "components/templates";
+import { LandingD4DaoTemplate } from "components/templates";
 
-const Home = () => {
-  const { t } = useTranslation(["landing-home"]);
+const Page = () => {
+  const { t } = useTranslation(["landing-d4-dao"]);
   return (
     <>
       <Head>
-        <title>{t("landing-home.head")}</title>
+        <title>{t("landing-d4-dao.head")}</title>
       </Head>
 
-      <LandingHomeTemplate t={t} />
+      <LandingD4DaoTemplate t={t} />
     </>
   );
 };
 
-export default Home;
+export default Page;
 
 export const getServerSideProps = async ({
   locale = "es",
 }: NextPageContext) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "landing-home"])),
+    ...(await serverSideTranslations(locale, ["common", "landing-d4-dao"])),
   },
 });
 
-Home.layout = "Landing";
+Page.layout = "Landing";
