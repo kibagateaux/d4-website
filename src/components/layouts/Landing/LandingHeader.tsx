@@ -1,4 +1,5 @@
 import { FingerPrintIcon, MenuAlt4Icon } from "@heroicons/react/outline";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -6,29 +7,70 @@ import { Container, DiscordIcon, Logo, TwitterIcon } from "components/elements";
 import { LandingHeaderMobileMenu } from "./LandingHeaderMobileMenu";
 
 const LogoLink = () => (
-  <Link href="#">
+  <Link href="/">
     <a>
       <Logo />
     </a>
   </Link>
 );
 
-const MenuLinks = (props: any) => (
-  <div {...props}>
-    <Link href="#what-is-d4data">
-      <a>What is D4DATA</a>
-    </Link>
-    <Link href="#d4-dao">
-      <a>D4 DAO</a>
-    </Link>
-    <Link href="#data-token">
-      <a>$DATA Token</a>
-    </Link>
-    <Link href="/news">
-      <a>News</a>
-    </Link>
+const MenuLink = ({
+  selected,
+  children,
+}: {
+  selected: boolean;
+  children: React.ReactNode;
+}) => (
+  <div
+    className={`cursor-pointer hover:opacity-80 flex h-full items-center font-alt p-4 md:px-8 ${
+      selected && "bg-theme-primary text-white"
+    }`}
+  >
+    {children}
   </div>
 );
+
+const MenuLinks = ({ ...props }: any) => {
+  const router = useRouter();
+  const currentRoute = router?.route;
+
+  const links: any[] = [
+    {
+      name: "What is D4DATA",
+      href: "/what-is-d4data",
+      hrefRx: "/what-is-d4data",
+    },
+    {
+      name: "D4 DAO",
+      href: "/d4-dao",
+      hrefRx: "/d4-dao",
+    },
+    {
+      name: "$DATA Token",
+      href: "/data-token",
+      hrefRx: "/data-token",
+    },
+    {
+      name: "News",
+      href: "/news",
+      hrefRx: "/news",
+    },
+  ];
+
+  return (
+    <div {...props}>
+      {links.map(({ name, href, hrefRx }, index) => (
+        <Link href={href} key={index}>
+          <a className="h-full">
+            <MenuLink selected={currentRoute.indexOf(hrefRx) >= 0}>
+              {name}
+            </MenuLink>
+          </a>
+        </Link>
+      ))}
+    </div>
+  );
+};
 
 const RRSSLinks = (props: any) => (
   <div {...props}>
@@ -61,9 +103,9 @@ const LandingHeader = () => {
     <>
       <Container>
         {/* Desktop header */}
-        <div className="hidden md:flex items-center justify-between border-b py-2 font-alt">
+        <div className="hidden md:flex items-center justify-between border-b">
           <LogoLink />
-          <MenuLinks className="flex items-center space-x-12" />
+          <MenuLinks className="flex items-center h-16" />
           <RRSSLinks className="flex items-center space-x-4" />
         </div>
       </Container>
