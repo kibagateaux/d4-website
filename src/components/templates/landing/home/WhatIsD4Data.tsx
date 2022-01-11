@@ -1,5 +1,6 @@
 import { TFunction } from "next-i18next";
 
+import { AnimatedLink } from "components/modules";
 import { Container } from "components/elements";
 
 const Header = ({ t }: { t: TFunction }) => (
@@ -34,15 +35,6 @@ const Message = ({ t }: { t: TFunction }) => (
   <p className="text-3xl mx-auto">{t("landing-home.what-is.details")}</p>
 );
 
-const LearnMore = ({ t }: { t: TFunction }) => (
-  <div className="flex items-center justify-end space-x-2 px-8 cursor-pointer hover:opacity-80">
-    <div className="w-6 h-6 bg-theme-primary"></div>
-    <div className="font-alt tracking-widest">
-      {t("landing-home.learn-more")}
-    </div>
-  </div>
-);
-
 interface WhatIsD4DataProps {
   t: TFunction;
 }
@@ -71,7 +63,7 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
         </div>
 
         <Message t={t} />
-        <LearnMore t={t} />
+        <AnimatedLink text={t("landing-home.learn-more")} href="/" />
       </div>
 
       {/* Desktop view */}
@@ -84,7 +76,7 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
           <div className="flex flex-col items-start divide-y divide-theme-primary">
             <div className="py-20 px-4 flex-1 max-w-xl 2xl:max-w-4xl space-y-12">
               <Message t={t} />
-              <LearnMore t={t} />
+              <AnimatedLink text={t("landing-home.learn-more")} href="/" />
             </div>
             {/* Main content */}
             <div className="w-full py-12">

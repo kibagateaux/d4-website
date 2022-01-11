@@ -1,5 +1,6 @@
 import { TFunction } from "next-i18next";
 
+import { AnimatedLink } from "components/modules";
 import { Container } from "components/elements";
 
 const SimpleTag = ({
@@ -82,10 +83,7 @@ const DataToken = ({ t }: DataTokenProps) => {
               </div>
             </div>
             <div className="px-12 py-20">
-              <div className="flex items-center justify-end space-x-2 max-w-2xl 2xl:max-w-3xl cursor-pointer hover:opacity-80">
-                <div className="w-6 h-6 bg-white"></div>
-                <div className="font-alt">{t("landing-home.learn-more")}</div>
-              </div>
+              <AnimatedLink text={t("landing-home.learn-more")} href="/" />
             </div>
           </div>
         </div>

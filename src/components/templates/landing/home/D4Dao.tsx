@@ -1,5 +1,6 @@
 import { TFunction } from "next-i18next";
 
+import { AnimatedLink } from "components/modules";
 import { Container } from "components/elements";
 
 const Header = ({ t }: { t: TFunction }) => (
@@ -68,10 +69,7 @@ const D4Dao = ({ t }: D4DaoProps) => {
               <Message t={t} />
             </div>
             <div className="px-12 py-12 w-full flex justify-end">
-              <div className="flex items-center space-x-2 max-w-2xl cursor-pointer hover:opacity-80">
-                <div className="w-6 h-6 bg-theme-primary"></div>
-                <div className="font-alt">{t("landing-home.learn-more")}</div>
-              </div>
+              <AnimatedLink text={t("landing-home.learn-more")} href="/" />
             </div>
           </div>
         </div>
