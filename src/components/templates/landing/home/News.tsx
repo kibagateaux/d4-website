@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Container } from "components/elements";
 import { News } from "models";
 import { AnimatedLink, postsBrowserSelector } from "components/modules";
-import { shuffleArray } from "utils";
 import { useAsyncRecoilValue } from "components/modules/ghost/hooks";
 
 const NewsItem = ({
@@ -22,24 +21,22 @@ const NewsItem = ({
   </div>
 );
 
-const Thumbnail = ({ src, order }: { src: string; order: number }) => (
+const Thumbnail = ({ src }: { src: string }) => (
   <img
     src={src}
     alt=""
-    className={`object-cover h-20 w-72 grayscale m-4 border order-${order}`}
+    className="object-cover h-20 w-72 grayscale m-4 border"
   />
 );
 
-const NewsTitle = ({ title, order }: { title: string; order: number }) => (
-  <p className={`text-4xl m-4 order-${order}`}>{title}</p>
+const NewsTitle = ({ title }: { title: string }) => (
+  <p className="text-4xl m-4">{title}</p>
 );
 
-const Button = ({ time, order }: { time: number; order: number }) => (
-  <a
-    className={`bg-theme-base-content text-theme-base-100 m-4 px-6 py-6 font-alt font-bold text-center order-${order}`}
-  >
+const Button = ({ time }: { time: number }) => (
+  <div className="bg-theme-base-content text-theme-base-100 m-4 px-6 py-6 font-alt font-bold text-center">
     {time} min read
-  </a>
+  </div>
 );
 
 const News = () => {
@@ -77,19 +74,38 @@ const News = () => {
                 { feature_image, reading_time, title, slug }: any,
                 index: number
               ) => {
-                const orderElements = shuffleArray([1, 2, 3]);
-                const align = shuffleArray(["left", "right"]);
-
+                if (index === 0) {
+                  return (
+                    <Link href={`/news/${slug}`} key={index}>
+                      <a>
+                        <NewsItem align="left">
+                          <Thumbnail src={feature_image} />
+                          <NewsTitle title={title} />
+                          <Button time={reading_time} />
+                        </NewsItem>
+                      </a>
+                    </Link>
+                  );
+                } else if (index === 1) {
+                  return (
+                    <Link href={`/news/${slug}`} key={index}>
+                      <a>
+                        <NewsItem align="right">
+                          <Button time={reading_time} />
+                          <Thumbnail src={feature_image} />
+                          <NewsTitle title={title} />
+                        </NewsItem>
+                      </a>
+                    </Link>
+                  );
+                }
                 return (
-                  <Link href={`/news/${slug}`}>
+                  <Link href={`/news/${slug}`} key={index}>
                     <a>
-                      <NewsItem align={align[0]} key={index}>
-                        <Thumbnail
-                          src={feature_image}
-                          order={orderElements[0]}
-                        />
-                        <NewsTitle title={title} order={orderElements[1]} />
-                        <Button time={reading_time} order={orderElements[2]} />
+                      <NewsItem align="right">
+                        <Button time={reading_time} />
+                        <NewsTitle title={title} />
+                        <Thumbnail src={feature_image} />
                       </NewsItem>
                     </a>
                   </Link>
