@@ -1,4 +1,5 @@
 import { TFunction } from "next-i18next";
+import Marquee from "react-fast-marquee";
 
 import { AnimatedLink } from "components/modules";
 import { Container } from "components/elements";
@@ -9,11 +10,15 @@ const Header = ({ t }: { t: TFunction }) => (
       className="flex items-center justify-center grow text-theme-base-100 relative overflow-hidden p-0"
       style={{ backgroundColor: "#303030" }}
     >
-      <p className="absolute font-alt font-bold text-4xl lg:text-6xl truncate tracking-widest">
-        {t("landing-home.what-is.header-1")}
-      </p>
+      <Marquee
+        gradient={false}
+        className="absolute font-alt font-bold text-4xl lg:text-6xl truncate tracking-widest pb-3"
+      >
+        <span className="pr-16">{t("landing-home.what-is.header-1")}</span>
+        <span>{t("landing-home.what-is.header-1")}</span>
+      </Marquee>
     </div>
-    <div>
+    <div className="flex-none w-52">
       <img
         src="/images/what-is-d4-data-header.png"
         alt=""
@@ -24,9 +29,13 @@ const Header = ({ t }: { t: TFunction }) => (
       className="flex items-center justify-center grow text-theme-base-100 relative overflow-hidden p-0"
       style={{ backgroundColor: "#303030" }}
     >
-      <p className="absolute font-alt font-bold text-4xl lg:text-6xl truncate tracking-widest">
-        {t("landing-home.what-is.header-2")}
-      </p>
+      <Marquee
+        gradient={false}
+        className="absolute font-alt font-bold text-4xl lg:text-6xl truncate tracking-widest pb-3"
+      >
+        <span className="pr-16">{t("landing-home.what-is.header-2")}</span>
+        <span>{t("landing-home.what-is.header-2")}</span>
+      </Marquee>
     </div>
   </div>
 );

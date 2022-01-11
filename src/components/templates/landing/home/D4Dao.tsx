@@ -1,4 +1,5 @@
 import { TFunction } from "next-i18next";
+import Marquee from "react-fast-marquee";
 
 import { AnimatedLink } from "components/modules";
 import { Container } from "components/elements";
@@ -12,15 +13,19 @@ const Header = ({ t }: { t: TFunction }) => (
       DAO
     </div>
     <div className="flex items-center justify-center grow bg-theme-base-content text-theme-base-100 relative overflow-hidden p-0">
-      <p className="absolute font-alt font-bold text-4xl lg:text-7xl truncate tracking-widest">
-        {t("landing-home.d4-dao.header")}
-      </p>
+      <Marquee
+        gradient={false}
+        className="absolute font-alt font-bold text-4xl lg:text-7xl truncate tracking-widest pb-3"
+      >
+        <span className="pr-16">{t("landing-home.d4-dao.header")}</span>
+        <span>{t("landing-home.d4-dao.header")}</span>
+      </Marquee>
     </div>
-    <div>
+    <div className="flex-none w-52">
       <img
         src="/images/dao-d4-header.png"
         alt=""
-        className="h-12 lg:h-full object-cover"
+        className="h-12  lg:h-full object-cover"
       />
     </div>
   </div>
