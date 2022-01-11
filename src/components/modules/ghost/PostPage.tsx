@@ -27,11 +27,13 @@ const Post = (post: PostProps) => (
     <div className="space-y-3 lg:space-y-6 pb-20">
       <Title title={post.title} />
       <Metadata date={post.date} readingTime={post.readingTime} />
-      <img
-        src={post.featureImage}
-        className="object-cover w-full max-w-3xl mx-auto"
-        alt=""
-      />
+      {post.featureImage && (
+        <img
+          src={post.featureImage}
+          className="object-cover w-full max-w-3xl mx-auto"
+          alt=""
+        />
+      )}
       <Content html={post.html} />
       <div className="py-8">
         <ShareButtons url={post.url} />

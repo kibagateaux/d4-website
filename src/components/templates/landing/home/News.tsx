@@ -81,7 +81,7 @@ const News = () => {
                     <Link href={`/news/${slug}`} key={index}>
                       <a>
                         <NewsItem align="left">
-                          <Thumbnail src={feature_image} />
+                          {feature_image && <Thumbnail src={feature_image} />}
                           <NewsTitle title={title} />
                           <Button time={reading_time} />
                         </NewsItem>
@@ -94,7 +94,7 @@ const News = () => {
                       <a>
                         <NewsItem align="right">
                           <Button time={reading_time} />
-                          <Thumbnail src={feature_image} />
+                          {feature_image && <Thumbnail src={feature_image} />}
                           <NewsTitle title={title} />
                         </NewsItem>
                       </a>
@@ -107,7 +107,7 @@ const News = () => {
                       <NewsItem align="right">
                         <Button time={reading_time} />
                         <NewsTitle title={title} />
-                        <Thumbnail src={feature_image} />
+                        {feature_image && <Thumbnail src={feature_image} />}
                       </NewsItem>
                     </a>
                   </Link>
