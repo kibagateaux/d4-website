@@ -1,5 +1,8 @@
 {
-    "news": {
-        "head": "Noticias"
-    }
+  "news": {
+    "generic-error": "Se ha producido un error recuperando el post",
+    "head": "Noticias",
+    "loading": "Cargando...",
+    "not-found": "No se ha encontrado el post"
+  }
 }

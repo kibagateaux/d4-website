@@ -65,7 +65,7 @@ const readPosts = async ({
       {
         slug,
       },
-      { include: ["authors"] }
+      { include: ["tags", "authors"] }
     );
     return result;
   } catch (error) {

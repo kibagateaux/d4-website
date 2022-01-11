@@ -1,13 +1,16 @@
+import { TFunction } from "next-i18next";
+
 import { PostPage } from "components/modules";
 
 interface BlogPageTemplateProps {
-  slug: string
+  slug: string;
+  t: TFunction;
 }
 
-export const BlogPageTemplate = ({ slug } : BlogPageTemplateProps) => {
+export const BlogPageTemplate = ({ slug, t }: BlogPageTemplateProps) => {
   return (
     <>
-      <PostPage slug={slug}/>
+      <PostPage slug={slug} t={t} />
     </>
   );
 };

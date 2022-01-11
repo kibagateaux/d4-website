@@ -1,7 +1,6 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import Head from "next/head";
 import type { NextPageContext } from "next";
 
 import { BlogPageTemplate } from "components/templates";
@@ -13,11 +12,7 @@ const Page = () => {
 
   return (
     <>
-      <Head>
-        <title>{t("news.head")}</title>
-      </Head>
-
-      <BlogPageTemplate slug={`${slug}`} />
+      <BlogPageTemplate slug={`${slug}`} t={t} />
     </>
   );
 };
