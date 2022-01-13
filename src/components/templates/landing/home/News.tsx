@@ -13,7 +13,7 @@ const NewsItem = ({
   align: "right" | "left";
 }) => (
   <div
-    className={`flex flex-col md:flex-row w-full md:items-center hover:opacity-80 ${
+    className={`flex flex-col md:flex-row w-full md:items-center hover:opacity-80 group ${
       align === "right"
         ? "items-end md:justify-end"
         : "items-start md:justify-start"
@@ -27,7 +27,7 @@ const Thumbnail = ({ src }: { src: string }) => (
   <img
     src={src}
     alt=""
-    className="object-cover h-20 w-72 grayscale m-4 border"
+    className="object-cover h-20 w-72 grayscale group-hover:grayscale-0 m-4 border"
   />
 );
 
@@ -36,7 +36,7 @@ const NewsTitle = ({ title }: { title: string }) => (
 );
 
 const Button = ({ time }: { time: number }) => (
-  <div className="bg-theme-base-content text-theme-base-100 m-4 px-6 py-6 font-alt font-bold text-center">
+  <div className="bg-theme-base-content group-hover:bg-theme-primary text-theme-base-100 m-4 px-6 py-6 font-alt font-bold text-center">
     {time} min read
   </div>
 );
