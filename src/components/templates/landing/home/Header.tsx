@@ -32,7 +32,7 @@ const Header = ({ t }: HeaderProps) => {
         {/* Desktop */}
         <div
           className="hidden md:block w-full bg-no-repeat bg-cover bg-center overflow-hidden my-20 max-w-6xl mx-auto"
-          style={{ backgroundImage: "url(/images/token-data-bg.png)" }}
+          style={{ backgroundImage: "url(/images/header-bg.gif)", boxShadow: 'inset 0 0 0 1000px rgba(68,3,14,.7)' }}
         >
           <img className="w-full" src="/images/header-desktop-1.svg" alt="" />
           <div className="relative">
@@ -58,7 +58,7 @@ const Header = ({ t }: HeaderProps) => {
         {/* Mobile */}
         <div
           className="block md:hidden w-full bg-no-repeat bg-cover bg-center overflow-hidden my-12 max-w-4xl mx-auto"
-          style={{ backgroundImage: "url(/images/token-data-bg.png)" }}
+          style={{ backgroundImage: "url(/images/header-bg.gif)", boxShadow: 'inset 0 0 0 1000px rgba(68,3,14,.7)' }}
         >
           <img className="w-full" src="/images/header-mobile-1.svg" alt="" />
           <div className="relative">
