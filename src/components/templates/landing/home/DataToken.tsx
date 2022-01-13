@@ -61,6 +61,7 @@ const DataToken = ({ t }: DataTokenProps) => {
             <AnimatedLink
               text={t("landing-home.learn-more")}
               href="/data-token"
+              tagColor="bg-theme-base-content"
             />
           </div>
         </div>
@@ -92,6 +93,7 @@ const DataToken = ({ t }: DataTokenProps) => {
               <AnimatedLink
                 text={t("landing-home.learn-more")}
                 href="/data-token"
+                tagColor="bg-theme-base-content"
               />
             </div>
           </div>

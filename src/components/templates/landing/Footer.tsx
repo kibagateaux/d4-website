@@ -88,12 +88,12 @@ const LandingFooter = ({
           <div className={`h-8 md:w-2/5 ${tagsBg}`}></div>
           <div className="flex space-x-4 w-full md:w-2/5">
             <div
-              className={`h-8 w-1/2 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2`}
+              className={`h-8 w-1/2 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 leading-none`}
             >
               Designed by FLOC*
             </div>
             <div
-              className={`h-8 w-1/2 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2`}
+              className={`h-8 w-1/2 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 leading-none`}
             >
               Developed by Tutellus
             </div>
