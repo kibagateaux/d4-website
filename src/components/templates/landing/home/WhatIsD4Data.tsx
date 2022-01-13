@@ -1,7 +1,7 @@
 import { TFunction } from "next-i18next";
 import Marquee from "react-fast-marquee";
 
-import { AnimatedLink } from "components/modules";
+import { AnimatedLink, TypeAnimation } from "components/modules";
 import { Container } from "components/elements";
 
 const Header = ({ t }: { t: TFunction }) => (
@@ -12,7 +12,7 @@ const Header = ({ t }: { t: TFunction }) => (
     >
       <Marquee
         gradient={false}
-        className="absolute font-alt font-bold text-4xl lg:text-6xl truncate tracking-widest pb-3"
+        className="absolute font-alt font-bold text-4xl lg:text-6xl truncate tracking-widest py-2"
       >
         <span className="pr-16">{t("landing-home.what-is.header-1")}</span>
         <span>{t("landing-home.what-is.header-1")}</span>
@@ -31,7 +31,7 @@ const Header = ({ t }: { t: TFunction }) => (
     >
       <Marquee
         gradient={false}
-        className="absolute font-alt font-bold text-4xl lg:text-6xl truncate tracking-widest pb-3"
+        className="absolute font-alt font-bold text-4xl lg:text-6xl truncate tracking-widest py-2"
       >
         <span className="pr-16">{t("landing-home.what-is.header-2")}</span>
         <span>{t("landing-home.what-is.header-2")}</span>
@@ -66,7 +66,9 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
           <div className="flex items-center justify-end space-x-4 -mt-40 -mr-8 mb-24">
             <p className="text-3xl">{t("landing-home.what-is.slogan-1")}</p>
             <div className="bg-theme-primary text-white px-8 py-2 text-3xl font-alt font-bold">
-              {t("landing-home.what-is.slogan-2")}
+              <TypeAnimation
+                text={[t("landing-home.what-is.slogan-2"), "Other", "Another"]}
+              />
             </div>
           </div>
         </div>
@@ -100,7 +102,13 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
               <div className="flex items-center justify-end space-x-8 -mr-8">
                 <p className="text-6xl">{t("landing-home.what-is.slogan-1")}</p>
                 <div className="bg-theme-primary text-white px-12 py-5 text-5xl font-alt font-bold">
-                  {t("landing-home.what-is.slogan-2")}
+                  <TypeAnimation
+                    text={[
+                      t("landing-home.what-is.slogan-2"),
+                      "Other",
+                      "Another",
+                    ]}
+                  />
                 </div>
               </div>
             </div>

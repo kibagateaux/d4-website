@@ -5,7 +5,7 @@ import { AnimatedLink } from "components/modules";
 import { Container } from "components/elements";
 
 const Header = ({ t }: { t: TFunction }) => (
-  <div className="flex space-x-2 lg:space-x-4">
+  <div className="w-full space-x-2 md:space-x-4 flex justify-between">
     <div className="bg-theme-primary text-white px-4 lg:px-10 py-1 lg:py-4 text-4xl lg:text-6xl font-bold font-alt flex items-center justify-center">
       <span className="text-theme-primary-content font-monospace mr-1 lg:mr-4">
         D4
@@ -15,17 +15,17 @@ const Header = ({ t }: { t: TFunction }) => (
     <div className="flex items-center justify-center grow bg-theme-base-content text-theme-base-100 relative overflow-hidden p-0">
       <Marquee
         gradient={false}
-        className="absolute font-alt font-bold text-4xl lg:text-7xl truncate tracking-widest pb-3"
+        className="absolute font-alt font-bold text-4xl lg:text-7xl truncate tracking-widest py-2"
       >
         <span className="pr-16">{t("landing-home.d4-dao.header")}</span>
         <span>{t("landing-home.d4-dao.header")}</span>
       </Marquee>
     </div>
-    <div className="flex-none w-52">
+    <div className="flex-none w-32 md:w-52">
       <img
         src="/images/dao-d4-header.png"
         alt=""
-        className="h-12  lg:h-full object-cover"
+        className="w-full object-cover"
       />
     </div>
   </div>
