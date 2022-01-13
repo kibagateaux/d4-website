@@ -5,6 +5,8 @@ import { Layout } from "components/layouts";
 
 interface ComponentProp extends React.ComponentClass<any> {
   layout?: string;
+  bgColor?: string;
+  textColor?: string;
   requireAuth: boolean;
 }
 
@@ -18,7 +20,11 @@ const MyApp: React.ComponentType<any> = ({
   pageProps,
 }: ApplicationProps) => {
   return (
-    <Layout name={Component.layout}>
+    <Layout
+      name={Component.layout}
+      bgColor={Component.bgColor}
+      textColor={Component.textColor}
+    >
       <Component {...pageProps} />
     </Layout>
   );

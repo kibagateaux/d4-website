@@ -8,19 +8,30 @@ export enum LayoutTypes {
 
 interface LayoutProps {
   name?: string;
+  bgColor?: string;
+  textColor?: string;
   children: React.ReactNode;
 }
 
-const renderWithLayout = ({ name, children }: LayoutProps) => {
+const renderWithLayout = ({
+  name,
+  children,
+  bgColor,
+  textColor,
+}: LayoutProps) => {
   switch (name) {
     case LayoutTypes.Landing:
-      return <LandingLayout>{children}</LandingLayout>;
+      return (
+        <LandingLayout bgColor={bgColor} textColor={textColor}>
+          {children}
+        </LandingLayout>
+      );
     default:
       return <>{children}</>;
   }
 };
 
-export const Layout = ({ name, children }: LayoutProps) => (
+export const Layout = ({ name, bgColor, textColor, children }: LayoutProps) => (
   <RecoilRoot>
     <Head>
       <meta charSet="utf-8" />
@@ -29,6 +40,8 @@ export const Layout = ({ name, children }: LayoutProps) => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
     </Head>
-    <div data-theme="d4data">{renderWithLayout({ name, children })}</div>
+    <div data-theme="d4data">
+      {renderWithLayout({ name, bgColor, textColor, children })}
+    </div>
   </RecoilRoot>
 );

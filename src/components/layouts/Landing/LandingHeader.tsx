@@ -9,7 +9,7 @@ import { LandingHeaderMobileMenu } from "./LandingHeaderMobileMenu";
 const LogoLink = () => (
   <Link href="/">
     <a>
-      <Logo />
+      <Logo className="h-12" />
     </a>
   </Link>
 );
@@ -103,7 +103,7 @@ const LandingHeader = () => {
     <>
       <Container>
         {/* Desktop header */}
-        <div className="hidden md:flex items-center justify-between border-b">
+        <div className="hidden md:flex items-center justify-between border-b border-opacity-40">
           <LogoLink />
           <MenuLinks className="flex items-center h-16" />
           <RRSSLinks className="flex items-center space-x-4" />
