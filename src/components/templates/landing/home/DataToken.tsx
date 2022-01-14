@@ -2,24 +2,34 @@ import { TFunction } from "next-i18next";
 
 import { AnimatedLink } from "components/modules";
 import { Container } from "components/elements";
+import ToggleBoxes from "../ToggleBoxes";
+import { useState } from "react";
 
-const SimpleTag = ({
-  className = "",
-  t,
-}: {
-  className?: string;
-  t: TFunction;
-}) => (
-  <div className={`flex flex-col w-40 ${className}`}>
-    <div className="text-right bg-theme-base-content text-theme-base-100 text-3xl px-2 py-1">
-      {t("landing-home.data-token.simple")}
-    </div>
-    <div className="flex">
-      <div className="flex-1 bg-theme-base-100 h-0.5"></div>
-      <div className="flex-1 bg-theme-base-content-muted h-0.5"></div>
-    </div>
-  </div>
-);
+const ToggleData = [
+  {
+    name: "Simple",
+    details: "Single token exposure with automated rebalancing and additions",
+  },
+  {
+    name: "Data",
+    details:
+      "The data economy is envolving expeditiously, bringing investment opportunities in network infraestructure, memory, storage and cybersecurity.",
+  },
+  {
+    name: "Other Data",
+    details: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    name: "Example",
+    details:
+      "Ipsam eos est iusto expedita aliquid sint facere dolores ratione error voluptates.",
+  },
+  {
+    name: "Another Example",
+    details:
+      " Consequuntur mollitia iusto deserunt doloribus et obcaecati inventore repudiandae! Mollitia!",
+  },
+];
 
 const Header = ({ t }: { t: TFunction }) => (
   <div className="flex flex-col lg:flex-row items-center space-y-8 lg:space-x-8 mb-12 z-10">
@@ -39,6 +49,8 @@ interface DataTokenProps {
 }
 
 const DataToken = ({ t }: DataTokenProps) => {
+  const [toggleSelected, setToggleSelected] = useState(0);
+
   return (
     <section
       id="data-token"
@@ -54,9 +66,17 @@ const DataToken = ({ t }: DataTokenProps) => {
               alt=""
               className="w-full max-w-sm mx-auto"
             />
-            <SimpleTag className="absolute bottom-0 left-0 mb-10 -ml-4" t={t} />
+            <div className="absolute bottom-0 left-0 mb-10 -ml-4">
+              <ToggleBoxes
+                bgColor="bg-theme-base-content"
+                textColor="text-theme-base-100"
+                selected={0}
+                text={[ToggleData[toggleSelected].name]}
+                onClick={() => {}}
+              />
+            </div>
           </div>
-          <Message t={t} />
+          <p className="text-2xl">{[ToggleData[toggleSelected].details]}</p>
           <div className="w-full flex justify-end pt-8 pr-8">
             <AnimatedLink
               text={t("landing-home.learn-more")}
@@ -77,15 +97,15 @@ const DataToken = ({ t }: DataTokenProps) => {
 
               {/* Main content */}
               <div className="flex items-end space-x-8">
-                <div className="flex flex-col space-y-6">
-                  <SimpleTag t={t} />
-                  <div className="w-36 h-6 bg-theme-base-content"></div>
-                  <div className="w-28 h-6 bg-theme-base-content"></div>
-                  <div className="w-32 h-6 bg-theme-base-content"></div>
-                  <div className="w-16 h-6 bg-theme-base-content"></div>
-                </div>
-                <div className="px-12 flex-1 max-w-xl 2xl:max-w-3xl">
-                  <Message t={t} />
+                <ToggleBoxes
+                  bgColor="bg-theme-base-content"
+                  textColor="text-theme-base-100"
+                  selected={toggleSelected}
+                  text={ToggleData.map((t) => t.name)}
+                  onClick={(selected: number) => setToggleSelected(selected)}
+                />
+                <div className="px-12 text-2xl py-8 flex-1 max-w-xl 2xl:max-w-xl">
+                  {ToggleData[toggleSelected].details}
                 </div>
               </div>
             </div>

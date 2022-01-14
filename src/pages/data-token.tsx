@@ -29,3 +29,5 @@ export const getServerSideProps = async ({
 });
 
 Page.layout = "Landing";
+Page.bgColor = "bg-theme-primary";
+Page.textColor = "text-theme-primary-content";

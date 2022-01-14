@@ -6,6 +6,7 @@ import type { NextPageContext } from "next";
 
 import { BlogTemplate } from "components/templates";
 import { GhostFilterPost } from "components/modules";
+import Header from "components/templates/landing/Header";
 
 interface composeFilterProps {
   filter: string | string[] | undefined;
@@ -58,6 +59,7 @@ const Page = () => {
         <title>{t("news.head")}</title>
       </Head>
 
+      <Header />
       <BlogTemplate title="DEMO" filter={ghostFilter} />
     </>
   );

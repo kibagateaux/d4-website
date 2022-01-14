@@ -4,12 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 
 import { Container, DiscordIcon, Logo, TwitterIcon } from "components/elements";
-import { LandingHeaderMobileMenu } from "./LandingHeaderMobileMenu";
+import HeaderMobileMenu from "./HeaderMobileMenu";
 
-const LogoLink = () => (
+const LogoLink = ({ src }: { src: string }) => (
   <Link href="/">
     <a>
-      <Logo className="h-12" />
+      <img src={src} alt="" className="h-12" />
     </a>
   </Link>
 );
@@ -23,7 +23,7 @@ const MenuLink = ({
 }) => (
   <div
     className={`cursor-pointer hover:opacity-80 flex h-full items-center font-alt p-4 md:px-8 ${
-      selected && "bg-theme-primary text-white"
+      selected && "bg-theme-primary text-white selected-option-header"
     }`}
   >
     {children}
@@ -87,7 +87,11 @@ const RRSSLinks = (props: any) => (
   </div>
 );
 
-const LandingHeader = () => {
+interface LandingHeaderProps {
+  logo?: string;
+}
+
+const LandingHeader = ({ logo = "/images/logo.png" }: LandingHeaderProps) => {
   const [leftMenuOpen, setLeftMenuOpen] = useState(false);
   const [rightMenuOpen, setRightMenuOpen] = useState(false);
 
@@ -101,10 +105,10 @@ const LandingHeader = () => {
 
   return (
     <>
-      <Container>
+      <Container className="sticky top-0 z-50 backdrop-blur-sm backdrop-brightness-100 hover:backdrop-blur-sm transition duration-150 ease-out hover:ease-in">
         {/* Desktop header */}
         <div className="hidden md:flex items-center justify-between border-b border-opacity-40">
-          <LogoLink />
+          <LogoLink src={logo} />
           <MenuLinks className="flex items-center h-16" />
           <RRSSLinks className="flex items-center space-x-4" />
         </div>
@@ -127,14 +131,14 @@ const LandingHeader = () => {
       </div>
 
       {/* Mobile Left Menu */}
-      <LandingHeaderMobileMenu
+      <HeaderMobileMenu
         onLeft={true}
         open={leftMenuOpen}
         onClose={handleMobileLeftMenu}
       >
         <div className="mt-5 flex-1 h-0 overflow-y-auto">
           <nav className="px-4">
-            <LogoLink />
+            <LogoLink src={logo} />
             <MenuLinks
               className="flex flex-col space-y-4 mt-8"
               onClick={handleMobileLeftMenu}
@@ -142,10 +146,10 @@ const LandingHeader = () => {
           </nav>
         </div>
         <div className="px-4">{/* menuBottom */}</div>
-      </LandingHeaderMobileMenu>
+      </HeaderMobileMenu>
 
       {/* Mobile Right Menu */}
-      <LandingHeaderMobileMenu
+      <HeaderMobileMenu
         onLeft={false}
         open={rightMenuOpen}
         onClose={handleMobileRightMenu}
@@ -157,7 +161,7 @@ const LandingHeader = () => {
             onClick={handleMobileRightMenu}
           />
         </div>
-      </LandingHeaderMobileMenu>
+      </HeaderMobileMenu>
     </>
   );
 };

@@ -3,7 +3,8 @@ import { TFunction } from "next-i18next";
 import D4Dao from "./D4Dao";
 import DataToken from "./DataToken";
 import Footer from "../Footer";
-import Header from "./Header";
+import Header from "../Header";
+import HeaderSection from "./Header";
 import News from "./News";
 import WhatIsD4Data from "./WhatIsD4Data";
 
@@ -14,7 +15,8 @@ interface LandingHomeTemplateProps {
 export const LandingHomeTemplate = ({ t }: LandingHomeTemplateProps) => {
   return (
     <>
-      <Header t={t} />
+      <Header />
+      <HeaderSection t={t} />
       <WhatIsD4Data t={t} />
       <D4Dao t={t} />
       <DataToken t={t} />

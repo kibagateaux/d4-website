@@ -16,7 +16,7 @@ const LandingFooter = ({
     <footer className="py-12 px-4">
       <Container className="space-y-3 md:space-y-6 text-xs md:text-sm">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 text-2xl md:text-3xl pb-4 md:pb-0">
-          <Link href="/#top" scroll={true}>
+          <Link href="#" scroll={true}>
             <button
               type="button"
               className="grow flex items-center space-x-2 font-bold font-alt uppercase cursor-pointer"

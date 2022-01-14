@@ -7,7 +7,7 @@ interface LandingHeaderMobileMenuProps {
   onClose?: () => void;
 }
 
-export const LandingHeaderMobileMenu = ({
+const HeaderMobileMenu = ({
   children,
   onLeft = true,
   open = false,
@@ -45,3 +45,5 @@ export const LandingHeaderMobileMenu = ({
       </div>
     </div>
   ) : null;
+
+export default HeaderMobileMenu;

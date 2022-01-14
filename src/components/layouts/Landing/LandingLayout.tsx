@@ -1,5 +1,4 @@
 import { SkeletonLayout } from "../SkeletonLayout";
-import LandingHeader from "./LandingHeader";
 
 interface LandingLayoutProps {
   children: React.ReactNode;
@@ -15,7 +14,7 @@ export const LandingLayout = ({
   <SkeletonLayout
     menu={false}
     footer={null}
-    header={<LandingHeader />}
+    header={null}
     bgColor={bgColor}
     textColor={textColor}
   >

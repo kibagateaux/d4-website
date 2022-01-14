@@ -1,10 +1,37 @@
 import { AnimatedLink } from "components/modules";
+import { useState } from "react";
+
+import ToggleBoxes from "../ToggleBoxes";
+
+const ToggleData = [
+  {
+    name: "Data example",
+    details:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eos est iusto expedita aliquid sint facere dolores ratione error voluptates. Consequuntur mollitia iusto deserunt doloribus et obcaecati inventore repudiandae! Mollitia!",
+  },
+  {
+    name: "Data",
+    details:
+      "The data economy is envolving expeditiously, bringing investment opportunities in network infraestructure, memory, storage and cybersecurity.",
+  },
+  {
+    name: "Data 2",
+    details:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eos est iusto expedita aliquid sint facere dolores ratione error voluptates. Consequuntur mollitia iusto deserunt doloribus et obcaecati inventore repudiandae! Mollitia!",
+  },
+];
 
 const MainSection = () => {
+  const [toggleSelected, setToggleSelected] = useState(1);
+
+  const handleToggleClick = (index: number) => {
+    setToggleSelected(index);
+  };
+
   return (
-    <section>
+    <section id="top">
       {/* Header */}
-      <div className="relative">
+      <div className="relative z-40">
         <div className="flex justify-end w-full">
           <div className="w-full md:w-9/12 relative">
             <img
@@ -14,11 +41,14 @@ const MainSection = () => {
             />
           </div>
         </div>
-        <div className="absolute inset-0 p-16 md:pt-20 flex flex-col justify-between items-center">
-          <h1 className="text-5xl md:text-7xl xl:text-9xl font-alt font-bold w-full text-center">
-            What is D4DATA
-          </h1>
-          <div className="px-12 py-12 z-40">
+        <div
+          className="absolute h-screen bg-theme-primary opacity-90 -top-20 flex items-end justify-center"
+          style={{
+            left: `431px`, // $('.selected-option-header').offsetLeft
+            width: `201px`, // $('.selected-option-header').offsetWidth
+          }}
+        >
+          <div className="px-12 py-12">
             <AnimatedLink
               text="discover"
               href="#"
@@ -26,10 +56,15 @@ const MainSection = () => {
             />
           </div>
         </div>
+        <div className="absolute inset-0 p-16 md:pt-20 flex flex-col justify-between items-center">
+          <h1 className="text-5xl md:text-7xl xl:text-9xl font-alt font-bold w-full text-center">
+            What is D4DATA
+          </h1>
+        </div>
       </div>
 
       <div className="flex flex-col md:flex-row items-end justify-between h-screen md:-mt-96 relative mx-12">
-        <div className="flex-none w-20 h-full bg-red-500 bg-opacity-10 hidden md:flex items-center justify-center">
+        <div className="flex-none w-20 h-full bg-red-500 bg-opacity-20 hidden md:flex items-center justify-center">
           <p className="-rotate-90 font-bold font-alt text-6xl text-theme-primary">
             Marquee
           </p>
@@ -42,8 +77,72 @@ const MainSection = () => {
         </p>
       </div>
 
-      <p>Toggle + imagen</p>
-      <p>Marquee + imágenes</p>
+      {/* Section 2 - Toggles */}
+      <div className="flex flex-col md:flex-row items-center md:items-start justify-between space-x-8 mx-12">
+        <div className="grow py-12 space-y-12">
+          <div
+            className={`flex space-x-8 ${
+              toggleSelected === 0
+                ? "items-start"
+                : toggleSelected === 1
+                ? "items-center"
+                : "items-end"
+            }`}
+          >
+            <p className="text-4xl">The Power of</p>
+            <ToggleBoxes
+              bgColor="bg-theme-primary"
+              textColor="text-theme-base-100"
+              selected={toggleSelected}
+              text={ToggleData.map((t) => t.name)}
+              onClick={handleToggleClick}
+            />
+          </div>
+          <p className="text-lg max-w-md leading-tight">
+            {ToggleData[toggleSelected].details}
+          </p>
+        </div>
+        <div className="grow max-w-sm md:max-w-xl">
+          <img
+            src="/images/what-is-d4-data-image-2.png"
+            alt=""
+            className="w-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* Section 3 - Glitch Images */}
+      <div className="flex p-12 h-screen">
+        <div className="flex-none w-20 h-full bg-red-500 bg-opacity-20 hidden md:flex items-center justify-center lg:-mt-96">
+          <p className="-rotate-90 font-bold font-alt text-6xl text-theme-primary">
+            Marquee
+          </p>
+        </div>
+        <div className="grow flex items-start justify-center mb-32 md:mb-96 p-4">
+          <div className="flex flex-col items-end">
+            <img
+              src="/images/wid-people-1.png"
+              alt=""
+              className="object-cover h-full w-full"
+            />
+            <p className="text-xl md:text-3xl md:-mt-10 md:-mr-24">
+              Thomas Hepner
+            </p>
+          </div>
+        </div>
+        <div className="grow flex items-end justify-center p-4">
+          <div className="flex flex-col items-end">
+            <img
+              src="/images/wid-people-2.png"
+              alt=""
+              className="object-cover h-full w-full"
+            />
+            <p className="text-xl md:text-3xl md:-mt-10 md:-mr-24">
+              Kiba Gateaux
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
