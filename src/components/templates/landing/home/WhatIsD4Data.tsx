@@ -65,7 +65,7 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
           />
           <div className="flex items-center justify-end space-x-4 -mt-40 -mr-8 mb-24">
             <p className="text-3xl">{t("landing-home.what-is.slogan-1")}</p>
-            <div className="bg-theme-primary text-white px-8 py-2 text-3xl font-alt font-bold">
+            <div className="bg-theme-primary text-white px-8 py-2 text-3xl font-alt font-bold flex items-center justify-center w-56">
               <TypeAnimation
                 text={[t("landing-home.what-is.slogan-2"), "Other", "Another"]}
               />
@@ -101,7 +101,7 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
             <div className="w-full py-12">
               <div className="flex items-center justify-end space-x-8 -mr-8">
                 <p className="text-6xl">{t("landing-home.what-is.slogan-1")}</p>
-                <div className="bg-theme-primary text-white px-12 py-5 text-5xl font-alt font-bold">
+                <div className="bg-theme-primary text-white px-8 py-5 text-5xl font-alt font-bold flex items-center justify-center w-80">
                   <TypeAnimation
                     text={[
                       t("landing-home.what-is.slogan-2"),
