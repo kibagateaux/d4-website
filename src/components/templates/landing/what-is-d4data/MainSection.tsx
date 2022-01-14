@@ -1,6 +1,9 @@
 import { AnimatedLink } from "components/modules";
+import { useRecoilState } from "recoil";
 import { useState } from "react";
 
+import { ElementBounds } from "models";
+import { selectedItemHeaderAtom } from "../header-element.state";
 import ToggleBoxes from "../ToggleBoxes";
 
 const ToggleData = [
@@ -23,6 +26,9 @@ const ToggleData = [
 
 const MainSection = () => {
   const [toggleSelected, setToggleSelected] = useState(1);
+  const [selectedItem] = useRecoilState<ElementBounds | null>(
+    selectedItemHeaderAtom
+  );
 
   const handleToggleClick = (index: number) => {
     setToggleSelected(index);
@@ -41,21 +47,23 @@ const MainSection = () => {
             />
           </div>
         </div>
-        <div
-          className="absolute h-screen bg-theme-primary opacity-90 -top-20 flex items-end justify-center"
-          style={{
-            left: `431px`, // $('.selected-option-header').offsetLeft
-            width: `201px`, // $('.selected-option-header').offsetWidth
-          }}
-        >
-          <div className="px-12 py-12">
-            <AnimatedLink
-              text="discover"
-              href="#"
-              tagColor="bg-theme-base-100"
-            />
+        {selectedItem && (
+          <div
+            className="absolute h-screen bg-theme-primary opacity-90 -top-20 hidden lg:flex items-end justify-center transition duration-100 ease-in"
+            style={{
+              left: `${selectedItem?.left}px`, // $('.selected-option-header').offsetLeft
+              width: `${selectedItem?.width}px`, // $('.selected-option-header').offsetWidth
+            }}
+          >
+            <div className="px-12 py-12">
+              <AnimatedLink
+                text="discover"
+                href="#"
+                tagColor="bg-theme-base-100"
+              />
+            </div>
           </div>
-        </div>
+        )}
         <div className="absolute inset-0 p-16 md:pt-20 flex flex-col justify-between items-center">
           <h1 className="text-5xl md:text-7xl xl:text-9xl font-alt font-bold w-full text-center">
             What is D4DATA
@@ -63,13 +71,13 @@ const MainSection = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-end justify-between h-screen md:-mt-96 relative mx-12">
+      <div className="flex flex-col md:flex-row items-end justify-between md:h-screen md:-mt-96 relative mx-12">
         <div className="flex-none w-20 h-full bg-red-500 bg-opacity-20 hidden md:flex items-center justify-center">
           <p className="-rotate-90 font-bold font-alt text-6xl text-theme-primary">
             Marquee
           </p>
         </div>
-        <p className="flex-none py-12 text-3xl max-w-xl border-b border-theme-primary">
+        <p className="flex-none py-12 text-2xl md:text-3xl max-w-xl border-b border-theme-primary">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eos est
           iusto expedita aliquid sint facere dolores ratione error voluptates.
           Consequuntur mollitia iusto deserunt doloribus et obcaecati inventore
@@ -112,7 +120,7 @@ const MainSection = () => {
       </div>
 
       {/* Section 3 - Glitch Images */}
-      <div className="flex p-12 h-screen">
+      <div className="flex p-12 lg:h-screen">
         <div className="flex-none w-20 h-full bg-red-500 bg-opacity-20 hidden md:flex items-center justify-center lg:-mt-96">
           <p className="-rotate-90 font-bold font-alt text-6xl text-theme-primary">
             Marquee

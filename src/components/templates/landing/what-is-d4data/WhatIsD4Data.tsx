@@ -14,7 +14,11 @@ export const LandingWhatIsD4DataTemplate = ({
 }: LandingWhatIsD4DataTemplateProps) => {
   return (
     <Container className="pb-12">
-      <Header logo="/images/logo-wid.png" />
+      <Header
+        logo="/images/logo-wid.png"
+        bgColor="text-black"
+        textColor="text-theme-base-100"
+      />
       <MainSection />
       <Footer
         tagsBg="bg-theme-primary"

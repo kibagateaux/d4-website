@@ -38,20 +38,21 @@ const ToggleBoxes = ({
 }: ToggleBoxesProps) => {
   return (
     <div className="flex flex-col space-y-6">
-      {text.map((t, index) =>
-        index === selected ? (
-          <ToggleBoxSelected bgColor={bgColor} textColor={textColor}>
-            {t}
-          </ToggleBoxSelected>
-        ) : (
-          <div
-            key={index}
-            className={`h-6 ${bgColor} hover:opacity-80 cursor-pointer`}
-            style={{ width: `${(t.length + 5) * 15}px` }}
-            onClick={() => onClick(index)}
-          ></div>
-        )
-      )}
+      {text.map((t, index) => (
+        <div key={index}>
+          {index === selected ? (
+            <ToggleBoxSelected bgColor={bgColor} textColor={textColor}>
+              {t}
+            </ToggleBoxSelected>
+          ) : (
+            <div
+              className={`h-6 ${bgColor} hover:opacity-80 cursor-pointer`}
+              style={{ width: `${(t.length + 5) * 15}px` }}
+              onClick={() => onClick(index)}
+            ></div>
+          )}
+        </div>
+      ))}
     </div>
   );
 };

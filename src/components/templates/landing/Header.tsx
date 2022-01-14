@@ -1,9 +1,12 @@
 import { FingerPrintIcon, MenuAlt4Icon } from "@heroicons/react/outline";
+import { useEffect, useRef, useState } from "react";
+import { useRecoilState } from "recoil";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import Link from "next/link";
 
-import { Container, DiscordIcon, Logo, TwitterIcon } from "components/elements";
+import { Container, DiscordIcon, TwitterIcon } from "components/elements";
+import { ElementBounds } from "models";
+import { selectedItemHeaderAtom } from "./header-element.state";
 import HeaderMobileMenu from "./HeaderMobileMenu";
 
 const LogoLink = ({ src }: { src: string }) => (
@@ -17,20 +20,45 @@ const LogoLink = ({ src }: { src: string }) => (
 const MenuLink = ({
   selected,
   children,
+  textColor,
 }: {
   selected: boolean;
   children: React.ReactNode;
-}) => (
-  <div
-    className={`cursor-pointer hover:opacity-80 flex h-full items-center font-alt p-4 md:px-8 ${
-      selected && "bg-theme-primary text-white selected-option-header"
-    }`}
-  >
-    {children}
-  </div>
-);
+  textColor: string;
+}) => {
+  const linkRef = useRef<any>();
+  const [selectedItem, setSelectedItem] = useRecoilState<ElementBounds | null>(
+    selectedItemHeaderAtom
+  );
 
-const MenuLinks = ({ ...props }: any) => {
+  const getSelectedLinkSize = () => {
+    if (selected) {
+      const bounds: ElementBounds = {
+        left: linkRef.current?.offsetLeft || selectedItem?.left,
+        width: linkRef.current?.offsetWidth || selectedItem?.width,
+      };
+      setSelectedItem(bounds);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", getSelectedLinkSize);
+    setTimeout(() => getSelectedLinkSize(), 0);
+  }, [linkRef.current]);
+
+  return (
+    <div
+      ref={linkRef}
+      className={`cursor-pointer hover:opacity-80 flex h-full items-center font-alt p-4 md:px-8 ${textColor} ${
+        selected && "bg-theme-primary text-white selected-option-header"
+      }`}
+    >
+      {children}
+    </div>
+  );
+};
+
+const MenuLinks = ({ textColor, ...props }: any) => {
   const router = useRouter();
   const currentRoute = router?.route;
 
@@ -62,7 +90,10 @@ const MenuLinks = ({ ...props }: any) => {
       {links.map(({ name, href, hrefRx }, index) => (
         <Link href={href} key={index}>
           <a className="h-full">
-            <MenuLink selected={currentRoute.indexOf(hrefRx) >= 0}>
+            <MenuLink
+              selected={currentRoute.indexOf(hrefRx) >= 0}
+              textColor={textColor}
+            >
               {name}
             </MenuLink>
           </a>
@@ -89,9 +120,15 @@ const RRSSLinks = (props: any) => (
 
 interface LandingHeaderProps {
   logo?: string;
+  bgColor?: string;
+  textColor?: string;
 }
 
-const LandingHeader = ({ logo = "/images/logo.png" }: LandingHeaderProps) => {
+const LandingHeader = ({
+  logo = "/images/logo.png",
+  bgColor = "bg-white",
+  textColor = "text-theme-base-content",
+}: LandingHeaderProps) => {
   const [leftMenuOpen, setLeftMenuOpen] = useState(false);
   const [rightMenuOpen, setRightMenuOpen] = useState(false);
 
@@ -104,12 +141,14 @@ const LandingHeader = ({ logo = "/images/logo.png" }: LandingHeaderProps) => {
   };
 
   return (
-    <>
-      <Container className="sticky top-0 z-50 backdrop-blur-sm backdrop-brightness-100 hover:backdrop-blur-sm transition duration-150 ease-out hover:ease-in">
+    <header
+      className={`sticky top-0 z-50 ${bgColor} ${textColor} bg-opacity-50 backdrop-blur-sm`}
+    >
+      <Container>
         {/* Desktop header */}
         <div className="hidden md:flex items-center justify-between border-b border-opacity-40">
           <LogoLink src={logo} />
-          <MenuLinks className="flex items-center h-16" />
+          <MenuLinks className="flex items-center h-16" textColor={textColor} />
           <RRSSLinks className="flex items-center space-x-4" />
         </div>
       </Container>
@@ -162,7 +201,7 @@ const LandingHeader = ({ logo = "/images/logo.png" }: LandingHeaderProps) => {
           />
         </div>
       </HeaderMobileMenu>
-    </>
+    </header>
   );
 };
 
