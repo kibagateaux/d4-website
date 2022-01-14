@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ElementBounds } from "models";
 import { selectedItemHeaderAtom } from "../header-element.state";
 import ToggleBoxes from "../ToggleBoxes";
+import Marquee from "react-fast-marquee";
 
 const ToggleData = [
   {
@@ -72,10 +73,16 @@ const MainSection = () => {
       </div>
 
       <div className="flex flex-col md:flex-row items-end justify-between md:h-screen md:-mt-96 relative mx-12">
-        <div className="flex-none w-20 h-full bg-red-500 bg-opacity-20 hidden md:flex items-center justify-center">
-          <p className="-rotate-90 font-bold font-alt text-6xl text-theme-primary">
-            Marquee
-          </p>
+        <div className="flex-none w-20 h-full hidden md:flex items-center justify-center">
+          <div className="-rotate-90 opacity-80">
+            <Marquee
+              className="w-full font-bold font-alt text-6xl text-theme-primary overflow-hidden"
+              speed={2}
+              gradientColor={[0, 0, 0]}
+            >
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit
+            </Marquee>
+          </div>
         </div>
         <p className="flex-none py-12 text-2xl md:text-3xl max-w-xl border-b border-theme-primary">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eos est
@@ -121,11 +128,18 @@ const MainSection = () => {
 
       {/* Section 3 - Glitch Images */}
       <div className="flex p-12 lg:h-screen">
-        <div className="flex-none w-20 h-full bg-red-500 bg-opacity-20 hidden md:flex items-center justify-center lg:-mt-96">
-          <p className="-rotate-90 font-bold font-alt text-6xl text-theme-primary">
-            Marquee
-          </p>
+        <div className="flex-none w-20 h-full hidden md:flex items-center justify-center lg:-mt-96">
+          <div className="-rotate-90 opacity-80">
+            <Marquee
+              className="w-full font-bold font-alt text-6xl text-theme-primary overflow-hidden"
+              speed={2}
+              gradientColor={[0, 0, 0]}
+            >
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit
+            </Marquee>
+          </div>
         </div>
+
         <div className="grow flex items-start justify-center mb-32 md:mb-96 p-4">
           <div className="flex flex-col items-end">
             <img
