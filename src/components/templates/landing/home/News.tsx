@@ -13,7 +13,7 @@ const NewsItem = ({
   align: "right" | "left";
 }) => (
   <div
-    className={`flex flex-col md:flex-row w-full md:items-center hover:opacity-80 group ${
+    className={`flex flex-col md:flex-row mb-12 overflow-hidden w-full space-y-2 md:space-x-16 md:items-center hover:opacity-80 group ${
       align === "right"
         ? "items-end md:justify-end"
         : "items-start md:justify-start"
@@ -27,16 +27,16 @@ const Thumbnail = ({ src }: { src: string }) => (
   <img
     src={src}
     alt=""
-    className="object-cover h-20 w-72 grayscale group-hover:grayscale-0 m-4 border"
+    className="object-cover h-32 md:h-20 w-full md:w-72 grayscale group-hover:grayscale-0 border"
   />
 );
 
 const NewsTitle = ({ title }: { title: string }) => (
-  <p className="text-4xl m-4">{title}</p>
+  <p className="text-2xl md:text-4xl">{title}</p>
 );
 
 const Button = ({ time }: { time: number }) => (
-  <div className="bg-theme-base-content group-hover:bg-theme-primary text-theme-base-100 m-4 px-6 py-6 font-alt font-bold text-center">
+  <div className="bg-theme-base-content group-hover:bg-theme-primary text-theme-base-100 px-6 py-6 font-alt font-bold text-center">
     {time} min read
   </div>
 );
@@ -67,9 +67,33 @@ const News = () => {
       className="bg-theme-base-100 text-theme-base-content py-20 px-4"
     >
       <Container>
-        <p className="text-9xl font-alt font-bold">News</p>
+        <p className="text-7xl md:text-9xl font-alt font-bold">News</p>
 
-        <div className="space-y-16 md:space-y-8 pt-8">
+        {/* Mobile version */}
+        <div className="block md:hidden space-y-16">
+          {Array.isArray(posts) &&
+            posts.map(
+              (
+                { feature_image, reading_time, title, slug }: any,
+                index: number
+              ) => (
+                <Link href={`/news/${slug}`} key={index}>
+                  <a className="p-4 overflow-hidden">
+                    <NewsItem align="left">
+                      {feature_image && <Thumbnail src={feature_image} />}
+                      <NewsTitle title={title} />
+                      <div className="flex justify-end w-full">
+                        <Button time={reading_time} />
+                      </div>
+                    </NewsItem>
+                  </a>
+                </Link>
+              )
+            )}
+        </div>
+
+        {/* Desktop version */}
+        <div className="hidden md:block space-y-8 pt-8">
           {Array.isArray(posts) &&
             posts.map(
               (
@@ -116,8 +140,8 @@ const News = () => {
             )}
         </div>
 
-        <div className="flex justify-end py-12">
-          <AnimatedLink text="learn more" href="/news" />
+        <div className="flex justify-center py-12">
+          <AnimatedLink text="view all" href="/news" />
         </div>
       </Container>
     </section>
