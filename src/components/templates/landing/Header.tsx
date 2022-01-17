@@ -11,7 +11,7 @@ import HeaderMobileMenu from "./HeaderMobileMenu";
 
 const LogoLink = ({ src }: { src: string }) => (
   <Link href="/">
-    <a>
+    <a className="w-12">
       <img src={src} alt="" className="h-12" />
     </a>
   </Link>
