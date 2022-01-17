@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface AnimatedLinkProps {
   text: string;
-  href: string;
+  href?: string;
   tagColor?: string;
 }
 
@@ -24,14 +24,18 @@ export const AnimatedLink = ({
     return () => clearInterval(interval);
   });
 
-  return (
+  const content = (
+    <div className="flex items-center justify-end space-x-2 max-w-2xl 2xl:max-w-3xl hover:opacity-80">
+      <div className={`w-6 h-6 ${opacities[currentOpacity]} ${tagColor}`}></div>
+      <div className="font-alt">{text}</div>
+    </div>
+  );
+
+  return href ? (
     <Link href={href}>
-      <a className="flex items-center justify-end space-x-2 max-w-2xl 2xl:max-w-3xl hover:opacity-80">
-        <div
-          className={`w-6 h-6 ${opacities[currentOpacity]} ${tagColor}`}
-        ></div>
-        <div className="font-alt">{text}</div>
-      </a>
+      <a>{content}</a>
     </Link>
+  ) : (
+    content
   );
 };

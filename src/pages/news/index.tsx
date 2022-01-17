@@ -60,7 +60,7 @@ const Page = () => {
       </Head>
 
       <Header />
-      <BlogTemplate title="DEMO" filter={ghostFilter} />
+      <BlogTemplate filter={ghostFilter} />
     </>
   );
 };
