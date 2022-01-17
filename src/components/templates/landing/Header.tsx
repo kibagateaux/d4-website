@@ -21,10 +21,14 @@ const MenuLink = ({
   selected,
   children,
   textColor,
+  bgSelectedColor,
+  textSelectedColor,
 }: {
   selected: boolean;
   children: React.ReactNode;
   textColor: string;
+  bgSelectedColor: string;
+  textSelectedColor: string;
 }) => {
   const linkRef = useRef<any>();
   const [selectedItem, setSelectedItem] = useRecoilState<ElementBounds | null>(
@@ -50,7 +54,8 @@ const MenuLink = ({
     <div
       ref={linkRef}
       className={`cursor-pointer hover:opacity-80 flex h-full items-center font-alt p-4 md:px-8 ${textColor} ${
-        selected && "bg-theme-primary text-white selected-option-header"
+        selected &&
+        `${bgSelectedColor} ${textSelectedColor} selected-option-header`
       }`}
     >
       {children}
@@ -58,7 +63,12 @@ const MenuLink = ({
   );
 };
 
-const MenuLinks = ({ textColor, ...props }: any) => {
+const MenuLinks = ({
+  textColor,
+  bgSelectedColor,
+  textSelectedColor,
+  ...props
+}: any) => {
   const router = useRouter();
   const currentRoute = router?.route;
 
@@ -93,6 +103,8 @@ const MenuLinks = ({ textColor, ...props }: any) => {
             <MenuLink
               selected={currentRoute.indexOf(hrefRx) >= 0}
               textColor={textColor}
+              bgSelectedColor={bgSelectedColor}
+              textSelectedColor={textSelectedColor}
             >
               {name}
             </MenuLink>
@@ -122,12 +134,16 @@ interface LandingHeaderProps {
   logo?: string;
   bgColor?: string;
   textColor?: string;
+  bgSelectedColor?: string;
+  textSelectedColor?: string;
 }
 
 const LandingHeader = ({
   logo = "/images/logo.png",
   bgColor = "bg-white",
   textColor = "text-theme-base-content",
+  bgSelectedColor = "bg-theme-primary",
+  textSelectedColor = "text-theme-base-100",
 }: LandingHeaderProps) => {
   const [leftMenuOpen, setLeftMenuOpen] = useState(false);
   const [rightMenuOpen, setRightMenuOpen] = useState(false);
@@ -148,7 +164,12 @@ const LandingHeader = ({
         {/* Desktop header */}
         <div className="hidden md:flex items-center justify-between border-b border-opacity-40">
           <LogoLink src={logo} />
-          <MenuLinks className="flex items-center h-16" textColor={textColor} />
+          <MenuLinks
+            className="flex items-center h-16"
+            textColor={textColor}
+            bgSelectedColor={bgSelectedColor}
+            textSelectedColor={textSelectedColor}
+          />
           <RRSSLinks className="flex items-center space-x-4" />
         </div>
       </Container>

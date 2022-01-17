@@ -26,7 +26,7 @@ const HeaderMobileMenu = ({
         onClick={onClose}
       ></div>
 
-      <div className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-theme-base-100 text-theme-base-content">
+      <div className="relative flex-1 flex flex-col max-w-xs w-full h-screen pt-5 pb-4 bg-theme-base-100 text-theme-base-content">
         <div
           className={`absolute top-0 ${
             onLeft ? "right-0 -mr-12" : "left-0 -ml-12"
