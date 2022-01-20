@@ -75,24 +75,38 @@ const MainSection = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-end justify-between md:h-screen md:-mt-96 relative mx-12">
-        <div className="flex-none w-20 h-full hidden md:flex items-center justify-center">
+      {/* Marquee section 1 */}
+      <div className="md:h-screen flex items-center justify-center relative overflow-hidden md:overflow-visible md:-mt-96">
+        {/* Marquee */}
+        <div className="flex-none w-10 md:w-20 h-screen absolute left-0 flex items-center justify-center overflow-hidden">
           <div className="-rotate-90 opacity-80">
             <Marquee
-              className="w-full font-bold font-alt text-6xl text-theme-primary overflow-hidden"
+              className="font-bold font-alt text-3xl md:text-6xl text-theme-primary overflow-hidden"
               speed={2}
+              gradient={true}
+              gradientWidth={60}
               gradientColor={[0, 0, 0]}
             >
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit
+              Data Centric Chain Agnostic Data Centric Chain Agnostic
             </Marquee>
           </div>
         </div>
-        <p className="flex-none py-12 text-2xl md:text-3xl max-w-xl border-b border-theme-primary">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eos est
-          iusto expedita aliquid sint facere dolores ratione error voluptates.
-          Consequuntur mollitia iusto deserunt doloribus et obcaecati inventore
-          repudiandae! Mollitia!
-        </p>
+
+        {/* Description */}
+        <div className="flex-grow flex flex-col items-end justify-end pl-20 md:pl-60 h-full text-2xl md:text-3xl">
+          <div className="max-w-2xl border-b border-theme-primary px-4 md:px-0 py-20 md:py-8 space-y-4">
+            <p>
+              We are doers, and it's in our DNA to get things going, to pass the
+              ball, and develop the game. Also, we have a hard time sitting
+              still.
+            </p>
+            <p>
+              Especially when it comes to watching friends and family missing
+              out on opportunities because of lack of insight. You should feel
+              the same
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Section 2 - Toggles */}
