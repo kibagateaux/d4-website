@@ -53,7 +53,7 @@ const MenuLink = ({
   return (
     <div
       ref={linkRef}
-      className={`cursor-pointer hover:opacity-80 flex h-full items-center font-alt p-4 md:px-8 ${
+      className={`cursor-pointer hover:opacity-80 flex h-full items-center font-alt p-4 md:px-12 ${
         selected
           ? `${bgSelectedColor} ${textSelectedColor} selected-option-header`
           : textColor

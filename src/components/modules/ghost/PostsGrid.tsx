@@ -23,7 +23,7 @@ export const PostsGrid = ({ filter = {} }: PostsGridProps) => {
           ))}
       </div>
       {!Array.isArray(posts) && posts.meta?.pagination && (
-        <div>{JSON.stringify(posts.meta?.pagination)}</div>
+        <div>{JSON.stringify(posts.meta)}</div>
       )}
     </Container>
   );

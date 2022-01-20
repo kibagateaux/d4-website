@@ -36,11 +36,11 @@ const MainSection = () => {
   };
 
   return (
-    <section id="top">
+    <section className="text-theme-base-100">
       {/* Header */}
       <div className="relative z-40">
         <div className="flex justify-end w-full">
-          <div className="w-full md:w-9/12 relative">
+          <div className="w-full h-96 md:h-auto md:w-9/12 relative">
             <img
               src="/images/dao-d4-bg.png"
               alt=""
@@ -52,8 +52,8 @@ const MainSection = () => {
           <div
             className="absolute h-screen bg-theme-primary opacity-90 -top-20 hidden lg:flex items-end justify-center transition duration-100 ease-in"
             style={{
-              left: `${selectedItem?.left}px`, // $('.selected-option-header').offsetLeft
-              width: `${selectedItem?.width}px`, // $('.selected-option-header').offsetWidth
+              left: `${selectedItem?.left}px`,
+              width: `${selectedItem?.width}px`,
             }}
           >
             <div className="px-12 py-12">
@@ -65,10 +65,13 @@ const MainSection = () => {
             </div>
           </div>
         )}
-        <div className="absolute inset-0 p-16 md:pt-20 flex flex-col justify-between items-center">
-          <h1 className="text-5xl md:text-7xl xl:text-9xl font-alt font-bold w-full text-center">
+        <div className="absolute inset-0 p-16 md:pt-20 flex items-center md:items-start">
+          <h1 className="text-6xl md:text-7xl xl:text-9xl font-alt font-bold w-full text-center">
             What is D4DATA
           </h1>
+        </div>
+        <div className="block md:hidden px-8 py-4 absolute bottom-0 right-0 bg-theme-primary text-theme-base-content text-lg">
+          <AnimatedLink text="discover" href="#" tagColor="bg-theme-base-100" />
         </div>
       </div>
 

@@ -48,11 +48,11 @@ const MainSection = () => {
       {/* Header */}
       <div className="relative z-40 text-theme-base-100">
         <div className="flex justify-end w-full">
-          <div className="w-full md:w-9/12 relative">
+          <div className="w-full h-96 md:h-auto md:w-9/12 relative">
             <img
               src="/images/dao-d4-bg.png"
               alt=""
-              className="w-full h-full object-cover opacity-50"
+              className="w-full h-full object-cover opacity-30 md:opacity-50"
             />
           </div>
         </div>
@@ -73,10 +73,13 @@ const MainSection = () => {
             </div>
           </div>
         )}
-        <div className="absolute inset-0 p-16 md:pt-20 flex flex-col justify-between items-center">
-          <h1 className="text-5xl md:text-7xl xl:text-9xl font-alt font-bold w-full text-center">
+        <div className="absolute inset-0 p-16 md:pt-20 flex items-center md:items-start">
+          <h1 className="text-6xl md:text-7xl xl:text-9xl font-alt font-bold w-full text-center">
             $DATA Token
           </h1>
+        </div>
+        <div className="block md:hidden px-8 py-4 absolute bottom-0 right-0 bg-theme-base-content text-theme-base-100 text-lg">
+          <AnimatedLink text="discover" href="#" tagColor="bg-theme-primary" />
         </div>
       </div>
 
