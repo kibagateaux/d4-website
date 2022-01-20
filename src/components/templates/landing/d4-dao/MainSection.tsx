@@ -3,23 +3,27 @@ import { useRecoilState } from "recoil";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
 
+import { Carousel } from "components/elements";
 import { ElementBounds } from "models";
 import { selectedItemHeaderAtom } from "../header-element.state";
+import CarouselItemTemplate from "./CarouselItemTemplate";
 import ToggleBoxes from "../ToggleBoxes";
 
 const ToggleData = [
   {
     name: "Simple",
-    details: "Single token exposure with automated rebalancing and additions",
+    details:
+      "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
   },
   {
     name: "DeFi",
     details:
-      "The data economy is envolving expeditiously, bringing investment opportunities in network infraestructure, memory, storage and cybersecurity.",
+      "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
   },
   {
     name: "Other Data",
-    details: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    details:
+      "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
   },
 ];
 
@@ -102,8 +106,24 @@ const MainSection = () => {
         </div>
       </div>
 
-      {/* Section 2 - Toggles */}
-      <div className="flex flex-col md:flex-row items-center justify-between space-x-8 mx-12">
+      {/* Toggles Section - Mobile version */}
+      <div className="block max-w-sm mx-auto md:hidden my-8">
+        <Carousel
+          value={ToggleData}
+          itemTemplate={CarouselItemTemplate}
+          autoplayInterval={5000}
+        ></Carousel>
+        <div className="p-4">
+          <img
+            src="/images/what-is-d4-data-image-2.png"
+            alt=""
+            className="w-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* Toggles Section - Desktop version */}
+      <div className="hidden md:flex flex-row items-center justify-between space-x-8">
         <div className="grow py-12 space-y-12">
           <div
             className={`flex space-x-8 ${
@@ -127,7 +147,7 @@ const MainSection = () => {
             {ToggleData[toggleSelected].details}
           </p>
         </div>
-        <div className="grow max-w-sm md:max-w-xl">
+        <div className="grow max-w-sm">
           <img
             src="/images/what-is-d4-data-image-2.png"
             alt=""

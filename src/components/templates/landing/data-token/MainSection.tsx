@@ -3,8 +3,10 @@ import { useRecoilState } from "recoil";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
 
+import { Carousel } from "components/elements";
 import { ElementBounds } from "models";
 import { selectedItemHeaderAtom } from "../header-element.state";
+import CarouselItemTemplate from "./CarouselItemTemplate";
 import ToggleBoxes from "../ToggleBoxes";
 
 const ToggleData = [
@@ -14,22 +16,11 @@ const ToggleData = [
   },
   {
     name: "Data",
-    details:
-      "The data economy is envolving expeditiously, bringing investment opportunities in network infraestructure, memory, storage and cybersecurity.",
-  },
-  {
-    name: "Other Data",
-    details: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    details: "Single token exposure with automated rebalancing and additions",
   },
   {
     name: "Example",
-    details:
-      "Ipsam eos est iusto expedita aliquid sint facere dolores ratione error voluptates.",
-  },
-  {
-    name: "Another Example",
-    details:
-      " Consequuntur mollitia iusto deserunt doloribus et obcaecati inventore repudiandae! Mollitia!",
+    details: "Single token exposure with automated rebalancing and additions",
   },
 ];
 
@@ -112,9 +103,18 @@ const MainSection = () => {
         </div>
       </div>
 
-      {/* Section 2 - Toggles */}
-      <div className="flex flex-col md:flex-row items-center md:items-start justify-between space-x-8 mx-12">
-        <div className="grow py-12 space-y-12 md:space-x-12 flex flex-col md:flex-row items-center md:items-end">
+      {/* Toggles Section - Mobile version */}
+      <div className="block max-w-sm mx-auto md:hidden">
+        <Carousel
+          value={ToggleData}
+          itemTemplate={CarouselItemTemplate}
+          autoplayInterval={5000}
+        ></Carousel>
+      </div>
+
+      {/* Toggles Section - Desktop version */}
+      <div className="hidden md:flex flex-row items-center justify-between space-x-8">
+        <div className="grow py-12 space-x-12 flex items-end">
           <ToggleBoxes
             bgColor="bg-theme-base-content"
             textColor="text-theme-base-100"
@@ -122,11 +122,11 @@ const MainSection = () => {
             text={ToggleData.map((t) => t.name)}
             onClick={handleToggleClick}
           />
-          <p className="text-lg max-w-md leading-tight">
+          <p className="text-xl max-w-md leading-tight">
             {ToggleData[toggleSelected].details}
           </p>
         </div>
-        <div className="grow max-w-sm md:max-w-xl">
+        <div className="grow max-w-xl">
           <img
             src="/images/token-data-bg.png"
             alt=""
@@ -136,7 +136,7 @@ const MainSection = () => {
       </div>
 
       {/* Section 3 - Glitch Images */}
-      <div className="flex p-12 lg:h-screen">
+      <div className="hidden p-12 lg:h-screen">
         <div className="flex-none w-20 h-full hidden md:flex items-center justify-center lg:-mt-96">
           <div className="-rotate-90 opacity-80">
             <Marquee

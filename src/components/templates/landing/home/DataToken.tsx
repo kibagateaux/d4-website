@@ -1,9 +1,10 @@
 import { TFunction } from "next-i18next";
 
 import { AnimatedLink } from "components/modules";
-import { Container } from "components/elements";
+import { Carousel, Container } from "components/elements";
 import ToggleBoxes from "../ToggleBoxes";
 import { useState } from "react";
+import CarouselItemTemplate from "./CarouselItemTemplate";
 
 const ToggleData = [
   {
@@ -13,7 +14,7 @@ const ToggleData = [
   {
     name: "Data",
     details:
-      "The data economy is envolving expeditiously, bringing investment opportunities in network infraestructure, memory, storage and cybersecurity.",
+      "Single token exposure with automated rebalancing and additions",
   },
   {
     name: "Other Data",
@@ -40,10 +41,6 @@ const Header = ({ t }: { t: TFunction }) => (
   </div>
 );
 
-const Message = ({ t }: { t: TFunction }) => (
-  <p className="text-3xl">{t("landing-home.data-token.details")}</p>
-);
-
 interface DataTokenProps {
   t: TFunction;
 }
@@ -58,26 +55,19 @@ const DataToken = ({ t }: DataTokenProps) => {
     >
       <Container>
         {/* Mobile view */}
-        <div className="flex flex-col justify-center xl:hidden max-w-xl mx-auto">
-          <Header t={t} />
-          <div className="relative -mt-24 lg:mt-0 z-0 mb-8">
-            <img
-              src="/images/token-data-bg.png"
-              alt=""
-              className="w-full max-w-sm mx-auto"
-            />
-            <div className="absolute bottom-0 left-0 mb-10 -ml-4">
-              <ToggleBoxes
-                bgColor="bg-theme-base-content"
-                textColor="text-theme-base-100"
-                selected={0}
-                text={[ToggleData[toggleSelected].name]}
-                onClick={() => {}}
-              />
-            </div>
-          </div>
-          <p className="text-2xl">{[ToggleData[toggleSelected].details]}</p>
-          <div className="w-full flex justify-end pt-8 pr-8">
+        <div className="flex flex-col justify-center md:hidden max-w-sm mx-auto">
+          <img
+            src="/images/token-data-logo.png"
+            alt=""
+            className="w-20 mx-auto"
+          />
+          <Carousel
+            value={ToggleData}
+            itemTemplate={CarouselItemTemplate}
+            autoplayInterval={5000}
+          ></Carousel>
+
+          <div className="w-full flex justify-center pt-8 pr-8">
             <AnimatedLink
               text={t("landing-home.learn-more")}
               href="/data-token"
@@ -88,7 +78,7 @@ const DataToken = ({ t }: DataTokenProps) => {
 
         {/* Desktop view */}
         <div
-          className="bg-no-repeat bg-right hidden xl:block"
+          className="bg-no-repeat bg-right hidden md:block"
           style={{ backgroundImage: "url(/images/token-data-bg.png)" }}
         >
           <div className="flex flex-col divide-y divide-theme-primary-content">
