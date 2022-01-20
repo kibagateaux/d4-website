@@ -13,22 +13,19 @@ const ToggleData = [
   },
   {
     name: "Data",
-    details:
-      "Single token exposure with automated rebalancing and additions",
+    details: "Single token exposure with automated rebalancing and additions",
   },
   {
     name: "Other Data",
-    details: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    details: "Single token exposure with automated rebalancing and additions",
   },
   {
     name: "Example",
-    details:
-      "Ipsam eos est iusto expedita aliquid sint facere dolores ratione error voluptates.",
+    details: "Single token exposure with automated rebalancing and additions",
   },
   {
     name: "Another Example",
-    details:
-      " Consequuntur mollitia iusto deserunt doloribus et obcaecati inventore repudiandae! Mollitia!",
+    details: "Single token exposure with automated rebalancing and additions",
   },
 ];
 

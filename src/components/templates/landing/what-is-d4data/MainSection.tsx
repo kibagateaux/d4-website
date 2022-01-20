@@ -52,7 +52,7 @@ const MainSection = () => {
         </div>
         {selectedItem && (
           <div
-            className="absolute h-full top-0 bg-theme-primary opacity-90 hidden lg:flex items-end justify-center transition duration-100 ease-in"
+            className="absolute h-full top-0 bg-theme-primary opacity-90 hidden md:flex items-end justify-center transition duration-100 ease-in"
             style={{
               left: `${selectedItem?.left}px`,
               width: `${selectedItem?.width}px`,
@@ -163,22 +163,26 @@ const MainSection = () => {
         </div>
       </div>
 
-      {/* Section 3 - Glitch Images */}
-      <div className="flex p-12 lg:h-screen">
-        <div className="flex-none w-20 h-full hidden md:flex items-center justify-center lg:-mt-96">
+      {/* Marquee section 2 */}
+      <div className="md:h-screen flex items-center justify-center relative overflow-hidden md:overflow-visible py-8">
+        {/* Marquee */}
+        <div className="flex-none w-10 md:w-20 h-screen absolute left-0 flex items-center justify-center overflow-hidden md:-mt-60">
           <div className="-rotate-90 opacity-80">
             <Marquee
-              className="w-full font-bold font-alt text-6xl text-theme-primary overflow-hidden"
+              className="font-bold font-alt text-3xl md:text-6xl text-theme-primary overflow-hidden"
               speed={2}
+              gradient={true}
+              gradientWidth={60}
               gradientColor={[0, 0, 0]}
             >
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit
+              Board Memebers Borard Members Board Memebers Borard Members
             </Marquee>
           </div>
         </div>
 
-        <div className="grow flex items-start justify-center mb-32 md:mb-96 p-4">
-          <div className="flex flex-col items-end">
+        {/* Description */}
+        <div className="grow flex flex-col md:flex-row justify-between pl-20 md:pl-52 pr-4 md:pr-40 text-2xl md:text-3xl space-y-16 h-full">
+          <div className="flex flex-col items-end place-self-start mt-20 md:mt-60">
             <img
               src="/images/wid-people-1.png"
               alt=""
@@ -188,9 +192,7 @@ const MainSection = () => {
               Thomas Hepner
             </p>
           </div>
-        </div>
-        <div className="grow flex items-end justify-center p-4">
-          <div className="flex flex-col items-end">
+          <div className="flex flex-col items-end place-self-end">
             <img
               src="/images/wid-people-2.png"
               alt=""

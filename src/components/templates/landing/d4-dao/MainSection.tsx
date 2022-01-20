@@ -52,7 +52,7 @@ const MainSection = () => {
         </div>
         {selectedItem && (
           <div
-            className="absolute h-full top-0 bg-theme-base-content opacity-90 hidden lg:flex items-end justify-center transition duration-100 ease-in"
+            className="absolute h-full top-0 bg-theme-base-content opacity-90 hidden md:flex items-end justify-center transition duration-100 ease-in"
             style={{
               left: `${selectedItem?.left}px`,
               width: `${selectedItem?.width}px`,
@@ -156,31 +156,34 @@ const MainSection = () => {
         </div>
       </div>
 
-      {/* Section 3 - Glitch Images */}
-      <div className="flex p-12" style={{ height: "800px" }}>
-        <div className="flex-none w-20 h-full hidden md:flex items-center justify-center overflow-hidden">
+      {/* Marquee section 2 */}
+      <div className="md:h-screen flex items-center justify-center relative overflow-hidden md:overflow-visible py-8">
+        {/* Marquee */}
+        <div className="flex-none w-10 md:w-20 h-screen absolute left-0 flex items-center justify-center overflow-hidden md:-mt-60">
           <div className="-rotate-90 opacity-80">
             <Marquee
-              className="w-full font-bold font-alt text-6xl text-theme-primary overflow-hidden"
+              className="font-bold font-alt text-3xl md:text-6xl text-theme-primary overflow-hidden"
               speed={2}
+              gradient={true}
+              gradientWidth={100}
               gradientColor={[255, 255, 255]}
             >
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit
+              Always be Proud and Learning Always be Proud and Learning
             </Marquee>
           </div>
         </div>
 
-        <div className="grow flex items-center justify-center mb-32 p-4">
-          <div className="max-w-6xl py-12 px-12 md:px-40 md:ml-20">
+        {/* Description */}
+        <div className="grow flex items-center justify-center pl-20 md:pl-52 pr-4 h-full">
+          <div className="py-12 max-w-4xl">
             <h2 className="text-4xl font-bold font-alt mb-12">
               Representing the frontier of one of the greatest transitions to
               mankind
             </h2>
-            <p className="text-xl md:text-3xl md:pl-40">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam
-              asperiores aspernatur commodi maxime repudiandae. Suscipit rem qui
-              est non, aliquam vero delectus labore, voluptatibus doloremque,
-              incidunt explicabo aut numquam fugiat.
+            <p className="text-2xl md:text-3xl md:pl-20">
+              Through (data) research we will reveal the depths of opportunities
+              awaiting traditional finance, setting the stage for adventures
+              that come with Web3
             </p>
           </div>
         </div>
