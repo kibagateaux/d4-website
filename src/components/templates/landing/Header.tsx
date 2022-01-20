@@ -1,4 +1,4 @@
-import { FingerPrintIcon, MenuAlt4Icon } from "@heroicons/react/outline";
+import { FingerPrintIcon, MenuAlt4Icon, XIcon } from "@heroicons/react/outline";
 import { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import { useRouter } from "next/router";
@@ -53,7 +53,7 @@ const MenuLink = ({
   return (
     <div
       ref={linkRef}
-      className={`cursor-pointer hover:opacity-80 flex h-full items-center font-alt p-4 md:px-7 ${
+      className={`cursor-pointer hover:opacity-80 flex h-full items-center font-bold md:font-normal font-alt p-4 md:px-7 ${
         selected
           ? `${bgSelectedColor} ${textSelectedColor} selected-option-header`
           : textColor
@@ -176,38 +176,23 @@ const LandingHeader = ({
       </Container>
 
       {/* Mobile header */}
-      <div className="flex items-center justify-between bg-transparent fixed md:hidden top-0 w-full z-50 py-4">
+      <div className="flex items-center justify-between bg-transparent md:hidden top-0 w-full py-4">
+        <Link href="/">
+          <a className="bg-theme-primary text-theme-primary-content px-4 py-2 hover:opacity-80 z-50 cursor-pointer">
+            <img src="/images/logo-symbol.svg" alt="" className="w-6" />
+          </a>
+        </Link>
         <div
-          className="bg-theme-primary text-theme-primary-content px-4 py-2 hover:opacity-80 cursor-pointer"
-          onClick={handleMobileLeftMenu}
-        >
-          <FingerPrintIcon width={30} />
-        </div>
-        <div
-          className="bg-theme-base-content text-theme-base-100 px-4 py-2 hover:opacity-80 cursor-pointer"
+          className="bg-theme-base-content text-theme-base-100 px-4 py-2 hover:opacity-80 z-50 cursor-pointer"
           onClick={handleMobileRightMenu}
         >
-          <MenuAlt4Icon width={20} />
+          {rightMenuOpen ? (
+            <XIcon width={25} />
+          ) : (
+            <img src="/images/menu.svg" alt="" className="w-6 py-2" />
+          )}
         </div>
       </div>
-
-      {/* Mobile Left Menu */}
-      <HeaderMobileMenu
-        onLeft={true}
-        open={leftMenuOpen}
-        onClose={handleMobileLeftMenu}
-      >
-        <div className="mt-5 flex-1 h-0 overflow-y-auto">
-          <nav className="px-4">
-            <LogoLink src={logo} />
-            <MenuLinks
-              className="flex flex-col space-y-4 mt-8"
-              onClick={handleMobileLeftMenu}
-            />
-          </nav>
-        </div>
-        <div className="px-4">{/* menuBottom */}</div>
-      </HeaderMobileMenu>
 
       {/* Mobile Right Menu */}
       <HeaderMobileMenu
@@ -215,12 +200,22 @@ const LandingHeader = ({
         open={rightMenuOpen}
         onClose={handleMobileRightMenu}
       >
-        <div className="px-4 space-y-4">
-          <p className="text-4xl">RRSS</p>
-          <RRSSLinks
-            className="flex space-x-4"
-            onClick={handleMobileRightMenu}
-          />
+        <div className="flex h-full flex-col items-start justify-between px-4">
+          <nav className="mt-20 text-2xl">
+            <MenuLinks
+              className="flex flex-col space-y-4 mt-8"
+              onClick={handleMobileLeftMenu}
+              textColor="text-theme-base-content"
+              bgSelectedColor="bg-theme-primary"
+              textSelectedColor="text-theme-primary-content"
+            />
+          </nav>
+          <div className="pl-10 pb-20 flex w-full">
+            <RRSSLinks
+              className="grow flex justify-start space-x-8 py-8 border-t border-theme-primary"
+              onClick={handleMobileRightMenu}
+            />
+          </div>
         </div>
       </HeaderMobileMenu>
     </header>

@@ -15,31 +15,23 @@ const HeaderMobileMenu = ({
 }: LandingHeaderMobileMenuProps) =>
   open ? (
     <div
-      className={`fixed inset-0 flex ${
+      className={`fixed inset-0 flex h-screen ${
         onLeft ? "flex-row" : "flex-row-reverse"
-      } z-50 md:hidden transform md:translate-x-0 transition duration-75 ease-linear ${
+      } z-40 md:hidden transform md:translate-x-0 transition duration-75 ease-linear ${
         !open && (onLeft ? "-translate-x-full" : "translate-x-full")
       }`}
     >
       <div
-        className="fixed inset-0 bg-gray-900 bg-opacity-50"
+        className="fixed inset-0 bg-black bg-opacity-80"
         onClick={onClose}
       ></div>
 
-      <div className="relative flex-1 flex flex-col max-w-xs w-full h-screen pt-5 pb-4 bg-theme-base-100 text-theme-base-content">
+      <div className="relative flex-1 flex flex-col max-w-lg ml-10 w-full h-screen pt-5 pb-4 bg-theme-base-100 text-theme-base-content">
         <div
           className={`absolute top-0 ${
             onLeft ? "right-0 -mr-12" : "left-0 -ml-12"
           } pt-2`}
         >
-          <button
-            type="button"
-            className="flex items-center justify-center h-10 w-10 rounded-full focus:outline-none"
-            onClick={onClose}
-          >
-            <span className="sr-only"></span>
-            <XIcon width={30} height={30} className="text-white" />
-          </button>
         </div>
         <>{children}</>
       </div>
