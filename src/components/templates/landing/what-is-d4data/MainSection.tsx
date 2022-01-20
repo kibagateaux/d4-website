@@ -98,7 +98,7 @@ const MainSection = () => {
         <div className="flex-grow flex flex-col items-end justify-end pl-20 md:pl-60 h-full text-2xl md:text-3xl">
           <div className="max-w-2xl border-b border-theme-primary px-4 md:px-0 py-20 md:py-8 space-y-4">
             <p>
-              We are doers, and it's in our DNA to get things going, to pass the
+              We are doers, and it´s in our DNA to get things going, to pass the
               ball, and develop the game. Also, we have a hard time sitting
               still.
             </p>
