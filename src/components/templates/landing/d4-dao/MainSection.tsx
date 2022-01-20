@@ -38,7 +38,7 @@ const MainSection = () => {
       {/* Header */}
       <div className="relative z-40">
         <div className="flex justify-end w-full">
-          <div className="w-full h-96 md:h-auto md:w-9/12 relative">
+          <div className="w-full h-96 md:h-auto md:w-10/12 relative">
             <img
               src="/images/dao-d4-bg.png"
               alt=""
@@ -48,7 +48,7 @@ const MainSection = () => {
         </div>
         {selectedItem && (
           <div
-            className="absolute h-screen bg-theme-base-content opacity-90 -top-20 hidden lg:flex items-end justify-center transition duration-100 ease-in"
+            className="absolute h-full top-0 bg-theme-base-content opacity-90 hidden lg:flex items-end justify-center transition duration-100 ease-in"
             style={{
               left: `${selectedItem?.left}px`,
               width: `${selectedItem?.width}px`,
