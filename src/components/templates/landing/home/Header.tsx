@@ -27,7 +27,7 @@ const Header = ({ t }: HeaderProps) => {
   };
 
   return (
-    <section id="top" className="bg-theme-base-100 text-theme-base-content pt-20 md:pt-4">
+    <section className="bg-theme-base-100 text-theme-base-content pt-20 md:pt-4">
       <Container>
         {/* Desktop */}
         <div

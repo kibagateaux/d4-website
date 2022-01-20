@@ -6,16 +6,20 @@ import { Container } from "components/elements";
 interface LandingFooterProps {
   tagsBg?: string;
   tagsColor?: string;
+  topTextColor?: string;
 }
 
 const LandingFooter = ({
   tagsBg = "bg-theme-base-content",
   tagsColor = "text-theme-base-100",
+  topTextColor = "text-theme-base-content",
 }: LandingFooterProps) => {
   return (
     <footer className="py-12 px-4">
       <Container className="space-y-3 md:space-y-6 text-xs md:text-sm">
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 text-2xl md:text-3xl pb-4 md:pb-0">
+        <div
+          className={`flex flex-col md:flex-row items-center justify-between space-y-4 text-2xl md:text-3xl pb-4 md:pb-0 ${topTextColor}`}
+        >
           <Link href="#" scroll={true}>
             <button
               type="button"
