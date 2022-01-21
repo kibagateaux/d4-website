@@ -57,7 +57,7 @@ const DataToken = ({ t }: DataTokenProps) => {
     >
       <Container>
         {/* Mobile view */}
-        <div className="flex flex-col justify-center md:hidden max-w-sm mx-auto">
+        <div className="flex flex-col justify-center lg:hidden max-w-sm mx-auto">
           <img
             src="/images/token-data-logo.png"
             alt=""
@@ -79,9 +79,9 @@ const DataToken = ({ t }: DataTokenProps) => {
         </div>
 
         {/* Desktop view */}
-        <div className="hidden md:block">
-          <div className="flex items-center justify-end  h-screen relative">
-            <div className="max-w-lg">
+        <div className="hidden lg:block">
+          <div className="flex items-center justify-end h-screen relative">
+            <div className="max-w-sm xl:max-w-lg">
               {ToggleData[toggleSelected].source.indexOf("webm") >= 0 ? (
                 <video
                   key={ToggleData[toggleSelected].source}
@@ -105,7 +105,7 @@ const DataToken = ({ t }: DataTokenProps) => {
               )}
             </div>
 
-            <div className="absolute left-0 top-40 flex flex-col divide-y divide-theme-primary-content">
+            <div className="absolute left-0 top-40 flex flex-col divide-y divide-theme-primary-content max-w-2xl">
               <div className="px-12 pb-20">
                 <Header t={t} />
 
