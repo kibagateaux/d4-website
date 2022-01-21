@@ -10,22 +10,27 @@ const ToggleData = [
   {
     name: "Simple",
     details: "Single token exposure with automated rebalancing and additions",
+    source: "/images/token-tab-simple.gif",
   },
   {
-    name: "Data",
+    name: "Transparency",
     details: "Single token exposure with automated rebalancing and additions",
+    source: "/images/token-tab-transparency.webm",
   },
   {
-    name: "Other Data",
+    name: "Efficient",
     details: "Single token exposure with automated rebalancing and additions",
+    source: "/images/token-tab-efficient.webm",
   },
   {
-    name: "Example",
+    name: "Diverse",
     details: "Single token exposure with automated rebalancing and additions",
+    source: "/images/token-tab-diversity.webm",
   },
   {
-    name: "Another Example",
+    name: "Unique",
     details: "Single token exposure with automated rebalancing and additions",
+    source: "/images/token-tab-unique.webm",
   },
 ];
 
@@ -74,34 +79,57 @@ const DataToken = ({ t }: DataTokenProps) => {
         </div>
 
         {/* Desktop view */}
-        <div
-          className="bg-no-repeat bg-right hidden md:block"
-          style={{ backgroundImage: "url(/images/token-data-bg.png)" }}
-        >
-          <div className="flex flex-col divide-y divide-theme-primary-content">
-            <div className="px-12 pb-20">
-              <Header t={t} />
-
-              {/* Main content */}
-              <div className="flex items-end space-x-8">
-                <ToggleBoxes
-                  bgColor="bg-theme-base-content"
-                  textColor="text-theme-base-100"
-                  selected={toggleSelected}
-                  text={ToggleData.map((t) => t.name)}
-                  onClick={(selected: number) => setToggleSelected(selected)}
+        <div className="hidden md:block">
+          <div className="flex items-center justify-end  h-screen relative">
+            <div className="max-w-lg">
+              {ToggleData[toggleSelected].source.indexOf("webm") >= 0 ? (
+                <video
+                  key={ToggleData[toggleSelected].source}
+                  controls={false}
+                  autoPlay
+                  muted
+                  loop
+                  className="w-full object-cover"
+                >
+                  <source
+                    src={ToggleData[toggleSelected].source}
+                    type="video/webm"
+                  />
+                </video>
+              ) : (
+                <img
+                  src={ToggleData[toggleSelected].source}
+                  alt=""
+                  className="w-full object-cover"
                 />
-                <div className="px-12 text-2xl py-8 flex-1 max-w-xl 2xl:max-w-xl">
-                  {ToggleData[toggleSelected].details}
+              )}
+            </div>
+
+            <div className="absolute left-0 top-40 flex flex-col divide-y divide-theme-primary-content">
+              <div className="px-12 pb-20">
+                <Header t={t} />
+
+                {/* Main content */}
+                <div className="flex items-end space-x-8">
+                  <ToggleBoxes
+                    bgColor="bg-theme-base-content"
+                    textColor="text-theme-base-100"
+                    selected={toggleSelected}
+                    text={ToggleData.map((t) => t.name)}
+                    onClick={(selected: number) => setToggleSelected(selected)}
+                  />
+                  <div className="px-12 text-2xl py-8 flex-1 max-w-xl 2xl:max-w-xl">
+                    {ToggleData[toggleSelected].details}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="px-12 py-20">
-              <AnimatedLink
-                text={t("landing-home.learn-more")}
-                href="/data-token"
-                tagColor="bg-theme-base-content"
-              />
+              <div className="px-12 py-20">
+                <AnimatedLink
+                  text={t("landing-home.learn-more")}
+                  href="/data-token"
+                  tagColor="bg-theme-base-content"
+                />
+              </div>
             </div>
           </div>
         </div>
