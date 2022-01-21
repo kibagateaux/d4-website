@@ -40,7 +40,7 @@ export const postsBrowserSelector = selectorFamily<
 >({
   key: "postsBrowser",
   get:
-    ({ limit = 2, ...filterProps }: GhostFilterPost) =>
+    ({ limit = 10, ...filterProps }: GhostFilterPost) =>
     async ({ get }: { get: GetRecoilValue }): Promise<PostsOrPages | void> => {
       const ghost = get(ghostAtom);
       if (ghost) {

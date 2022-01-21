@@ -57,15 +57,15 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
       {/* Mobile view */}
       <div className="flex flex-col justify-center xl:hidden space-y-6 px-4 py-12 mx-auto">
         <Header t={t} />
-        <div className="py-8 px-12" style={{ backgroundColor: "#000" }}>
+        <div className="py-8 px-4 max-w-xl mx-auto" style={{ backgroundColor: "#000" }}>
           <img
             src="/images/what-is-d4-data.png"
             alt=""
-            className="w-full max-w-xl mx-auto"
+            className="w-full"
           />
-          <div className="flex items-center justify-end space-x-4 -mt-40 -mr-8 mb-24">
-            <p className="text-3xl">{t("landing-home.what-is.slogan-1")}</p>
-            <div className="bg-theme-primary text-white px-8 py-2 text-3xl font-alt font-bold flex items-center justify-center w-56">
+          <div className="flex items-center justify-end space-x-4 -mt-40 -mx-8 px-4 mb-24">
+            <p className="text-4xl">{t("landing-home.what-is.slogan-1")}</p>
+            <div className="bg-theme-primary text-white py-3 text-2xl font-alt font-bold flex items-center justify-center w-44">
               <TypeAnimation
                 text={[t("landing-home.what-is.slogan-2"), "Other", "Another"]}
               />

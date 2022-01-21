@@ -38,7 +38,7 @@ const MainSection = () => {
   };
 
   return (
-    <section className="text-theme-base-100">
+    <section id="top" className="text-theme-base-100">
       {/* Header */}
       <div className="relative z-40">
         <div className="flex justify-end w-full">
