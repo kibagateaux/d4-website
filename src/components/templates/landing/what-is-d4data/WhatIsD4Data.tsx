@@ -15,7 +15,7 @@ export const LandingWhatIsD4DataTemplate = ({
   return (
     <Container className="pb-12">
       <Header
-        logo="/images/logo-wid.png"
+        logo="/images/logo-wid.svg"
         bgColor="text-black"
         textColor="text-theme-base-100"
       />

@@ -53,11 +53,15 @@ const D4Dao = ({ t }: D4DaoProps) => {
         <Message t={t} />
 
         <div className="py-8" style={{ backgroundColor: "#1e1e1e" }}>
-          <img
-            src="/images/dao-d4-bg.png"
-            alt=""
+          <video
+            controls={false}
+            autoPlay
+            muted
+            loop
             className="w-full max-w-xl mx-auto"
-          />
+          >
+            <source src="/images/d4-dao-home.webm" type="video/webm" />
+          </video>
         </div>
 
         <div className="w-full flex justify-end py-8 pr-8">
@@ -68,20 +72,23 @@ const D4Dao = ({ t }: D4DaoProps) => {
       {/* Desktop view */}
       <Container className="hidden xl:block">
         <Header t={t} />
-        <div
-          className="bg-no-repeat bg-left py-20"
-          style={{ backgroundImage: "url(/images/dao-d4-bg.png)" }}
-        >
-          <div className="flex flex-col items-end divide-y divide-theme-primary">
+        <div className="py-20">
+          <div className="flex flex-col items-start relative">
+            <video controls={false} autoPlay muted loop className="max-w-2xl">
+              <source src="/images/d4-dao-home.webm" type="video/webm" />
+            </video>
+
             {/* Main content */}
-            <div className="px-12 py-20 flex-1 max-w-xl 2xl:max-w-4xl">
-              <Message t={t} />
-            </div>
-            <div className="px-12 py-12 w-full flex justify-end">
-              <AnimatedLink
-                text={t("landing-home.learn-more")}
-                href="/d4-dao"
-              />
+            <div className="absolute max-w-2xl top-0 right-0">
+              <div className="px-20 pt-40 flex-1">
+                <Message t={t} />
+              </div>
+              <div className="px-12 py-20 w-full flex justify-end">
+                <AnimatedLink
+                  text={t("landing-home.learn-more")}
+                  href="/d4-dao"
+                />
+              </div>
             </div>
           </div>
         </div>

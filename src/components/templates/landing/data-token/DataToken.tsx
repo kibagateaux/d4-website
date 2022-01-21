@@ -15,7 +15,7 @@ export const LandingDataTokenTemplate = ({
   return (
     <Container className="pb-12">
       <Header
-        logo="/images/logo-dt.png"
+        logo="/images/logo-dt.svg"
         bgColor="text-black"
         textColor="text-theme-base-100"
         bgSelectedColor="bg-black bg-opacity-70"

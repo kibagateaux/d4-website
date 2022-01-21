@@ -57,13 +57,14 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
       {/* Mobile view */}
       <div className="flex flex-col justify-center xl:hidden space-y-6 px-4 py-12 mx-auto">
         <Header t={t} />
-        <div className="py-8 px-4 max-w-xl mx-auto" style={{ backgroundColor: "#000" }}>
-          <img
-            src="/images/what-is-d4-data.png"
-            alt=""
-            className="w-full"
-          />
-          <div className="flex items-center justify-end space-x-4 -mt-40 -mx-8 px-4 mb-24">
+        <div
+          className="py-8 px-4 max-w-xl mx-auto relative"
+          style={{ backgroundColor: "#000" }}
+        >
+          <video controls={false} autoPlay muted loop className="w-full z-0">
+            <source src="/images/the-power-of-people.webm" type="video/webm" />
+          </video>
+          <div className="flex items-center justify-end absolute w-full bottom-0 space-x-4 px-4 mb-24">
             <p className="text-4xl">{t("landing-home.what-is.slogan-1")}</p>
             <div className="bg-theme-primary text-white py-3 text-2xl font-alt font-bold flex items-center justify-center w-44">
               <TypeAnimation
@@ -85,21 +86,32 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
       {/* Desktop view */}
       <Container className="hidden xl:block">
         <Header t={t} />
-        <div
-          className="bg-no-repeat bg-right py-20 px-20 bg-origin-content"
-          style={{ backgroundImage: "url(/images/what-is-d4-data.png)" }}
-        >
-          <div className="flex flex-col items-start divide-y divide-theme-primary">
-            <div className="py-20 px-4 flex-1 max-w-xl 2xl:max-w-4xl space-y-12">
+        <div className="py-20 px-20">
+          <div className="flex flex-col items-end relative">
+            <div className="py-20 grow px-4 space-y-12 max-w-xl absolute top-0 left-0">
               <Message t={t} />
               <AnimatedLink
                 text={t("landing-home.learn-more")}
                 href="/what-is-d4data"
               />
             </div>
+
             {/* Main content */}
-            <div className="w-full py-12">
-              <div className="flex items-center justify-end space-x-8 -mr-8">
+            <div className="w-full py-12 relative flex justify-end">
+              <video
+                controls={false}
+                autoPlay
+                muted
+                loop
+                className="max-w-sm z-0"
+              >
+                <source
+                  src="/images/the-power-of-people.webm"
+                  type="video/webm"
+                />
+              </video>
+
+              <div className="flex items-center justify-end absolute w-full bottom-0 space-x-4 px-4 mb-24">
                 <p className="text-6xl">{t("landing-home.what-is.slogan-1")}</p>
                 <div className="bg-theme-primary text-white px-8 py-5 text-5xl font-alt font-bold flex items-center justify-center w-80">
                   <TypeAnimation

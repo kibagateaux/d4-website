@@ -1,10 +1,10 @@
-import { FingerPrintIcon, MenuAlt4Icon, XIcon } from "@heroicons/react/outline";
 import { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import { useRouter } from "next/router";
+import { XIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 
-import { Container, DiscordIcon, TwitterIcon } from "components/elements";
+import { Container } from "components/elements";
 import { ElementBounds } from "models";
 import { selectedItemHeaderAtom } from "./header-element.state";
 import HeaderMobileMenu from "./HeaderMobileMenu";
@@ -120,12 +120,12 @@ const RRSSLinks = (props: any) => (
   <div {...props}>
     <Link href="#">
       <a>
-        <TwitterIcon className="h-6" />
+        <img src="/images/twitter.svg" alt="Twitter" className="h-6" />
       </a>
     </Link>
     <Link href="#">
       <a>
-        <DiscordIcon className="h-6" />
+        <img src="/images/discord.svg" alt="Twitter" className="h-6" />
       </a>
     </Link>
   </div>
@@ -140,7 +140,7 @@ interface LandingHeaderProps {
 }
 
 const LandingHeader = ({
-  logo = "/images/logo.png",
+  logo = "/images/logo.svg",
   bgColor = "bg-white",
   textColor = "text-theme-base-content",
   bgSelectedColor = "bg-theme-primary",
@@ -159,11 +159,11 @@ const LandingHeader = ({
 
   return (
     <header
-      className={`sticky top-0 z-50 ${bgColor} ${textColor} bg-opacity-50 backdrop-blur-sm`}
+      className={`sticky top-0 z-50 ${bgColor} ${textColor} bg-opacity-50`}
     >
       <Container>
         {/* Desktop header */}
-        <div className="hidden md:flex items-center justify-between border-b border-opacity-40">
+        <div className="hidden md:flex items-center justify-between border-b border-opacity-40 px-4">
           <LogoLink src={logo} />
           <MenuLinks
             className="flex items-center h-16"

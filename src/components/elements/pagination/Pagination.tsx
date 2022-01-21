@@ -10,6 +10,7 @@ interface PaginationProps {
 const template: any = {
   layout: "CurrentPageReport PrevPageLink NextPageLink",
   CurrentPageReport: (options: any) => {
+    
     return (
       <span
         style={{
@@ -20,7 +21,7 @@ const template: any = {
           fontSize: "1.0rem",
         }}
       >
-        {options.first} - {options.last} of {options.totalRecords}
+        {options.props.first} - {options.last} of {options.props.totalRecords}
       </span>
     );
   },
