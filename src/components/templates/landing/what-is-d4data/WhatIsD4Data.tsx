@@ -23,6 +23,7 @@ export const LandingWhatIsD4DataTemplate = ({
       <Footer
         tagsBg="bg-theme-primary"
         tagsColor="text-theme-primary-content"
+        topTextColor="text-theme-base-100"
       />
     </Container>
   );

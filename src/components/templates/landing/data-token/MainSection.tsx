@@ -13,14 +13,27 @@ const ToggleData = [
   {
     name: "Simple",
     details: "Single token exposure with automated rebalancing and additions",
+    source: "/images/token-tab-simple.gif",
   },
   {
-    name: "Data",
+    name: "Transparency",
     details: "Single token exposure with automated rebalancing and additions",
+    source: "/images/token-tab-transparency.webm",
   },
   {
-    name: "Example",
+    name: "Efficient",
     details: "Single token exposure with automated rebalancing and additions",
+    source: "/images/token-tab-efficient.webm",
+  },
+  {
+    name: "Diverse",
+    details: "Single token exposure with automated rebalancing and additions",
+    source: "/images/token-tab-diversity.webm",
+  },
+  {
+    name: "Unique",
+    details: "Single token exposure with automated rebalancing and additions",
+    source: "/images/token-tab-unique.webm",
   },
 ];
 
@@ -39,12 +52,16 @@ const MainSection = () => {
       {/* Header */}
       <div className="relative z-40 text-theme-base-100">
         <div className="flex justify-end w-full">
-          <div className="w-full h-96 md:h-auto md:w-10/12 relative">
-            <img
-              src="/images/dao-d4-bg.png"
-              alt=""
-              className="w-full h-full object-cover opacity-30 md:opacity-50"
-            />
+          <div className="w-full h-96 md:h-auto md:w-8/12 relative">
+            <video
+              controls={false}
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-cover opacity-90"
+            >
+              <source src="/images/token-cover.webm" type="video/webm" />
+            </video>
           </div>
         </div>
         {selectedItem && (
@@ -126,12 +143,28 @@ const MainSection = () => {
             {ToggleData[toggleSelected].details}
           </p>
         </div>
-        <div className="grow max-w-xl">
-          <img
-            src="/images/token-data-bg.png"
-            alt=""
-            className="w-full object-cover"
-          />
+        <div className="grow max-w-lg">
+          {ToggleData[toggleSelected].source.indexOf("webm") >= 0 ? (
+            <video
+              key={ToggleData[toggleSelected].source}
+              controls={false}
+              autoPlay
+              muted
+              loop
+              className="w-full object-cover"
+            >
+              <source
+                src={ToggleData[toggleSelected].source}
+                type="video/webm"
+              />
+            </video>
+          ) : (
+            <img
+              src={ToggleData[toggleSelected].source}
+              alt=""
+              className="w-full object-cover"
+            />
+          )}
         </div>
       </div>
 

@@ -11,19 +11,48 @@ import ToggleBoxes from "../ToggleBoxes";
 
 const ToggleData = [
   {
-    name: "Data 0",
-    details:
-      "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
-  },
-  {
     name: "Data",
     details:
       "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
+    image: (
+      <img
+        src="/images/what-is-tab-data.gif"
+        alt=""
+        className="w-full object-cover"
+      />
+    ),
   },
   {
-    name: "Data 2",
+    name: "Future",
     details:
       "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
+    image: (
+      <video
+        controls={false}
+        autoPlay
+        muted
+        loop
+        className="w-full object-cover"
+      >
+        <source src="/images/hand-glitch.webm" type="video/webm" />
+      </video>
+    ),
+  },
+  {
+    name: "People",
+    details:
+      "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
+    image: (
+      <video
+        controls={false}
+        autoPlay
+        muted
+        loop
+        className="w-full object-cover"
+      >
+        <source src="/images/what-is-tab-people.webm" type="video/webm" />
+      </video>
+    ),
   },
 ];
 
@@ -42,12 +71,19 @@ const MainSection = () => {
       {/* Header */}
       <div className="relative z-40">
         <div className="flex justify-end w-full">
-          <div className="w-full h-96 md:h-auto md:w-10/12 relative">
-            <img
-              src="/images/dao-d4-bg.png"
-              alt=""
+          <div className="w-full h-96 md:h-auto md:w-8/12 relative">
+            <video
+              controls={false}
+              autoPlay
+              muted
+              loop
               className="w-full h-full object-cover opacity-50"
-            />
+            >
+              <source
+                src="/images/what-is-d4data-cover.webm"
+                type="video/webm"
+              />
+            </video>
           </div>
         </div>
         {selectedItem && (
@@ -120,13 +156,7 @@ const MainSection = () => {
           bgIndicator="rgba(255, 255, 255, .5)"
           bgIndicatorSelected="rgba(241, 18, 56, 1)"
         ></Carousel>
-        <div className="p-4">
-          <img
-            src="/images/what-is-d4-data-image-2.png"
-            alt=""
-            className="w-full object-cover"
-          />
-        </div>
+        <div className="p-4">{ToggleData[toggleSelected].image}</div>
       </div>
 
       {/* Toggles Section - Desktop version */}
@@ -141,26 +171,22 @@ const MainSection = () => {
                 : "items-end"
             }`}
           >
-            <p className="text-4xl">DAO for</p>
-            <ToggleBoxes
-              bgColor="bg-theme-primary"
-              textColor="text-theme-base-100"
-              selected={toggleSelected}
-              text={ToggleData.map((t) => t.name)}
-              onClick={handleToggleClick}
-            />
+            <p className="text-4xl">The Power of</p>
+            <div className="font-alt font-bold">
+              <ToggleBoxes
+                bgColor="bg-theme-primary"
+                textColor="text-theme-base-100"
+                selected={toggleSelected}
+                text={ToggleData.map((t) => t.name)}
+                onClick={handleToggleClick}
+              />
+            </div>
           </div>
           <p className="text-2xl max-w-md leading-tight text-theme-base-content-muted">
             {ToggleData[toggleSelected].details}
           </p>
         </div>
-        <div className="grow max-w-sm">
-          <img
-            src="/images/what-is-d4-data-image-2.png"
-            alt=""
-            className="w-full object-cover"
-          />
-        </div>
+        <div className="grow max-w-sm">{ToggleData[toggleSelected].image}</div>
       </div>
 
       {/* Marquee section 2 */}
@@ -182,23 +208,31 @@ const MainSection = () => {
 
         {/* Description */}
         <div className="grow flex flex-col md:flex-row justify-between pl-20 md:pl-52 pr-4 md:pr-40 text-2xl md:text-3xl space-y-16 h-full">
-          <div className="flex flex-col items-end place-self-start mt-20 md:mt-60">
-            <img
-              src="/images/wid-people-1.png"
-              alt=""
+          <div className="flex flex-col items-end place-self-center md:place-self-start max-w-xs relative mt-20">
+          <video
+              controls={false}
+              autoPlay
+              muted
+              loop
               className="object-cover h-full w-full"
-            />
-            <p className="text-xl md:text-3xl md:-mt-10 md:-mr-24">
+            >
+              <source src="/images/data-thomas-hepner.webm" type="video/webm" />
+            </video>
+            <p className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12">
               Thomas Hepner
             </p>
           </div>
-          <div className="flex flex-col items-end place-self-end">
-            <img
-              src="/images/wid-people-2.png"
-              alt=""
+          <div className="flex flex-col items-end place-self-center md:place-self-end max-w-xs relative">
+            <video
+              controls={false}
+              autoPlay
+              muted
+              loop
               className="object-cover h-full w-full"
-            />
-            <p className="text-xl md:text-3xl md:-mt-10 md:-mr-24">
+            >
+              <source src="/images/data-kiba-gateaux.webm" type="video/webm" />
+            </video>
+            <p className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12">
               Kiba Gateaux
             </p>
           </div>

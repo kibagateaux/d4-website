@@ -1,8 +1,8 @@
-import { AnimatedLink } from "components/modules";
 import { useRecoilState } from "recoil";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
 
+import { AnimatedLink } from "components/modules";
 import { Carousel } from "components/elements";
 import { ElementBounds } from "models";
 import { selectedItemHeaderAtom } from "../header-element.state";
@@ -42,12 +42,16 @@ const MainSection = () => {
       {/* Header */}
       <div className="relative z-40">
         <div className="flex justify-end w-full">
-          <div className="w-full h-96 md:h-auto md:w-10/12 relative">
-            <img
-              src="/images/dao-d4-bg.png"
-              alt=""
+          <div className="w-full h-96 md:h-auto md:w-8/12 relative">
+            <video
+              controls={false}
+              autoPlay
+              muted
+              loop
               className="w-full h-full object-cover opacity-90"
-            />
+            >
+              <source src="/images/d4dao-cover.webm" type="video/webm" />
+            </video>
           </div>
         </div>
         {selectedItem && (
@@ -115,7 +119,7 @@ const MainSection = () => {
         ></Carousel>
         <div className="p-4">
           <img
-            src="/images/what-is-d4-data-image-2.png"
+            src="/images/d4dao-tab-defi.gif"
             alt=""
             className="w-full object-cover"
           />
@@ -135,13 +139,15 @@ const MainSection = () => {
             }`}
           >
             <p className="text-4xl">DAO for</p>
-            <ToggleBoxes
-              bgColor="bg-theme-primary"
-              textColor="text-theme-base-100"
-              selected={toggleSelected}
-              text={ToggleData.map((t) => t.name)}
-              onClick={handleToggleClick}
-            />
+            <div className="font-bold font-alt">
+              <ToggleBoxes
+                bgColor="bg-theme-primary"
+                textColor="text-theme-base-100"
+                selected={toggleSelected}
+                text={ToggleData.map((t) => t.name)}
+                onClick={handleToggleClick}
+              />
+            </div>
           </div>
           <p className="text-2xl max-w-md leading-tight text-theme-base-content-muted">
             {ToggleData[toggleSelected].details}
@@ -149,7 +155,7 @@ const MainSection = () => {
         </div>
         <div className="grow max-w-sm">
           <img
-            src="/images/what-is-d4-data-image-2.png"
+            src="/images/d4dao-tab-defi.gif"
             alt=""
             className="w-full object-cover"
           />
