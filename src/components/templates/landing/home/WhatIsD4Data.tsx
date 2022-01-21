@@ -41,7 +41,7 @@ const Header = ({ t }: { t: TFunction }) => (
 );
 
 const Message = ({ t }: { t: TFunction }) => (
-  <p className="text-3xl mx-auto">{t("landing-home.what-is.details")}</p>
+  <p className="text-3xl mx-auto mb-4">{t("landing-home.what-is.details")}</p>
 );
 
 interface WhatIsD4DataProps {

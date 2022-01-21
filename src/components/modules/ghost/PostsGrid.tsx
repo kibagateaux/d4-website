@@ -1,6 +1,7 @@
-import { Container } from "components/elements";
 import { BlogCard } from "./BlogCard";
+import { useRouter } from "next/router";
 
+import { Container, Pagination } from "components/elements";
 import { GhostFilterPost, postsBrowserSelector } from "./state";
 import { useAsyncRecoilValue } from "./hooks";
 
@@ -9,9 +10,22 @@ interface PostsGridProps {
 }
 
 export const PostsGrid = ({ filter = {} }: PostsGridProps) => {
+  const router = useRouter();
   const { loading, value: posts } = useAsyncRecoilValue(postsBrowserSelector, [
     filter,
   ]);
+
+  const { pagination = {} } = (posts && posts["meta"]) || {};
+
+  const onPageChange = (e: any) => {
+    router.replace({
+      pathname: "/news",
+      query: {
+        page: e.page + 1,
+        limit: e.rows,
+      },
+    });
+  };
 
   return (
     <Container className="max-w-4xl py-20 px-4">
@@ -22,9 +36,12 @@ export const PostsGrid = ({ filter = {} }: PostsGridProps) => {
             <BlogCard key={post.slug} path="news" {...post} />
           ))}
       </div>
-      {!Array.isArray(posts) && posts.meta?.pagination && (
-        <div>{JSON.stringify(posts.meta)}</div>
-      )}
+      <Pagination
+        page={pagination?.page}
+        limit={pagination?.limit}
+        total={pagination?.total}
+        onPageChange={onPageChange}
+      ></Pagination>
     </Container>
   );
 };
