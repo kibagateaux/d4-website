@@ -81,7 +81,7 @@ const DataToken = ({ t }: DataTokenProps) => {
         {/* Desktop view */}
         <div className="hidden lg:block">
           <div className="flex items-center justify-end h-screen relative">
-            <div className="max-w-sm xl:max-w-lg">
+            <div className="max-w-sm xl:max-w-lg flex justify-end">
               {ToggleData[toggleSelected].source.indexOf("webm") >= 0 ? (
                 <video
                   key={ToggleData[toggleSelected].source}
@@ -97,11 +97,13 @@ const DataToken = ({ t }: DataTokenProps) => {
                   />
                 </video>
               ) : (
-                <img
-                  src={ToggleData[toggleSelected].source}
-                  alt=""
-                  className="w-full object-cover"
-                />
+                <div className="w-screen">
+                  <img
+                    src={ToggleData[toggleSelected].source}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               )}
             </div>
 
