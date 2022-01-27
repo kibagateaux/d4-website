@@ -6,11 +6,15 @@ import { Container } from "components/elements";
 
 const Header = ({ t }: { t: TFunction }) => (
   <div className="w-full space-x-2 md:space-x-4 flex justify-between">
-    <div className="bg-theme-primary text-white px-4 lg:px-10 py-1 lg:py-4 text-4xl lg:text-6xl font-bold font-alt flex items-center justify-center">
-      <span className="text-theme-primary-content font-monospace mr-1 lg:mr-4">
-        D4
-      </span>
-      DAO
+    <div className="bg-theme-primary text-white px-2 lg:px-20 py-1 lg:py-4 text-4xl lg:text-6xl font-bold font-alt flex items-center justify-center space-x-2">
+      <div className="w-14 lg:w-24">
+        <img
+          src="/images/logo-d4.svg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <span className="-mt-1">DAO</span>
     </div>
     <div className="flex items-center justify-center grow bg-theme-base-content text-theme-base-100 relative overflow-hidden p-0">
       <Marquee
@@ -21,11 +25,11 @@ const Header = ({ t }: { t: TFunction }) => (
         <span>{t("landing-home.d4-dao.header")}</span>
       </Marquee>
     </div>
-    <div className="flex-none w-32 md:w-52">
+    <div className="flex-none w-12 md:w-52">
       <img
         src="/images/dao-d4-header.png"
         alt=""
-        className="w-full object-cover"
+        className="w-full h-full object-cover"
       />
     </div>
   </div>
