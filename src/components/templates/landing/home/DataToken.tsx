@@ -80,8 +80,9 @@ const DataToken = ({ t }: DataTokenProps) => {
 
         {/* Desktop view */}
         <div className="hidden lg:block">
-          <div className="flex items-center justify-end h-screen relative">
-            <div className="max-w-sm xl:max-w-lg flex justify-end">
+          <div className="flex items-center justify-end relative">
+            <div className="border-b border-theme-base-content absolute bottom-72 -mb-4 w-full z-10"></div>
+            <div className="max-w-sm xl:max-w-lg flex justify-end items-center h-screen">
               {ToggleData[toggleSelected].source.indexOf("webm") >= 0 ? (
                 <video
                   key={ToggleData[toggleSelected].source}
@@ -107,7 +108,7 @@ const DataToken = ({ t }: DataTokenProps) => {
               )}
             </div>
 
-            <div className="absolute left-0 top-40 flex flex-col divide-y divide-theme-primary-content max-w-2xl">
+            <div className="absolute left-0 top-40 flex flex-col max-w-2xl">
               <div className="px-12 pb-20">
                 <Header t={t} />
 
