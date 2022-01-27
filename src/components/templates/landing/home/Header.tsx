@@ -40,9 +40,17 @@ const Header = ({ t }: HeaderProps) => {
             boxShadow: "inset 0 0 0 1000px rgba(68,3,14,.7)",
           }}
         >
-          <img className="w-full touch-none select-none" src="/images/header-desktop-1.svg" alt="" />
+          <img
+            className="w-full touch-none select-none"
+            src="/images/header-desktop-1.svg"
+            alt=""
+          />
           <div className="relative">
-            <img className="w-full touch-none select-none" src="/images/header-desktop-2.svg" alt="" />
+            <img
+              className="w-full touch-none select-none"
+              src="/images/header-desktop-2.svg"
+              alt=""
+            />
             <p className="text-2xl lg:text-3xl xl:text-4xl absolute top-0 w-full mx-auto text-center">
               {t("landing-home.header.title")}
             </p>
@@ -58,7 +66,11 @@ const Header = ({ t }: HeaderProps) => {
               </p>
             </div>
           </div>
-          <img className="w-full touch-none select-none" src="/images/header-desktop-3.svg" alt="" />
+          <img
+            className="w-full touch-none select-none"
+            src="/images/header-desktop-3.svg"
+            alt=""
+          />
         </div>
 
         {/* Mobile */}
@@ -84,7 +96,7 @@ const Header = ({ t }: HeaderProps) => {
                 alt=""
               />
               <p className="text-2xl xs:text-3xl sm:text-4xl truncate absolute top-0 pl-4 pb-4 w-full mx-auto text-center">
-                We show the Path of the Data
+                {t("landing-home.header.title")}
               </p>
               <div
                 className="absolute bottom-0 sm:bottom-4 left-0 sm:left-8 cursor-pointer flex items-center justify-start"
@@ -93,7 +105,7 @@ const Header = ({ t }: HeaderProps) => {
                 }}
               >
                 <Lottie options={defaultOptions} width={80} />
-                <p className="font-bold font-alt uppercase">Play</p>
+                <p className="font-bold font-alt uppercase">{t("landing-home.header.play")}</p>
               </div>
             </div>
             <img

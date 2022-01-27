@@ -8,28 +8,28 @@ import CarouselItemTemplate from "./CarouselItemTemplate";
 
 const ToggleData = [
   {
-    name: "Simple",
-    details: "Single token exposure with automated rebalancing and additions",
+    name: "landing-home.data-token.tg-1-name",
+    details: "landing-home.data-token.tg-1-details",
     source: "/images/token-tab-simple.gif",
   },
   {
-    name: "Transparency",
-    details: "Single token exposure with automated rebalancing and additions",
+    name: "landing-home.data-token.tg-2-name",
+    details: "landing-home.data-token.tg-2-details",
     source: "/images/token-tab-transparency.webm",
   },
   {
-    name: "Efficient",
-    details: "Single token exposure with automated rebalancing and additions",
+    name: "landing-home.data-token.tg-3-name",
+    details: "landing-home.data-token.tg-3-details",
     source: "/images/token-tab-efficient.webm",
   },
   {
-    name: "Diverse",
-    details: "Single token exposure with automated rebalancing and additions",
+    name: "landing-home.data-token.tg-4-name",
+    details: "landing-home.data-token.tg-4-details",
     source: "/images/token-tab-diversity.webm",
   },
   {
-    name: "Unique",
-    details: "Single token exposure with automated rebalancing and additions",
+    name: "landing-home.data-token.tg-5-name",
+    details: "landing-home.data-token.tg-5-details",
     source: "/images/token-tab-unique.webm",
   },
 ];
@@ -64,7 +64,9 @@ const DataToken = ({ t }: DataTokenProps) => {
             className="w-20 mx-auto"
           />
           <Carousel
-            value={ToggleData}
+            value={ToggleData.map(({ source, name, details }) => {
+              return { source, name: t(name), details: t(details) };
+            })}
             itemTemplate={CarouselItemTemplate}
             autoplayInterval={5000}
           ></Carousel>
@@ -118,11 +120,11 @@ const DataToken = ({ t }: DataTokenProps) => {
                     bgColor="bg-theme-base-content"
                     textColor="text-theme-base-100"
                     selected={toggleSelected}
-                    text={ToggleData.map((t) => t.name)}
+                    text={ToggleData.map((data) => t(data.name))}
                     onClick={(selected: number) => setToggleSelected(selected)}
                   />
                   <div className="px-12 text-2xl py-8 flex-1 max-w-xl 2xl:max-w-xl">
-                    {ToggleData[toggleSelected].details}
+                    {t(ToggleData[toggleSelected].details)}
                   </div>
                 </div>
               </div>

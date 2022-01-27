@@ -14,7 +14,7 @@ const Header = ({ t }: { t: TFunction }) => (
           className="w-full h-full object-cover"
         />
       </div>
-      <span className="-mt-1">DAO</span>
+      <span className="-mt-1">{t("landing-home.d4-dao.title")}</span>
     </div>
     <div className="flex items-center justify-center grow bg-theme-base-content text-theme-base-100 relative overflow-hidden p-0">
       <Marquee

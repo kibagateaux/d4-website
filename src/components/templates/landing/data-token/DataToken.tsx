@@ -21,7 +21,7 @@ export const LandingDataTokenTemplate = ({
         bgSelectedColor="bg-black bg-opacity-70"
         textSelectedColor="text-theme-base-100"
       />
-      <MainSection />
+      <MainSection t={t} />
       <Footer
         tagsBg="bg-theme-primary-content"
         tagsColor="text-theme-primary"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 import { Container } from "components/elements";
 
@@ -13,13 +14,15 @@ const LandingFooter = ({
   tagsColor = "text-theme-base-100",
   topTextColor = "text-theme-base-content",
 }: LandingFooterProps) => {
+  const { t } = useTranslation(["common"]);
+
   return (
     <>
       {/* Mobile view */}
       <footer className="w-full md:hidden space-y-4 max-w-md mx-auto p-4">
         <p className="flex items-center justify-center">
           <span className="px-4 border-l border-theme-base-content flex items-center h-12 text-2xl">
-            We show the Path of the Data
+            {t("slogan")}
           </span>
           <span className="px-4 border-x border-theme-base-content flex items-center h-12">
             <img src="/images/sword.svg" alt="" className="w-6" />
@@ -36,7 +39,7 @@ const LandingFooter = ({
             <a
               className={`h-8 w-5/6 ${tagsBg} ${tagsColor} flex items-center px-4 py-2 hover:opacity-80 cursor-pointer mr-12 font-bold`}
             >
-              join the discord
+              {t("join-discord")}
             </a>
           </Link>
 
@@ -49,7 +52,7 @@ const LandingFooter = ({
             <a
               className={`h-8 w-full ${tagsBg} ${tagsColor} flex items-center px-4 py-2 hover:opacity-80 cursor-pointer mr-12 font-bold`}
             >
-              follow on twitter
+              {t("follow-twitter")}
             </a>
           </Link>
 
@@ -60,7 +63,7 @@ const LandingFooter = ({
             <a
               className={`h-8 w-5/6 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 hover:opacity-80 cursor-pointer mr-12 font-bold`}
             >
-              read our minds
+              {t("read-minds")}
             </a>
           </Link>
 
@@ -69,18 +72,18 @@ const LandingFooter = ({
           <div
             className={`h-8 w-full ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 leading-none text-sm`}
           >
-            © D4DATA 2022. All rights reserved
+            {`© D4DATA ${new Date().getFullYear()}. ${t("rights-reserved")}`}
           </div>
 
           <div
             className={`h-8 w-full ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 leading-none text-sm`}
           >
-            Designed by FLOC*
+            {t("designed-by")}
           </div>
           <div
             className={`h-8 w-full ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 leading-none text-sm`}
           >
-            Developed by Tutellus
+            {t("developed-by")}
           </div>
         </div>
         <Link href="#top" scroll={true}>
@@ -88,7 +91,7 @@ const LandingFooter = ({
             type="button"
             className="grow flex w-full text-4xl items-center justify-between space-x-2 font-bold font-alt uppercase cursor-pointer"
           >
-            <span>Back to top</span>
+            <span>{t("back-top")}</span>
             <img src="/images/arrow-up.svg" alt="" className="w-7" />
           </button>
         </Link>
@@ -101,7 +104,7 @@ const LandingFooter = ({
           >
             <p className="grow flex items-center">
               <span className="px-4 border-l border-theme-base-content flex items-center h-12">
-                We show the Path of the Data
+                {t("slogan")}
               </span>
               <span className="px-4 border-x border-theme-base-content flex items-center h-12">
                 <img src="/images/sword.svg" alt="" className="w-6" />
@@ -112,7 +115,7 @@ const LandingFooter = ({
                 type="button"
                 className="flex items-center space-x-2 font-bold font-alt uppercase cursor-pointer"
               >
-                <span>Back to top</span>
+                <span>{t("back-top")}</span>
                 <img src="/images/arrow-up.svg" alt="" className="w-6" />
               </button>
             </Link>
@@ -131,14 +134,14 @@ const LandingFooter = ({
               <a
                 className={`h-8 w-1/2 md:w-1/3 ${tagsBg} ${tagsColor} flex items-center px-4 py-2 hover:opacity-80 cursor-pointer mr-12`}
               >
-                join the discord
+                {t("join-discord")}
               </a>
             </Link>
             <Link href="#">
               <a
                 className={`h-8 w-4/12 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 hover:opacity-80 cursor-pointer`}
               >
-                read out minds
+                {t("read-minds")}
               </a>
             </Link>
           </div>
@@ -156,13 +159,13 @@ const LandingFooter = ({
               <a
                 className={`h-8 w-1/2 md:w-1/3 ${tagsBg} ${tagsColor} flex items-center px-4 py-2 hover:opacity-80 cursor-pointer font-bold`}
               >
-                follow us on twitter
+                {t("follow-twitter")}
               </a>
             </Link>
             <div
               className={`h-8 w-1/2 md:w-5/12 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 leading-none`}
             >
-              © D4DATA 2022. All rights reserved
+              {`© D4DATA ${new Date().getFullYear()}. ${t("rights-reserved")}`}
             </div>
           </div>
 
@@ -172,12 +175,12 @@ const LandingFooter = ({
               <div
                 className={`h-8 w-1/2 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 leading-none`}
               >
-                Designed by FLOC*
+                {t("designed-by")}
               </div>
               <div
                 className={`h-8 w-1/2 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 leading-none`}
               >
-                Developed by Tutellus
+                {t("developed-by")}
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { AnimatedLink } from "components/modules";
+import { TFunction } from "next-i18next";
 import { useRecoilState } from "recoil";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
@@ -11,33 +12,37 @@ import ToggleBoxes from "../ToggleBoxes";
 
 const ToggleData = [
   {
-    name: "Simple",
-    details: "Single token exposure with automated rebalancing and additions",
+    name: "landing-data-token.tg-1-name",
+    details: "landing-data-token.tg-1-details",
     source: "/images/token-tab-simple.gif",
   },
   {
-    name: "Transparency",
-    details: "Single token exposure with automated rebalancing and additions",
+    name: "landing-data-token.tg-2-name",
+    details: "landing-data-token.tg-2-details",
     source: "/images/token-tab-transparency.webm",
   },
   {
-    name: "Efficient",
-    details: "Single token exposure with automated rebalancing and additions",
+    name: "landing-data-token.tg-3-name",
+    details: "landing-data-token.tg-3-details",
     source: "/images/token-tab-efficient.webm",
   },
   {
-    name: "Diverse",
-    details: "Single token exposure with automated rebalancing and additions",
+    name: "landing-data-token.tg-4-name",
+    details: "landing-data-token.tg-4-details",
     source: "/images/token-tab-diversity.webm",
   },
   {
-    name: "Unique",
-    details: "Single token exposure with automated rebalancing and additions",
+    name: "landing-data-token.tg-5-name",
+    details: "landing-data-token.tg-5-details",
     source: "/images/token-tab-unique.webm",
   },
 ];
 
-const MainSection = () => {
+interface MainSectionProps {
+  t: TFunction;
+}
+
+const MainSection = ({ t }: MainSectionProps) => {
   const [toggleSelected, setToggleSelected] = useState(1);
   const [selectedItem] = useRecoilState<ElementBounds | null>(
     selectedItemHeaderAtom
@@ -83,7 +88,7 @@ const MainSection = () => {
         )}
         <div className="absolute inset-0 py-16 px-16 md:px-4 md:pt-20 flex items-center md:items-start">
           <h1 className="text-6xl md:text-8xl xl:text-9xl font-alt font-bold w-full text-center lg:text-left lg:m-32">
-            $DATA Token
+            {t("landing-data-token.title")}
           </h1>
         </div>
         <div className="block md:hidden px-8 py-4 absolute bottom-0 right-0 bg-theme-base-content text-theme-base-100 text-lg">
@@ -103,7 +108,8 @@ const MainSection = () => {
               gradientWidth={50}
               gradientColor={[241, 18, 56]}
             >
-              Simple Unique Efficient Diverse Simple Unique Efficient Diverse
+              {t("landing-data-token.marquee-1")}{" "}
+              {t("landing-data-token.marquee-1")}
             </Marquee>
           </div>
         </div>
@@ -111,11 +117,7 @@ const MainSection = () => {
         {/* Description */}
         <div className="flex-grow flex flex-col items-end justify-end pl-20 md:pl-60 h-full text-2xl md:text-3xl">
           <div className="max-w-2xl border-b border-theme-primary px-4 md:px-0 py-32 md:py-40 space-y-4">
-            <p>
-              Cultivate a more open, secure, and equitable internet where
-              everyone, including robots, are equals when facing opportunities
-              in Web3
-            </p>
+            <p>{t("landing-data-token.description")}</p>
           </div>
         </div>
       </div>
@@ -123,7 +125,9 @@ const MainSection = () => {
       {/* Toggles Section - Mobile version */}
       <div className="block max-w-sm mx-auto md:hidden">
         <Carousel
-          value={ToggleData}
+          value={ToggleData.map(({ source, name, details }) => {
+            return { source, name: t(name), details: t(details) };
+          })}
           itemTemplate={CarouselItemTemplate}
           autoplayInterval={5000}
         ></Carousel>
@@ -136,11 +140,11 @@ const MainSection = () => {
             bgColor="bg-theme-base-content"
             textColor="text-theme-base-100"
             selected={toggleSelected}
-            text={ToggleData.map((t) => t.name)}
+            text={ToggleData.map(({ name }) => t(name))}
             onClick={handleToggleClick}
           />
           <p className="text-3xl max-w-md leading-tight">
-            {ToggleData[toggleSelected].details}
+            {t(ToggleData[toggleSelected].details)}
           </p>
         </div>
         <div className="grow max-w-lg w-full h-full">
@@ -180,7 +184,8 @@ const MainSection = () => {
               gradientWidth={50}
               gradientColor={[241, 18, 56]}
             >
-              Always be Proud and Learning Always be Proud and Learning
+              {t("landing-data-token.marquee-2")}{" "}
+              {t("landing-data-token.marquee-2")}
             </Marquee>
           </div>
         </div>
@@ -189,14 +194,10 @@ const MainSection = () => {
         <div className="grow flex items-center justify-center pl-20 md:pl-52 pr-4 h-full">
           <div className="py-12 max-w-4xl">
             <h2 className="text-4xl font-bold font-alt mb-12">
-              Data-based Protocol
+              {t("landing-data-token.description-2-title")}
             </h2>
             <p className="text-2xl md:text-3xl md:pl-20">
-              An independent security audit should have been performed on the
-              protocol and results reviewed by the product methodologist. In the
-              case that no audit has been performed, the methodologist applies
-              subjective judgement of the protocol based on assessment of the
-              criteria above and communications with the team
+              {t("landing-data-token.description-2-details")}
             </p>
           </div>
         </div>

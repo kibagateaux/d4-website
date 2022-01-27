@@ -1,3 +1,4 @@
+import { TFunction } from "next-i18next";
 import { useRecoilState } from "recoil";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
@@ -11,23 +12,24 @@ import ToggleBoxes from "../ToggleBoxes";
 
 const ToggleData = [
   {
-    name: "Simple",
-    details:
-      "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
+    name: "landing-d4-dao.tg-1-name",
+    details: "landing-d4-dao.tg-1-details",
   },
   {
-    name: "DeFi",
-    details:
-      "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
+    name: "landing-d4-dao.tg-2-name",
+    details: "landing-d4-dao.tg-2-details",
   },
   {
-    name: "Other Data",
-    details:
-      "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
+    name: "landing-d4-dao.tg-3-name",
+    details: "landing-d4-dao.tg-3-details",
   },
 ];
 
-const MainSection = () => {
+interface MainSectionProps {
+  t: TFunction;
+}
+
+const MainSection = ({ t }: MainSectionProps) => {
   const [toggleSelected, setToggleSelected] = useState(1);
   const [selectedItem] = useRecoilState<ElementBounds | null>(
     selectedItemHeaderAtom
@@ -73,7 +75,7 @@ const MainSection = () => {
         )}
         <div className="absolute inset-0 p-16 md:pt-20 flex items-center md:items-start">
           <h1 className="text-6xl md:text-7xl xl:text-9xl font-alt font-bold w-full text-center lg:text-left lg:m-32 text-theme-base-100 md:text-theme-primary">
-            D4 DAO
+            {t("landing-d4-dao.title")}
           </h1>
         </div>
         <div className="block md:hidden px-8 py-4 absolute bottom-0 right-0 bg-theme-base-content text-theme-base-100 text-lg">
@@ -93,7 +95,7 @@ const MainSection = () => {
               gradientWidth={250}
               gradientColor={[255, 255, 255]}
             >
-              Mainstream Empowerment Mainstream Empowerment
+              {t("landing-d4-dao.marquee-1")} {t("landing-d4-dao.marquee-1")}
             </Marquee>
           </div>
         </div>
@@ -101,11 +103,8 @@ const MainSection = () => {
         {/* Description */}
         <div className="flex-grow flex flex-col items-end justify-end pl-20 md:pl-60 h-full text-2xl md:text-3xl">
           <div className="max-w-2xl border-b border-theme-primary px-4 md:px-0 py-32 md:py-40 space-y-4">
-            <p>DAOs give direct power to the people.</p>
-            <p>
-              Join us in pioneering a future where magic internet communities
-              unlock the power of human-centric coordination.
-            </p>
+            <p>{t("landing-d4-dao.description-p1")}</p>
+            <p>{t("landing-d4-dao.description-p2")}</p>
           </div>
         </div>
       </div>
@@ -113,7 +112,9 @@ const MainSection = () => {
       {/* Toggles Section - Mobile version */}
       <div className="block max-w-sm mx-auto md:hidden my-8">
         <Carousel
-          value={ToggleData}
+          value={ToggleData.map(({ name, details }) => {
+            return { name: t(name), details: t(details) };
+          })}
           itemTemplate={CarouselItemTemplate}
           autoplayInterval={5000}
         ></Carousel>
@@ -138,19 +139,19 @@ const MainSection = () => {
                 : "items-end"
             }`}
           >
-            <p className="text-4xl">DAO for</p>
+            <p className="text-4xl">{t("landing-d4-dao.dao-for")}</p>
             <div className="font-bold font-alt">
               <ToggleBoxes
                 bgColor="bg-theme-primary"
                 textColor="text-theme-base-100"
                 selected={toggleSelected}
-                text={ToggleData.map((t) => t.name)}
+                text={ToggleData.map(({ name }) => t(name))}
                 onClick={handleToggleClick}
               />
             </div>
           </div>
           <p className="text-2xl lg:text-3xl max-w-lg leading-tight text-theme-base-content-muted">
-            {ToggleData[toggleSelected].details}
+            {t(ToggleData[toggleSelected].details)}
           </p>
         </div>
         <div className="grow max-w-lg w-full h-full">
@@ -174,7 +175,7 @@ const MainSection = () => {
               gradientWidth={100}
               gradientColor={[255, 255, 255]}
             >
-              Always be Proud and Learning Always be Proud and Learning
+              {t("landing-d4-dao.marquee-2")} {t("landing-d4-dao.marquee-2")}
             </Marquee>
           </div>
         </div>
@@ -183,13 +184,10 @@ const MainSection = () => {
         <div className="grow flex items-center justify-center pl-20 md:pl-52 pr-4 h-full">
           <div className="py-12 max-w-4xl">
             <h2 className="text-4xl font-bold font-alt mb-12">
-              Representing the frontier of one of the greatest transitions to
-              mankind
+              {t("landing-d4-dao.description-2-title")}
             </h2>
             <p className="text-2xl md:text-3xl md:pl-20">
-              Through (data) research we will reveal the depths of opportunities
-              awaiting traditional finance, setting the stage for adventures
-              that come with Web3
+              {t("landing-d4-dao.description-2-details")}
             </p>
           </div>
         </div>

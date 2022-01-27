@@ -1,5 +1,21 @@
 {
   "landing-data-token": {
-    "head": "$DATA Token"
+    "head": "$DATA Token",
+    "title": "$DATA Token",
+    "marquee-1": "Simple Unique Efficient Diverse",
+    "marquee-2": "Always be Proud and Learning",
+    "description": "Cultivate a more open, secure, and equitable internet where everyone, including robots, are equals when facing opportunities in Web3",
+    "description-2-title": "Data-based Protocol",
+    "description-2-details": "An independent security audit should have been performed on the protocol and results reviewed by the product methodologist. In the case that no audit has been performed, the methodologist applies subjective judgement of the protocol based on assessment of the criteria above and communications with the team",
+    "tg-1-name": "Simple",
+    "tg-1-details": "Single token exposure with automated rebalancing and additions",
+    "tg-2-name": "Transparency",
+    "tg-2-details": "Single token exposure with automated rebalancing and additions",
+    "tg-3-name": "Efficient",
+    "tg-3-details": "Single token exposure with automated rebalancing and additions",
+    "tg-4-name": "Diverse",
+    "tg-4-details": "Single token exposure with automated rebalancing and additions",
+    "tg-5-name": "Unique",
+    "tg-5-details": "Single token exposure with automated rebalancing and additions"
   }
 }

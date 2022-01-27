@@ -2,12 +2,21 @@
   "landing-home": {
     "d4-dao": {
       "details": "Chainlink is a secret ingredient to unlocking the potential of smart contract platforms and revolutionizing business and society",
-      "header": "Following the path of data"
+      "header": "Following the path of data",
+      "title": "DAO"
     },
     "data-token": {
-      "details": "Single token exposure with automated rebalancing and additions",
       "header": "Token",
-      "simple": "Simple"
+      "tg-1-name": "Simple",
+      "tg-1-details": "Single token exposure with automated rebalancing and additions",
+      "tg-2-name": "Transparency",
+      "tg-2-details": "Single token exposure with automated rebalancing and additions",
+      "tg-3-name": "Efficient",
+      "tg-3-details": "Single token exposure with automated rebalancing and additions",
+      "tg-4-name": "Diverse",
+      "tg-4-details": "Single token exposure with automated rebalancing and additions",
+      "tg-5-name": "Unique",
+      "tg-5-details": "Single token exposure with automated rebalancing and additions"
     },
     "head": "D4Data (ES)",
     "header": {

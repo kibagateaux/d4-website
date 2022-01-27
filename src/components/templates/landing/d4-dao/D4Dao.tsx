@@ -19,7 +19,7 @@ export const LandingD4DaoTemplate = ({ t }: LandingD4DaoTemplateProps) => {
         bgSelectedColor="bg-black bg-opacity-70"
         textSelectedColor="text-white"
       />
-      <MainSection />
+      <MainSection t={t} />
       <LandingFooter
         tagsBg="bg-theme-primary-content"
         tagsColor="text-theme-primary"
