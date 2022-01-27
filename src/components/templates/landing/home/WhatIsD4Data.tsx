@@ -65,7 +65,7 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
             <source src="/images/the-power-of-people.webm" type="video/webm" />
           </video>
           <div className="flex items-center justify-end absolute w-full bottom-0 space-x-4 px-4 mb-24">
-            <p className="text-4xl">{t("landing-home.what-is.slogan-1")}</p>
+            <p className="text-3xl text-center w-44">{t("landing-home.what-is.slogan-1")}</p>
             <div className="bg-theme-primary text-white py-3 text-2xl font-alt font-bold flex items-center justify-center w-44">
               <TypeAnimation
                 text={[t("landing-home.what-is.slogan-2"), "Other", "Another"]}

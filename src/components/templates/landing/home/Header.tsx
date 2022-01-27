@@ -40,9 +40,9 @@ const Header = ({ t }: HeaderProps) => {
             boxShadow: "inset 0 0 0 1000px rgba(68,3,14,.7)",
           }}
         >
-          <img className="w-full" src="/images/header-desktop-1.svg" alt="" />
+          <img className="w-full touch-none select-none" src="/images/header-desktop-1.svg" alt="" />
           <div className="relative">
-            <img className="w-full" src="/images/header-desktop-2.svg" alt="" />
+            <img className="w-full touch-none select-none" src="/images/header-desktop-2.svg" alt="" />
             <p className="text-2xl lg:text-3xl xl:text-4xl absolute top-0 w-full mx-auto text-center">
               {t("landing-home.header.title")}
             </p>
@@ -58,7 +58,7 @@ const Header = ({ t }: HeaderProps) => {
               </p>
             </div>
           </div>
-          <img className="w-full" src="/images/header-desktop-3.svg" alt="" />
+          <img className="w-full touch-none select-none" src="/images/header-desktop-3.svg" alt="" />
         </div>
 
         {/* Mobile */}
@@ -73,13 +73,13 @@ const Header = ({ t }: HeaderProps) => {
             <div className="absolute top-0 w-full border-t border-8 border-white -mt-2"></div>
             <div className="absolute bottom-0 w-full border-b border-8 border-white -mb-2"></div>
             <img
-              className="w-full -mb-1"
+              className="w-full touch-none select-none -mb-1"
               src="/images/header-mobile-1.svg"
               alt=""
             />
             <div className="relative">
               <img
-                className="w-full -mb-1"
+                className="w-full touch-none select-none -mb-1"
                 src="/images/header-mobile-2.svg"
                 alt=""
               />
@@ -97,7 +97,7 @@ const Header = ({ t }: HeaderProps) => {
               </div>
             </div>
             <img
-              className="w-full -mb-1"
+              className="w-full touch-none select-none -mb-1"
               src="/images/header-mobile-3.svg"
               alt=""
             />
