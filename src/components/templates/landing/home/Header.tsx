@@ -41,13 +41,13 @@ const Header = ({ t }: HeaderProps) => {
           }}
         >
           <img
-            className="w-full touch-none select-none"
+            className="w-full"
             src="/images/header-desktop-1.svg"
             alt=""
           />
           <div className="relative">
             <img
-              className="w-full touch-none select-none"
+              className="w-full"
               src="/images/header-desktop-2.svg"
               alt=""
             />
@@ -67,7 +67,7 @@ const Header = ({ t }: HeaderProps) => {
             </div>
           </div>
           <img
-            className="w-full touch-none select-none"
+            className="w-full"
             src="/images/header-desktop-3.svg"
             alt=""
           />
@@ -85,13 +85,13 @@ const Header = ({ t }: HeaderProps) => {
             <div className="absolute top-0 w-full border-t border-8 border-white -mt-2"></div>
             <div className="absolute bottom-0 w-full border-b border-8 border-white -mb-2"></div>
             <img
-              className="w-full touch-none select-none -mb-1"
+              className="w-full -mb-1"
               src="/images/header-mobile-1.svg"
               alt=""
             />
             <div className="relative">
               <img
-                className="w-full touch-none select-none -mb-1"
+                className="w-full -mb-1"
                 src="/images/header-mobile-2.svg"
                 alt=""
               />
@@ -109,7 +109,7 @@ const Header = ({ t }: HeaderProps) => {
               </div>
             </div>
             <img
-              className="w-full touch-none select-none -mb-1"
+              className="w-full -mb-1"
               src="/images/header-mobile-3.svg"
               alt=""
             />

@@ -1,11 +1,10 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import Head from "next/head";
 import type { NextPageContext } from "next";
 
 import { BlogTemplate } from "components/templates";
-import { GhostFilterPost } from "components/modules";
+import { GhostFilterPost, SEOTags } from "components/modules";
 import Header from "components/templates/landing/Header";
 
 interface composeFilterProps {
@@ -47,18 +46,23 @@ const Page = () => {
   const router = useRouter();
   const { t } = useTranslation(["news"]);
   const { filter, limit, page, order } = router.query;
-  console.log("router.query", router.query);
 
   const ghostFilter = composeFilter({ filter, limit, page, order });
 
-  console.log("ghostFilter", ghostFilter);
+  const seo = {
+    title: t("news.seo.title"),
+    description: t("news.seo.description"),
+    keywords: t("news.seo.keywords"),
+    image: t("news.seo.image"),
+    author: t("news.seo.author"),
+    twitterSite: t("news.seo.twitterSite"),
+    twitterCreator: t("news.seo.twitterCreator"),
+  };
+
 
   return (
     <>
-      <Head>
-        <title>{t("news.head")}</title>
-      </Head>
-
+      <SEOTags {...seo} />
       <Header />
       <BlogTemplate filter={ghostFilter} />
     </>

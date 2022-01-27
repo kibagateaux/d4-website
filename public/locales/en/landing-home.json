@@ -18,7 +18,6 @@
       "tg-5-name": "Unique",
       "tg-5-details": "Single token exposure with automated rebalancing and additions"
     },
-    "head": "D4Data (ES)",
     "header": {
       "play": "play",
       "title": "We show the Path of the Data"
@@ -30,6 +29,15 @@
       "header-2": "Data Centric Chain Agnostic",
       "slogan-1": "The Power of",
       "slogan-2": "People"
+    },
+    "seo": {
+      "title": "D4DATA",
+      "description": "",
+      "keywords": "",
+      "image": "",
+      "author": "",
+      "twitterSite": "",
+      "twitterCreator": ""
     }
   }
 }

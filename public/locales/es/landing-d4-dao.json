@@ -1,6 +1,5 @@
 {
   "landing-d4-dao": {
-    "head": "D4 DAO",
     "title": "D4 DAO",
     "marquee-1": "Mainstream Empowerment",
     "marquee-2": "Always be Proud and Learning",
@@ -14,6 +13,15 @@
     "tg-2-name": "DeFi",
     "tg-2-details": "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
     "tg-3-name": "Other Data",
-    "tg-3-details": "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity."
+    "tg-3-details": "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
+    "seo": {
+      "title": "D4 DAO",
+      "description": "DAOs give direct power to the people",
+      "keywords": "",
+      "image": "",
+      "author": "",
+      "twitterSite": "",
+      "twitterCreator": ""
+    }
   }
 }

@@ -1,18 +1,26 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import type { NextPageContext } from "next";
-import Head from "next/head";
 
 import { LandingD4DaoTemplate } from "components/templates";
+import { SEOTags } from "components/modules";
 
 const Page = () => {
   const { t } = useTranslation(["landing-d4-dao"]);
+
+  const seo = {
+    title: t("landing-d4-dao.seo.title"),
+    description: t("landing-d4-dao.seo.description"),
+    keywords: t("landing-d4-dao.seo.keywords"),
+    image: t("landing-d4-dao.seo.image"),
+    author: t("landing-d4-dao.seo.author"),
+    twitterSite: t("landing-d4-dao.seo.twitterSite"),
+    twitterCreator: t("landing-d4-dao.seo.twitterCreator"),
+  };
+
   return (
     <>
-      <Head>
-        <title>{t("landing-d4-dao.head")}</title>
-      </Head>
-
+      <SEOTags {...seo} />
       <LandingD4DaoTemplate t={t} />
     </>
   );

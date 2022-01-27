@@ -1,6 +1,5 @@
 {
   "landing-what-is-d4data": {
-    "head": "What is D4DATA",
     "title": "What is D4DATA",
     "marquee-1": "Data Centric Chain Agnostic",
     "marquee-2": "Board Memebers",
@@ -14,6 +13,15 @@
     "tg-2-name": "Future",
     "tg-2-details": "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
     "tg-3-name": "People",
-    "tg-3-details": "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity."
+    "tg-3-details": "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
+    "seo": {
+      "title": "What is D4DATA",
+      "description": "We are doers, and it's in our DNA to get things going, to pass the ball, and develop the game. Also, we have a hard time sitting still.",
+      "keywords": "",
+      "image": "",
+      "author": "",
+      "twitterSite": "",
+      "twitterCreator": ""
+    }
   }
 }

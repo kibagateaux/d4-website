@@ -1,8 +1,16 @@
 {
   "news": {
-    "generic-error": "Se ha producido un error recuperando el post",
-    "head": "News",
+    "generic-error": "There was an error retrieving the post",
     "loading": "Loading...",
-    "not-found": "No se ha encontrado el post"
+    "not-found": "Post not found",
+    "seo": {
+      "title": "News",
+      "description": "",
+      "keywords": "",
+      "image": "",
+      "author": "",
+      "twitterSite": "",
+      "twitterCreator": ""
+    }
   }
 }

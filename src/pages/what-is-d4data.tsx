@@ -1,18 +1,26 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import type { NextPageContext } from "next";
-import Head from "next/head";
 
 import { LandingWhatIsD4DataTemplate } from "components/templates";
+import { SEOTags } from "components/modules";
 
 const Page = () => {
   const { t } = useTranslation(["landing-what-is-d4data"]);
+
+  const seo = {
+    title: t("landing-what-is-d4data.seo.title"),
+    description: t("landing-what-is-d4data.seo.description"),
+    keywords: t("landing-what-is-d4data.seo.keywords"),
+    image: t("landing-what-is-d4data.seo.image"),
+    author: t("landing-what-is-d4data.seo.author"),
+    twitterSite: t("landing-what-is-d4data.seo.twitterSite"),
+    twitterCreator: t("landing-what-is-d4data.seo.twitterCreator"),
+  };
+
   return (
     <>
-      <Head>
-        <title>{t("landing-what-is-d4data.head")}</title>
-      </Head>
-
+      <SEOTags {...seo} />
       <LandingWhatIsD4DataTemplate t={t} />
     </>
   );

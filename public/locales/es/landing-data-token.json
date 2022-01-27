@@ -1,6 +1,5 @@
 {
   "landing-data-token": {
-    "head": "$DATA Token",
     "title": "$DATA Token",
     "marquee-1": "Simple Unique Efficient Diverse",
     "marquee-2": "Always be Proud and Learning",
@@ -16,6 +15,15 @@
     "tg-4-name": "Diverse",
     "tg-4-details": "Single token exposure with automated rebalancing and additions",
     "tg-5-name": "Unique",
-    "tg-5-details": "Single token exposure with automated rebalancing and additions"
+    "tg-5-details": "Single token exposure with automated rebalancing and additions",
+    "seo": {
+      "title": "$DATA Token",
+      "description": "Cultivate a more open, secure, and equitable internet where everyone, including robots, are equals when facing opportunities in Web3",
+      "keywords": "",
+      "image": "",
+      "author": "",
+      "twitterSite": "",
+      "twitterCreator": ""
+    }
   }
 }

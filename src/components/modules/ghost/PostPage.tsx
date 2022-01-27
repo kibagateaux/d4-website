@@ -1,8 +1,8 @@
 import { TFunction } from "next-i18next";
-import Head from "next/head";
 
 import { Container } from "components/elements";
 import { postsReadSelector } from "./state";
+import { SEOTags } from "..";
 import { useAsyncRecoilValue } from "./hooks";
 import Author from "./PostAuthor";
 import Content from "./PostContent";
@@ -60,24 +60,21 @@ export const PostPage = ({ slug, t }: PostPageProps) => {
   } = useAsyncRecoilValue(postsReadSelector, [slug]);
 
   const author = post.authors && post.authors.length > 0 ? post.authors[0] : {};
+  console.log("POST: ", post);
+
+  const seoData = {
+    title: post.meta_title || post.title,
+    description: post.meta_description,
+    keywords: '',
+    image: post.feature_image,
+    author: author.name,
+    twitterSite: post.twitter_title,
+    twitterCreator: post.twitter_description,
+  };
+
   return (
     <>
-      <Head>
-        <title>{post.title}</title>
-        <meta name="description" content={post.meta_description}></meta>
-        <meta name="title" content={post.meta_title || post.title}></meta>
-        <meta name="author" content={author.name} />
-        {Array.isArray(post.tags) && post.tags.length > 0 && (
-          <meta
-            name="keywords"
-            content={post.tags
-              .map((tag: any) =>
-                typeof tag === "string" ? tag : JSON.stringify(tag)
-              )
-              .join(", ")}
-          />
-        )}
-      </Head>
+      <SEOTags {...seoData}/>
 
       <Container className="max-w-4xl py-20 px-4">
         {loading && <div>{t("news.loading")}</div>}
