@@ -27,12 +27,18 @@ const Header = ({ t }: HeaderProps) => {
   };
 
   return (
-    <section id="top" className="bg-theme-base-100 text-theme-base-content pt-20 md:pt-4">
+    <section
+      id="top"
+      className="bg-theme-base-100 text-theme-base-content md:pt-4"
+    >
       <Container>
         {/* Desktop */}
         <div
           className="hidden md:block w-full bg-no-repeat bg-cover bg-center overflow-hidden my-20 max-w-6xl mx-auto"
-          style={{ backgroundImage: "url(/images/header-bg.gif)", boxShadow: 'inset 0 0 0 1000px rgba(68,3,14,.7)' }}
+          style={{
+            backgroundImage: "url(/images/d4dao-tab-defi.gif)",
+            boxShadow: "inset 0 0 0 1000px rgba(68,3,14,.7)",
+          }}
         >
           <img className="w-full" src="/images/header-desktop-1.svg" alt="" />
           <div className="relative">
@@ -56,27 +62,46 @@ const Header = ({ t }: HeaderProps) => {
         </div>
 
         {/* Mobile */}
-        <div
-          className="block md:hidden w-full bg-no-repeat bg-cover bg-center overflow-hidden my-12 max-w-4xl mx-auto"
-          style={{ backgroundImage: "url(/images/header-bg.gif)", boxShadow: 'inset 0 0 0 1000px rgba(68,3,14,.7)' }}
-        >
-          <img className="w-full" src="/images/header-mobile-1.svg" alt="" />
-          <div className="relative">
-            <img className="w-full" src="/images/header-mobile-2.svg" alt="" />
-            <p className="text-2xl xs:text-3xl sm:text-4xl truncate absolute top-0 pl-4 pb-4 w-full mx-auto text-center">
-              We show the Path of the Data
-            </p>
-            <div
-              className="absolute bottom-0 sm:bottom-4 left-0 sm:left-8 cursor-pointer flex items-center justify-start"
-              onClick={() => {
-                setShowPlayer(true);
-              }}
-            >
-              <Lottie options={defaultOptions} width={80} />
-              <p className="font-bold font-alt uppercase">Play</p>
+        <div className="flex md:hidden w-full h-screen items-center -mt-12 -mb-12">
+          <div
+            className="w-full bg-no-repeat bg-cover bg-center mt-4 mb-12 max-w-4xl mx-auto relative"
+            style={{
+              backgroundImage: "url(/images/d4dao-tab-defi.gif)",
+              boxShadow: "inset 0 0 0 1000px rgba(68,3,14,.7)",
+            }}
+          >
+            <div className="absolute top-0 w-full border-t border-8 border-white -mt-2"></div>
+            <div className="absolute bottom-0 w-full border-b border-8 border-white -mb-2"></div>
+            <img
+              className="w-full -mb-1"
+              src="/images/header-mobile-1.svg"
+              alt=""
+            />
+            <div className="relative">
+              <img
+                className="w-full -mb-1"
+                src="/images/header-mobile-2.svg"
+                alt=""
+              />
+              <p className="text-2xl xs:text-3xl sm:text-4xl truncate absolute top-0 pl-4 pb-4 w-full mx-auto text-center">
+                We show the Path of the Data
+              </p>
+              <div
+                className="absolute bottom-0 sm:bottom-4 left-0 sm:left-8 cursor-pointer flex items-center justify-start"
+                onClick={() => {
+                  setShowPlayer(true);
+                }}
+              >
+                <Lottie options={defaultOptions} width={80} />
+                <p className="font-bold font-alt uppercase">Play</p>
+              </div>
             </div>
+            <img
+              className="w-full -mb-1"
+              src="/images/header-mobile-3.svg"
+              alt=""
+            />
           </div>
-          <img className="w-full" src="/images/header-mobile-3.svg" alt="" />
         </div>
       </Container>
 
