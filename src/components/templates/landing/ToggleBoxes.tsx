@@ -14,10 +14,6 @@ const ToggleBoxSelected = ({
     <div className={`text-right ${bgColor} ${textColor} text-3xl px-2 py-1`}>
       {children}
     </div>
-    <div className="flex">
-      <div className="flex-1 bg-theme-base-100 h-0.5"></div>
-      <div className="flex-1 bg-theme-base-content-muted h-0.5"></div>
-    </div>
   </div>
 );
 
