@@ -28,6 +28,7 @@ const ToggleData = [
       "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
     image: (
       <video
+        key="hand-glitch.webm"
         controls={false}
         autoPlay
         muted
@@ -44,6 +45,7 @@ const ToggleData = [
       "The data economy is evolving expeditiously, bringing investment opportunities in network infrastructure, memory, storage and cybersecurity.",
     image: (
       <video
+        key="what-is-tab-people.webm"
         controls={false}
         autoPlay
         muted
@@ -160,7 +162,7 @@ const MainSection = () => {
       </div>
 
       {/* Toggles Section - Desktop version */}
-      <div className="hidden md:flex flex-row items-center justify-between space-x-8">
+      <div className="hidden md:flex flex-row items-center justify-between space-x-8 h-screen">
         <div className="grow py-12 space-y-12">
           <div
             className={`flex space-x-8 ${

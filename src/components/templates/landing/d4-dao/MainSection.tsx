@@ -127,7 +127,7 @@ const MainSection = () => {
       </div>
 
       {/* Toggles Section - Desktop version */}
-      <div className="hidden md:flex flex-row items-center justify-between space-x-8">
+      <div className="hidden md:flex flex-row items-center justify-between space-x-8 h-screen">
         <div className="grow py-12 space-y-12">
           <div
             className={`flex space-x-8 ${
@@ -149,11 +149,11 @@ const MainSection = () => {
               />
             </div>
           </div>
-          <p className="text-2xl max-w-md leading-tight text-theme-base-content-muted">
+          <p className="text-2xl lg:text-3xl max-w-lg leading-tight text-theme-base-content-muted">
             {ToggleData[toggleSelected].details}
           </p>
         </div>
-        <div className="grow max-w-sm">
+        <div className="grow max-w-lg w-full h-full">
           <img
             src="/images/d4dao-tab-defi.gif"
             alt=""
@@ -163,7 +163,7 @@ const MainSection = () => {
       </div>
 
       {/* Marquee section 2 */}
-      <div className="md:h-screen flex items-center justify-center relative overflow-hidden md:overflow-visible py-8">
+      <div className="md:h-screen flex items-center justify-center relative overflow-hidden md:overflow-visible py-8 md:-mt-40">
         {/* Marquee */}
         <div className="flex-none w-10 md:w-20 h-screen absolute left-0 flex items-center justify-center overflow-hidden md:-mt-60">
           <div className="-rotate-90 opacity-80">

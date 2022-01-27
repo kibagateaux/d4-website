@@ -8,7 +8,7 @@ interface PaginationProps {
 }
 
 const template: any = {
-  layout: "CurrentPageReport PrevPageLink NextPageLink",
+  layout: "PrevPageLink NextPageLink",
   CurrentPageReport: (options: any) => {
     
     return (
