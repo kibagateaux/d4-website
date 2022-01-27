@@ -151,7 +151,6 @@ interface LandingHeaderProps {
   textColor?: string;
   bgSelectedColor?: string;
   textSelectedColor?: string;
-  t: TFunction;
 }
 
 const LandingHeader = ({
