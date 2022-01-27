@@ -182,11 +182,11 @@ const MainSection = () => {
               />
             </div>
           </div>
-          <p className="text-2xl max-w-md leading-tight text-theme-base-content-muted">
+          <p className="text-2xl max-w-lg lg:max-w-xl leading-tight text-theme-base-100">
             {ToggleData[toggleSelected].details}
           </p>
         </div>
-        <div className="grow max-w-sm">{ToggleData[toggleSelected].image}</div>
+        <div className="grow max-w-sm lg:max-w-xl">{ToggleData[toggleSelected].image}</div>
       </div>
 
       {/* Marquee section 2 */}
@@ -207,7 +207,7 @@ const MainSection = () => {
         </div>
 
         {/* Description */}
-        <div className="grow flex flex-col md:flex-row justify-between pl-20 md:pl-52 pr-4 md:pr-40 text-2xl md:text-3xl space-y-16 h-full">
+        <div className="grow flex flex-col md:flex-row justify-between xl:justify-around pl-20 md:pl-52 pr-4 md:pr-40 text-2xl md:text-3xl space-y-16 h-full">
           <div className="flex flex-col items-end place-self-center md:place-self-start max-w-xs relative mt-20">
           <video
               controls={false}
@@ -218,7 +218,7 @@ const MainSection = () => {
             >
               <source src="/images/data-thomas-hepner.webm" type="video/webm" />
             </video>
-            <p className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12">
+            <p className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12 z-20">
               Thomas Hepner
             </p>
           </div>
