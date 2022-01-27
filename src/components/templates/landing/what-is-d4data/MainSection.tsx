@@ -70,8 +70,8 @@ const MainSection = () => {
     <section id="top" className="text-theme-base-100">
       {/* Header */}
       <div className="relative z-40">
-        <div className="flex justify-end w-full">
-          <div className="w-full h-96 md:h-auto md:w-8/12 relative">
+        <div className="flex justify-end w-full h-96 lg:h-screen lg:-mt-16 lg:pt-16">
+          <div className="w-full md:w-10/12 bg-black">
             <video
               controls={false}
               autoPlay
@@ -103,8 +103,8 @@ const MainSection = () => {
             </div>
           </div>
         )}
-        <div className="absolute inset-0 p-16 md:pt-20 flex items-center md:items-start">
-          <h1 className="text-6xl md:text-7xl xl:text-9xl font-alt font-bold w-full text-center">
+        <div className="absolute inset-0 py-16 px-10 md:pt-20 flex items-center md:items-start">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-alt font-bold w-full text-center lg:text-left lg:my-20">
             What is D4DATA
           </h1>
         </div>
@@ -186,7 +186,9 @@ const MainSection = () => {
             {ToggleData[toggleSelected].details}
           </p>
         </div>
-        <div className="grow max-w-sm lg:max-w-xl">{ToggleData[toggleSelected].image}</div>
+        <div className="grow max-w-sm lg:max-w-xl">
+          {ToggleData[toggleSelected].image}
+        </div>
       </div>
 
       {/* Marquee section 2 */}
@@ -209,7 +211,7 @@ const MainSection = () => {
         {/* Description */}
         <div className="grow flex flex-col md:flex-row justify-between xl:justify-around pl-20 md:pl-52 pr-4 md:pr-40 text-2xl md:text-3xl space-y-16 h-full">
           <div className="flex flex-col items-end place-self-center md:place-self-start max-w-xs relative mt-20">
-          <video
+            <video
               controls={false}
               autoPlay
               muted

@@ -51,8 +51,8 @@ const MainSection = () => {
     <section id="top" className="text-theme-base-content">
       {/* Header */}
       <div className="relative z-40 text-theme-base-100">
-        <div className="flex justify-end w-full">
-          <div className="w-full h-96 md:h-auto md:w-8/12 relative">
+        <div className="flex justify-end w-full h-96 lg:h-screen lg:-mt-16 lg:pt-16">
+          <div className="w-full md:w-10/12 bg-black">
             <video
               controls={false}
               autoPlay
@@ -81,8 +81,8 @@ const MainSection = () => {
             </div>
           </div>
         )}
-        <div className="absolute inset-0 p-16 md:pt-20 flex items-center md:items-start">
-          <h1 className="text-6xl md:text-7xl xl:text-9xl font-alt font-bold w-full text-center">
+        <div className="absolute inset-0 py-16 px-16 md:px-4 md:pt-20 flex items-center md:items-start">
+          <h1 className="text-6xl md:text-8xl xl:text-9xl font-alt font-bold w-full text-center lg:text-left lg:m-32">
             $DATA Token
           </h1>
         </div>
