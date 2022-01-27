@@ -18,11 +18,11 @@ const Header = ({ t }: { t: TFunction }) => (
         <span>{t("landing-home.what-is.header-1")}</span>
       </Marquee>
     </div>
-    <div className="flex-none w-52">
+    <div className="flex-none w-24 lg:w-52 h-12 lg:h-20 ">
       <img
-        src="/images/what-is-d4-data-header.png"
+        src="/images/home-gif-what-is.gif"
         alt=""
-        className="h-12 lg:h-full object-cover"
+        className=" w-full h-full object-cover"
       />
     </div>
     <div
