@@ -130,7 +130,7 @@ const MainSection = () => {
       </div>
 
       {/* Toggles Section - Desktop version */}
-      <div className="hidden md:flex flex-row items-center justify-between space-x-8">
+      <div className="hidden md:flex flex-row items-center justify-between space-x-8 h-screen">
         <div className="grow py-12 space-x-12 flex items-end">
           <ToggleBoxes
             bgColor="bg-theme-base-content"
@@ -139,11 +139,11 @@ const MainSection = () => {
             text={ToggleData.map((t) => t.name)}
             onClick={handleToggleClick}
           />
-          <p className="text-xl max-w-md leading-tight">
+          <p className="text-3xl max-w-md leading-tight">
             {ToggleData[toggleSelected].details}
           </p>
         </div>
-        <div className="grow max-w-lg">
+        <div className="grow max-w-lg w-full h-full">
           {ToggleData[toggleSelected].source.indexOf("webm") >= 0 ? (
             <video
               key={ToggleData[toggleSelected].source}
