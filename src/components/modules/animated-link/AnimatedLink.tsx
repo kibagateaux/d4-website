@@ -5,12 +5,14 @@ interface AnimatedLinkProps {
   text: string;
   href?: string;
   tagColor?: string;
+  target?: "_blank" | "_parent" | "_self" | "_top";
 }
 
 export const AnimatedLink = ({
   text,
   href,
   tagColor = "bg-theme-primary",
+  target = "_self",
 }: AnimatedLinkProps) => {
   const intervalMs = 300;
   const opacities = ["opacity-50", "opacity-100", "opacity-100"];
@@ -33,7 +35,7 @@ export const AnimatedLink = ({
 
   return href ? (
     <Link href={href}>
-      <a>{content}</a>
+      <a target={target}>{content}</a>
     </Link>
   ) : (
     content

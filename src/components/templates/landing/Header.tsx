@@ -1,14 +1,15 @@
+import { TFunction, useTranslation } from "next-i18next";
 import { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import { useRouter } from "next/router";
 import { XIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 
+import { AnimatedLink } from "components/modules";
 import { Container } from "components/elements";
 import { ElementBounds } from "models";
 import { selectedItemHeaderAtom } from "./header-element.state";
 import HeaderMobileMenu from "./HeaderMobileMenu";
-import { AnimatedLink } from "components/modules";
 
 const LogoLink = ({ src }: { src: string }) => (
   <Link href="/">
@@ -66,6 +67,7 @@ const MenuLink = ({
 };
 
 const MenuLinks = ({
+  t,
   textColor,
   bgSelectedColor,
   textSelectedColor,
@@ -76,22 +78,22 @@ const MenuLinks = ({
 
   const links: any[] = [
     {
-      name: "What is D4DATA",
+      name: t("menu.what-is-d4data"),
       href: "/what-is-d4data",
       hrefRx: "/what-is-d4data",
     },
     {
-      name: "D4 DAO",
+      name: t("menu.d4-dao"),
       href: "/d4-dao",
       hrefRx: "/d4-dao",
     },
     {
-      name: "$DATA Token",
+      name: t("menu.data-token"),
       href: "/data-token",
       hrefRx: "/data-token",
     },
     {
-      name: "News",
+      name: t("menu.news"),
       href: "/news",
       hrefRx: "/news",
     },
@@ -117,24 +119,29 @@ const MenuLinks = ({
   );
 };
 
-const RRSSLinks = (props: any) => (
+const RRSSLinks = ({ t, ...props }: any) => (
   <div {...props}>
-    <Link href="#">
-      <a>
+    <Link href={t("twitter-url")}>
+      <a target="_blank">
         <img src="/images/twitter.svg" alt="Twitter" className="h-6" />
       </a>
     </Link>
-    <Link href="#">
-      <a>
+    <Link href={t("discord-url")}>
+      <a target="_blank">
         <img src="/images/discord.svg" alt="Twitter" className="h-6" />
       </a>
     </Link>
   </div>
 );
 
-const BuyDataLink = () => (
+const BuyDataLink = ({ t }: { t: TFunction }) => (
   <div className="font-bold bg-theme-base-content text-theme-base-100 px-2 py-2 mx-4 leading-none">
-    <AnimatedLink text="Buy $DATA" tagColor="bg-theme-primary" href="#" />
+    <AnimatedLink
+      text="Buy $DATA"
+      tagColor="bg-theme-primary"
+      href={t("buy-data-url")}
+      target="_blank"
+    />
   </div>
 );
 
@@ -144,6 +151,7 @@ interface LandingHeaderProps {
   textColor?: string;
   bgSelectedColor?: string;
   textSelectedColor?: string;
+  t: TFunction;
 }
 
 const LandingHeader = ({
@@ -153,6 +161,8 @@ const LandingHeader = ({
   bgSelectedColor = "bg-theme-primary",
   textSelectedColor = "text-theme-base-100",
 }: LandingHeaderProps) => {
+  const { t } = useTranslation(["common"]);
+
   const [leftMenuOpen, setLeftMenuOpen] = useState(false);
   const [rightMenuOpen, setRightMenuOpen] = useState(false);
 
@@ -177,10 +187,11 @@ const LandingHeader = ({
             textColor={textColor}
             bgSelectedColor={bgSelectedColor}
             textSelectedColor={textSelectedColor}
+            t={t}
           />
           <div className="flex items-center space-x-4">
-            <BuyDataLink />
-            <RRSSLinks className="flex items-center space-x-4" />
+            <BuyDataLink t={t} />
+            <RRSSLinks className="flex items-center space-x-4" t={t} />
           </div>
         </div>
       </Container>
@@ -213,6 +224,7 @@ const LandingHeader = ({
         <div className="flex h-full flex-col items-start justify-between px-4">
           <nav className="mt-20 text-2xl mb-8 grow flex flex-col items-start justify-between">
             <MenuLinks
+              t={t}
               className="flex flex-col space-y-4 mt-8"
               onClick={handleMobileLeftMenu}
               textColor="text-theme-base-content"
@@ -220,10 +232,11 @@ const LandingHeader = ({
               textSelectedColor="text-theme-primary-content"
             />
 
-            <BuyDataLink />
+            <BuyDataLink t={t} />
           </nav>
           <div className="pl-4 pb-20 flex w-full">
             <RRSSLinks
+              t={t}
               className="grow flex justify-start space-x-8 py-8 border-t border-theme-primary"
               onClick={handleMobileRightMenu}
             />

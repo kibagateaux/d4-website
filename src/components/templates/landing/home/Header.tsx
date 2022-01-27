@@ -5,17 +5,12 @@ import Lottie from "react-lottie";
 import { Container } from "components/elements";
 import animationData from "lotties/play.json";
 
-const YT_VIDEO = "https://www.youtube.com/embed/ILofy-escS0";
-const VIDEO =
-  "https://d2gvzqttsr1gma.cloudfront.net/images/intro/reental_intro_es.mp4";
-const POSTER = "https://d2gvzqttsr1gma.cloudfront.net/images/intro/poster.png";
-const isYoutubeVideo = true;
-
 interface HeaderProps {
   t: TFunction;
 }
 
 const Header = ({ t }: HeaderProps) => {
+  const heroVideo = t('landing-home.hero-video');
   const [showPlayer, setShowPlayer] = useState(false);
   const defaultOptions = {
     loop: true,
@@ -40,17 +35,9 @@ const Header = ({ t }: HeaderProps) => {
             boxShadow: "inset 0 0 0 1000px rgba(68,3,14,.7)",
           }}
         >
-          <img
-            className="w-full"
-            src="/images/header-desktop-1.svg"
-            alt=""
-          />
+          <img className="w-full" src="/images/header-desktop-1.svg" alt="" />
           <div className="relative">
-            <img
-              className="w-full"
-              src="/images/header-desktop-2.svg"
-              alt=""
-            />
+            <img className="w-full" src="/images/header-desktop-2.svg" alt="" />
             <p className="text-2xl lg:text-3xl xl:text-4xl absolute top-0 w-full mx-auto text-center">
               {t("landing-home.header.title")}
             </p>
@@ -66,11 +53,7 @@ const Header = ({ t }: HeaderProps) => {
               </p>
             </div>
           </div>
-          <img
-            className="w-full"
-            src="/images/header-desktop-3.svg"
-            alt=""
-          />
+          <img className="w-full" src="/images/header-desktop-3.svg" alt="" />
         </div>
 
         {/* Mobile */}
@@ -105,7 +88,9 @@ const Header = ({ t }: HeaderProps) => {
                 }}
               >
                 <Lottie options={defaultOptions} width={80} />
-                <p className="font-bold font-alt uppercase">{t("landing-home.header.play")}</p>
+                <p className="font-bold font-alt uppercase">
+                  {t("landing-home.header.play")}
+                </p>
               </div>
             </div>
             <img
@@ -125,25 +110,16 @@ const Header = ({ t }: HeaderProps) => {
             setShowPlayer(false);
           }}
         >
-          {isYoutubeVideo ? (
-            <iframe
-              className="max-w-full"
-              width={1024}
-              height={576}
-              src={YT_VIDEO}
-              title="YouTube video player"
-              frameBorder={0}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          ) : (
-            <div className="max-w-screen-xl">
-              <video controls autoPlay poster={POSTER}>
-                <source src={VIDEO} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          )}
+          <iframe
+            className="max-w-full"
+            width={1024}
+            height={576}
+            src={heroVideo}
+            title="YouTube video player"
+            frameBorder={0}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       )}
     </section>

@@ -90,7 +90,7 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
           <div className="flex flex-col items-end relative">
             <div className="border-b border-theme-primary absolute bottom-72 -mb-1 w-full z-10"></div>
 
-            <div className="py-20 grow px-4 space-y-12 max-w-xl absolute top-0 left-0">
+            <div className="py-20 grow px-4 space-y-12 max-w-xl absolute top-0 left-0 z-10">
               <Message t={t} />
               <AnimatedLink
                 text={t("landing-home.learn-more")}

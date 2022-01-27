@@ -35,8 +35,9 @@ const LandingFooter = ({
             <div className={`h-8 w-5/6 ${tagsBg}`}></div>
           </div>
 
-          <Link href="#">
+          <Link href={t("discord-url")}>
             <a
+              target="_blank"
               className={`h-8 w-5/6 ${tagsBg} ${tagsColor} flex items-center px-4 py-2 hover:opacity-80 cursor-pointer mr-12 font-bold`}
             >
               {t("join-discord")}
@@ -48,8 +49,9 @@ const LandingFooter = ({
             <div className={`h-8 w-11/12 ${tagsBg}`}></div>
           </div>
 
-          <Link href="#">
+          <Link href={t("twitter-url")}>
             <a
+              target="_blank"
               className={`h-8 w-full ${tagsBg} ${tagsColor} flex items-center px-4 py-2 hover:opacity-80 cursor-pointer mr-12 font-bold`}
             >
               {t("follow-twitter")}
@@ -59,8 +61,9 @@ const LandingFooter = ({
           <div className={`h-8 w-9/12 ${tagsBg}`}></div>
           <div className={`h-8 w-full ${tagsBg}`}></div>
 
-          <Link href="#">
+          <Link href={t("read-minds-url")}>
             <a
+              target="_blank"
               className={`h-8 w-5/6 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 hover:opacity-80 cursor-pointer mr-12 font-bold`}
             >
               {t("read-minds")}
@@ -130,15 +133,17 @@ const LandingFooter = ({
           </div>
 
           <div className="flex justify-between w-full font-alt font-bold text-theme-base-100 space-x-4 pr-10">
-            <Link href="#">
+            <Link href={t("discord-url")}>
               <a
+                target="_blank"
                 className={`h-8 w-1/2 md:w-1/3 ${tagsBg} ${tagsColor} flex items-center px-4 py-2 hover:opacity-80 cursor-pointer mr-12`}
               >
                 {t("join-discord")}
               </a>
             </Link>
-            <Link href="#">
+            <Link href={t("read-minds-url")}>
               <a
+                target="_blank"
                 className={`h-8 w-4/12 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 hover:opacity-80 cursor-pointer`}
               >
                 {t("read-minds")}
@@ -155,8 +160,9 @@ const LandingFooter = ({
           </div>
 
           <div className="flex justify-between w-full font-alt text-theme-base-100 space-x-4">
-            <Link href="#">
+            <Link href={t("twitter-url")}>
               <a
+                target="_blank"
                 className={`h-8 w-1/2 md:w-1/3 ${tagsBg} ${tagsColor} flex items-center px-4 py-2 hover:opacity-80 cursor-pointer font-bold`}
               >
                 {t("follow-twitter")}

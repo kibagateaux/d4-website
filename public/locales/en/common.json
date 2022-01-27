@@ -8,6 +8,16 @@
   "developed-by": "Developed by Tutellus",
   "back-top": "Back to top",
   "rights-reserved": "All rights reserved",
+  "menu": {
+    "what-is-d4data": "What is D4DATA",
+    "d4-dao": "D4 DAO",
+    "data-token": "$DATA Token",
+    "news": "News"
+  },
+  "twitter-url": "https://twitter.com/d4data",
+  "discord-url": "https://discord.gg/d4data",
+  "buy-data-url": "https://buy-data.example",
+  "read-minds-url": "https://read-minds.example",
   "seo": {
     "title": "D4DATA",
     "description": "We show the Path of the Data",

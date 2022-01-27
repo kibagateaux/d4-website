@@ -58,6 +58,7 @@ export const SEOTags = (props: SEOTagsProps) => {
       <link rel="canonical" href={uri} />
 
       {Array.isArray(locales) &&
+        locales.length > 1 &&
         locales.map((lang) => {
           let langUri = `${baseUri}/${lang}${path}`;
           if (lang === defaultLocale) {
