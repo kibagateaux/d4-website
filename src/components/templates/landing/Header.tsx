@@ -8,6 +8,7 @@ import { Container } from "components/elements";
 import { ElementBounds } from "models";
 import { selectedItemHeaderAtom } from "./header-element.state";
 import HeaderMobileMenu from "./HeaderMobileMenu";
+import { AnimatedLink } from "components/modules";
 
 const LogoLink = ({ src }: { src: string }) => (
   <Link href="/">
@@ -53,7 +54,7 @@ const MenuLink = ({
   return (
     <div
       ref={linkRef}
-      className={`cursor-pointer hover:opacity-80 flex h-full items-center font-bold md:font-normal font-alt p-4 md:px-7 ${
+      className={`cursor-pointer hover:opacity-80 flex h-full items-center font-bold md:font-normal font-alt p-4 md:px-7 leading-none ${
         selected
           ? `${bgSelectedColor} ${textSelectedColor} selected-option-header`
           : textColor
@@ -131,6 +132,12 @@ const RRSSLinks = (props: any) => (
   </div>
 );
 
+const BuyDataLink = () => (
+  <div className="font-bold bg-theme-base-content text-theme-base-100 px-2 py-2 mx-4 leading-none">
+    <AnimatedLink text="Buy $DATA" tagColor="bg-theme-primary" href="#" />
+  </div>
+);
+
 interface LandingHeaderProps {
   logo?: string;
   bgColor?: string;
@@ -171,7 +178,10 @@ const LandingHeader = ({
             bgSelectedColor={bgSelectedColor}
             textSelectedColor={textSelectedColor}
           />
-          <RRSSLinks className="flex items-center space-x-4" />
+          <div className="flex items-center space-x-4">
+            <BuyDataLink />
+            <RRSSLinks className="flex items-center space-x-4" />
+          </div>
         </div>
       </Container>
 
@@ -201,7 +211,7 @@ const LandingHeader = ({
         onClose={handleMobileRightMenu}
       >
         <div className="flex h-full flex-col items-start justify-between px-4">
-          <nav className="mt-20 text-2xl">
+          <nav className="mt-20 text-2xl mb-8 grow flex flex-col items-start justify-between">
             <MenuLinks
               className="flex flex-col space-y-4 mt-8"
               onClick={handleMobileLeftMenu}
@@ -209,8 +219,10 @@ const LandingHeader = ({
               bgSelectedColor="bg-theme-primary"
               textSelectedColor="text-theme-primary-content"
             />
+
+            <BuyDataLink />
           </nav>
-          <div className="pl-10 pb-20 flex w-full">
+          <div className="pl-4 pb-20 flex w-full">
             <RRSSLinks
               className="grow flex justify-start space-x-8 py-8 border-t border-theme-primary"
               onClick={handleMobileRightMenu}

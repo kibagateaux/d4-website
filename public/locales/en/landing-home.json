@@ -2,7 +2,8 @@
   "landing-home": {
     "d4-dao": {
       "details": "Chainlink is a secret ingredient to unlocking the potential of smart contract platforms and revolutionizing business and society",
-      "header": "Following the path of data"
+      "header": "Following the path of data",
+      "title": "DAO"
     },
     "data-token": {
       "header": "Token",
