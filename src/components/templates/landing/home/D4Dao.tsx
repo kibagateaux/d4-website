@@ -78,6 +78,8 @@ const D4Dao = ({ t }: D4DaoProps) => {
               <source src="/images/d4-dao-home.webm" type="video/webm" />
             </video>
 
+            <div className="border-b border-theme-primary absolute bottom-48 mb-2 w-full z-10"></div>
+
             {/* Main content */}
             <div className="absolute max-w-2xl top-0 right-0">
               <div className="px-20 pt-40 flex-1">
