@@ -15,7 +15,10 @@ interface LandingHomeTemplateProps {
 export const LandingHomeTemplate = ({ t }: LandingHomeTemplateProps) => {
   return (
     <>
-      <Header />
+      <Header
+        bgColor="lg:bg-white lg:bg-opacity-50"
+        textColor="text-theme-base-content"
+      />
       <HeaderSection t={t} />
       <WhatIsD4Data t={t} />
       <D4Dao t={t} />

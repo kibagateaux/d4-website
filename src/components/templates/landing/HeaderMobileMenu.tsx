@@ -1,5 +1,3 @@
-import { XIcon } from "@heroicons/react/outline";
-
 interface LandingHeaderMobileMenuProps {
   children: React.ReactNode;
   onLeft?: boolean;

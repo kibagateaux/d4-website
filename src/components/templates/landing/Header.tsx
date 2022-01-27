@@ -159,7 +159,7 @@ const LandingHeader = ({
 
   return (
     <header
-      className={`sticky top-0 z-50 ${bgColor} ${textColor} bg-opacity-50`}
+      className={`fixed w-full lg:sticky top-0 z-50 ${bgColor} ${textColor} bg-opacity-50`}
     >
       <Container>
         {/* Desktop header */}
@@ -176,7 +176,7 @@ const LandingHeader = ({
       </Container>
 
       {/* Mobile header */}
-      <div className="flex items-center justify-between bg-transparent md:hidden top-0 w-full py-4">
+      <div className="flex items-center justify-between md:hidden top-0 w-full py-4">
         <Link href="/">
           <a className="bg-theme-primary text-theme-primary-content px-4 py-2 hover:opacity-80 z-50 cursor-pointer">
             <img src="/images/logo-symbol.svg" alt="" className="w-6" />

@@ -14,7 +14,7 @@ export const LandingD4DaoTemplate = ({ t }: LandingD4DaoTemplateProps) => {
     <Container className="pb-12">
       <Header
         logo="/images/logo-d4.svg"
-        bgColor="text-white"
+        bgColor="lg:bg-white lg:bg-opacity-50"
         textColor="text-black"
         bgSelectedColor="bg-black bg-opacity-70"
         textSelectedColor="text-white"

@@ -62,9 +62,9 @@ const Header = ({ t }: HeaderProps) => {
         </div>
 
         {/* Mobile */}
-        <div className="flex md:hidden w-full h-screen items-center -mt-12 -mb-12">
+        <div className="flex md:hidden w-full h-screen items-center">
           <div
-            className="w-full bg-no-repeat bg-cover bg-center mt-4 mb-12 max-w-4xl mx-auto relative"
+            className="w-full bg-no-repeat bg-cover bg-center my-12 max-w-4xl mx-auto relative"
             style={{
               backgroundImage: "url(/images/d4dao-tab-defi.gif)",
               boxShadow: "inset 0 0 0 1000px rgba(68,3,14,.7)",
