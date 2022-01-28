@@ -21,7 +21,7 @@ export const PostsGrid = ({ filter = {} }: PostsGridProps) => {
     router.replace({
       pathname: "/news",
       query: {
-        page: e.page + 1,
+        page: e.page,
         limit: e.rows,
       },
     });
@@ -37,7 +37,7 @@ export const PostsGrid = ({ filter = {} }: PostsGridProps) => {
           ))}
       </div>
       <Pagination
-        page={pagination?.page}
+        page={pagination?.page - 1}
         limit={pagination?.limit}
         total={pagination?.total}
         onPageChange={onPageChange}

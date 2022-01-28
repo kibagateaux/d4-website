@@ -10,7 +10,6 @@ interface PaginationProps {
 const template: any = {
   layout: "PrevPageLink NextPageLink",
   CurrentPageReport: (options: any) => {
-    
     return (
       <span
         style={{
@@ -30,13 +29,13 @@ const template: any = {
 export const Pagination = ({
   limit = 10,
   onPageChange,
-  page = 1,
+  page = 0,
   total = 0,
 }: PaginationProps) => (
   <>
     <PrimeReactPaginator
       template={template}
-      first={page}
+      first={page * limit}
       onPageChange={onPageChange}
       rows={limit}
       rowsPerPageOptions={[10, 20, 30]}
