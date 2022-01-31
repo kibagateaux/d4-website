@@ -16,6 +16,7 @@ const CarouselItemTemplate = ({
           key={source}
           controls={false}
           autoPlay
+          playsInline
           muted
           loop
           className="w-full object-cover"

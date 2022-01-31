@@ -48,6 +48,7 @@ const MainSection = ({ t }: MainSectionProps) => {
             <video
               controls={false}
               autoPlay
+              playsInline
               muted
               loop
               className="w-full h-full object-cover opacity-90"

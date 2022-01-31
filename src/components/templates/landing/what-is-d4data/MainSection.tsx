@@ -19,6 +19,7 @@ const ToggleData = [
         key="what-is-tab-data.mp4"
         controls={false}
         autoPlay
+        playsInline
         muted
         loop
         className="w-full object-cover"
@@ -35,6 +36,7 @@ const ToggleData = [
         key="what-is-tab-future.mp4"
         controls={false}
         autoPlay
+        playsInline
         muted
         loop
         className="w-full object-cover"
@@ -51,6 +53,7 @@ const ToggleData = [
         key="what-is-tab-people.mp4"
         controls={false}
         autoPlay
+        playsInline
         muted
         loop
         className="w-full object-cover"
@@ -84,6 +87,7 @@ const MainSection = ({ t }: MainSectionProps) => {
             <video
               controls={false}
               autoPlay
+              playsInline
               muted
               loop
               className="w-full h-full object-cover opacity-50"
@@ -223,6 +227,7 @@ const MainSection = ({ t }: MainSectionProps) => {
             <video
               controls={false}
               autoPlay
+              playsInline
               muted
               loop
               className="object-cover h-full w-full"
@@ -237,6 +242,7 @@ const MainSection = ({ t }: MainSectionProps) => {
             <video
               controls={false}
               autoPlay
+              playsInline
               muted
               loop
               className="object-cover h-full w-full"

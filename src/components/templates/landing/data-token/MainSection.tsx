@@ -61,6 +61,7 @@ const MainSection = ({ t }: MainSectionProps) => {
             <video
               controls={false}
               autoPlay
+              playsInline
               muted
               loop
               className="w-full h-full object-cover opacity-90"
@@ -153,6 +154,7 @@ const MainSection = ({ t }: MainSectionProps) => {
               key={ToggleData[toggleSelected].source}
               controls={false}
               autoPlay
+              playsInline
               muted
               loop
               className="w-full object-cover"

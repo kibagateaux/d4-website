@@ -90,6 +90,7 @@ const DataToken = ({ t }: DataTokenProps) => {
                   key={ToggleData[toggleSelected].source}
                   controls={false}
                   autoPlay
+                  playsInline
                   muted
                   loop
                   className="w-full object-cover"

@@ -60,6 +60,7 @@ const D4Dao = ({ t }: D4DaoProps) => {
           <video
             controls={false}
             autoPlay
+            playsInline
             muted
             loop
             className="w-full max-w-xl mx-auto"
@@ -78,7 +79,14 @@ const D4Dao = ({ t }: D4DaoProps) => {
         <Header t={t} />
         <div className="py-20">
           <div className="flex flex-col items-start relative">
-            <video controls={false} autoPlay muted loop className="max-w-2xl">
+            <video
+              controls={false}
+              autoPlay
+              playsInline
+              muted
+              loop
+              className="max-w-2xl"
+            >
               <source src="/images/d4-dao-home.mp4" type="video/mp4" />
             </video>
 
