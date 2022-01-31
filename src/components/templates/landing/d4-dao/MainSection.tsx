@@ -120,11 +120,17 @@ const MainSection = ({ t }: MainSectionProps) => {
           autoplayInterval={5000}
         ></Carousel>
         <div className="p-4">
-          <img
-            src="/images/d4dao-tab-defi.gif"
-            alt=""
+          <video
+            key="d4dao-tab-defi.mp4"
+            controls={false}
+            autoPlay
+            playsInline
+            muted
+            loop
             className="w-full object-cover"
-          />
+          >
+            <source src="/images/d4dao-tab-defi.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
 
@@ -156,11 +162,17 @@ const MainSection = ({ t }: MainSectionProps) => {
           </p>
         </div>
         <div className="grow max-w-lg w-full h-full">
-          <img
-            src="/images/d4dao-tab-defi.gif"
-            alt=""
+          <video
+            key="d4dao-tab-defi.mp4"
+            controls={false}
+            autoPlay
+            playsInline
+            muted
+            loop
             className="w-full object-cover"
-          />
+          >
+            <source src="/images/d4dao-tab-defi.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
 
