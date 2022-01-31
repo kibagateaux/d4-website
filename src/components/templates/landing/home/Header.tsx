@@ -58,7 +58,7 @@ const Header = ({ t }: HeaderProps) => {
                 {t("landing-home.header.title")}
               </p>
               <div
-                className="absolute -bottom-4 lg:bottom-0 left-32 lg:left-52 xl:left-64 cursor-pointer flex items-center justify-center"
+                className="absolute -bottom-4 lg:bottom-0 left-32 lg:left-52 xl:left-64 cursor-pointer flex items-center justify-center z-50"
                 onClick={() => {
                   setShowPlayer(true);
                 }}
@@ -113,7 +113,7 @@ const Header = ({ t }: HeaderProps) => {
                 {t("landing-home.header.title")}
               </p>
               <div
-                className="absolute bottom-0 sm:bottom-4 left-0 sm:left-8 cursor-pointer flex items-center justify-start"
+                className="absolute bottom-0 sm:bottom-4 left-0 sm:left-8 cursor-pointer flex items-center justify-start z-50"
                 onClick={() => {
                   setShowPlayer(true);
                 }}
@@ -137,7 +137,7 @@ const Header = ({ t }: HeaderProps) => {
       {/* video player */}
       {showPlayer && (
         <div
-          className="fixed w-full h-full bg-gray-900 bg-opacity-50 top-0 left-0 z-50 flex items-center justify-center"
+          className="fixed w-full h-full bg-gray-900 bg-opacity-50 top-0 left-0 flex items-center justify-center z-50"
           onClick={() => {
             setShowPlayer(false);
           }}
