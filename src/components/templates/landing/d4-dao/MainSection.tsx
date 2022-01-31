@@ -52,7 +52,7 @@ const MainSection = ({ t }: MainSectionProps) => {
               loop
               className="w-full h-full object-cover opacity-90"
             >
-              <source src="/images/d4dao-cover.webm" type="video/webm" />
+              <source src="/images/d4dao-cover.mp4" type="video/mp4" />
             </video>
           </div>
         </div>

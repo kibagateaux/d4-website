@@ -15,11 +15,16 @@ const ToggleData = [
     name: "landing-what-is-d4data.tg-1-name",
     details: "landing-what-is-d4data.tg-1-details",
     image: (
-      <img
-        src="/images/what-is-tab-data.gif"
-        alt=""
+      <video
+        key="what-is-tab-data.mp4"
+        controls={false}
+        autoPlay
+        muted
+        loop
         className="w-full object-cover"
-      />
+      >
+        <source src="/images/what-is-tab-data.mp4" type="video/mp4" />
+      </video>
     ),
   },
   {
@@ -27,14 +32,14 @@ const ToggleData = [
     details: "landing-what-is-d4data.tg-2-details",
     image: (
       <video
-        key="hand-glitch.webm"
+        key="what-is-tab-future.mp4"
         controls={false}
         autoPlay
         muted
         loop
         className="w-full object-cover"
       >
-        <source src="/images/hand-glitch.webm" type="video/webm" />
+        <source src="/images/what-is-tab-future.mp4" type="video/mp4" />
       </video>
     ),
   },
@@ -43,14 +48,14 @@ const ToggleData = [
     details: "landing-what-is-d4data.tg-3-details",
     image: (
       <video
-        key="what-is-tab-people.webm"
+        key="what-is-tab-people.mp4"
         controls={false}
         autoPlay
         muted
         loop
         className="w-full object-cover"
       >
-        <source src="/images/what-is-tab-people.webm" type="video/webm" />
+        <source src="/images/what-is-tab-people.mp4" type="video/mp4" />
       </video>
     ),
   },
@@ -84,8 +89,8 @@ const MainSection = ({ t }: MainSectionProps) => {
               className="w-full h-full object-cover opacity-50"
             >
               <source
-                src="/images/what-is-d4data-cover.webm"
-                type="video/webm"
+                src="/images/what-is-d4data-cover.mp4"
+                type="video/mp4"
               />
             </video>
           </div>
@@ -222,7 +227,7 @@ const MainSection = ({ t }: MainSectionProps) => {
               loop
               className="object-cover h-full w-full"
             >
-              <source src="/images/data-thomas-hepner.webm" type="video/webm" />
+              <source src="/images/data-thomas-hepner.mp4" type="video/mp4" />
             </video>
             <p className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12 z-20">
               {t("landing-what-is-d4data.name-1")}
@@ -236,7 +241,7 @@ const MainSection = ({ t }: MainSectionProps) => {
               loop
               className="object-cover h-full w-full"
             >
-              <source src="/images/data-kiba-gateaux.webm" type="video/webm" />
+              <source src="/images/data-kiba-gateaux.mp4" type="video/mp4" />
             </video>
             <p className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12">
               {t("landing-what-is-d4data.name-2")}

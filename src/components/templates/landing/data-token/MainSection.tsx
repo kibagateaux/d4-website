@@ -14,27 +14,27 @@ const ToggleData = [
   {
     name: "landing-data-token.tg-1-name",
     details: "landing-data-token.tg-1-details",
-    source: "/images/token-tab-simple.gif",
+    source: "/images/token-tab-simple.mp4",
   },
   {
     name: "landing-data-token.tg-2-name",
     details: "landing-data-token.tg-2-details",
-    source: "/images/token-tab-transparency.webm",
+    source: "/images/token-tab-transparency.mp4",
   },
   {
     name: "landing-data-token.tg-3-name",
     details: "landing-data-token.tg-3-details",
-    source: "/images/token-tab-efficient.webm",
+    source: "/images/token-tab-efficient.mp4",
   },
   {
     name: "landing-data-token.tg-4-name",
     details: "landing-data-token.tg-4-details",
-    source: "/images/token-tab-diversity.webm",
+    source: "/images/token-tab-diversity.mp4",
   },
   {
     name: "landing-data-token.tg-5-name",
     details: "landing-data-token.tg-5-details",
-    source: "/images/token-tab-unique.webm",
+    source: "/images/token-tab-unique.mp4",
   },
 ];
 
@@ -65,7 +65,7 @@ const MainSection = ({ t }: MainSectionProps) => {
               loop
               className="w-full h-full object-cover opacity-90"
             >
-              <source src="/images/token-cover.webm" type="video/webm" />
+              <source src="/images/token-cover.mp4" type="video/mp4" />
             </video>
           </div>
         </div>
@@ -148,7 +148,7 @@ const MainSection = ({ t }: MainSectionProps) => {
           </p>
         </div>
         <div className="grow max-w-lg w-full h-full">
-          {ToggleData[toggleSelected].source.indexOf("webm") >= 0 ? (
+          {ToggleData[toggleSelected].source.indexOf("mp4") >= 0 ? (
             <video
               key={ToggleData[toggleSelected].source}
               controls={false}
@@ -159,7 +159,7 @@ const MainSection = ({ t }: MainSectionProps) => {
             >
               <source
                 src={ToggleData[toggleSelected].source}
-                type="video/webm"
+                type="video/mp4"
               />
             </video>
           ) : (

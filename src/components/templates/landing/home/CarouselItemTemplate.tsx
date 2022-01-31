@@ -11,7 +11,7 @@ const CarouselItemTemplate = ({
 }: CarouselItemTemplateProps) => (
   <div className="w-full p-4">
     <div className="grow relative">
-      {source.indexOf("webm") >= 0 ? (
+      {source.indexOf("mp4") >= 0 ? (
         <video
           key={source}
           controls={false}
@@ -20,7 +20,7 @@ const CarouselItemTemplate = ({
           loop
           className="w-full object-cover"
         >
-          <source src={source} type="video/webm" />
+          <source src={source} type="video/mp4" />
         </video>
       ) : (
         <img src={source} alt="" className="w-full object-cover" />

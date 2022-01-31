@@ -10,27 +10,27 @@ const ToggleData = [
   {
     name: "landing-home.data-token.tg-1-name",
     details: "landing-home.data-token.tg-1-details",
-    source: "/images/token-tab-simple.gif",
+    source: "/images/token-tab-simple.mp4",
   },
   {
     name: "landing-home.data-token.tg-2-name",
     details: "landing-home.data-token.tg-2-details",
-    source: "/images/token-tab-transparency.webm",
+    source: "/images/token-tab-transparency.mp4",
   },
   {
     name: "landing-home.data-token.tg-3-name",
     details: "landing-home.data-token.tg-3-details",
-    source: "/images/token-tab-efficient.webm",
+    source: "/images/token-tab-efficient.mp4",
   },
   {
     name: "landing-home.data-token.tg-4-name",
     details: "landing-home.data-token.tg-4-details",
-    source: "/images/token-tab-diversity.webm",
+    source: "/images/token-tab-diversity.mp4",
   },
   {
     name: "landing-home.data-token.tg-5-name",
     details: "landing-home.data-token.tg-5-details",
-    source: "/images/token-tab-unique.webm",
+    source: "/images/token-tab-unique.mp4",
   },
 ];
 
@@ -85,7 +85,7 @@ const DataToken = ({ t }: DataTokenProps) => {
           <div className="flex items-center justify-end relative">
             <div className="border-b border-theme-base-content absolute bottom-72 -mb-4 w-full z-10"></div>
             <div className="max-w-sm xl:max-w-lg flex justify-end items-center h-screen">
-              {ToggleData[toggleSelected].source.indexOf("webm") >= 0 ? (
+              {ToggleData[toggleSelected].source.indexOf("mp4") >= 0 ? (
                 <video
                   key={ToggleData[toggleSelected].source}
                   controls={false}
@@ -96,7 +96,7 @@ const DataToken = ({ t }: DataTokenProps) => {
                 >
                   <source
                     src={ToggleData[toggleSelected].source}
-                    type="video/webm"
+                    type="video/mp4"
                   />
                 </video>
               ) : (
