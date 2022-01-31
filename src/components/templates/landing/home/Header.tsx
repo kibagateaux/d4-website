@@ -24,11 +24,11 @@ const Header = ({ t }: HeaderProps) => {
   return (
     <section
       id="top"
-      className="bg-theme-base-100 text-theme-base-content md:pt-4"
+      className="bg-theme-base-100 text-theme-base-content"
     >
-      <Container>
+      <Container className="h-screen">
         {/* Desktop */}
-        <div className="hidden md:flex items-center justify-center my-20 max-w-6xl w-full mx-auto overflow-hidden relative">
+        <div className="hidden md:flex items-center justify-center max-w-6xl w-full h-full mx-auto overflow-hidden relative -mt-16">
           {/* Background */}
           <div className="absolute w-full h-full top-0 left-0 z-0">
             <video
@@ -45,10 +45,11 @@ const Header = ({ t }: HeaderProps) => {
           </div>
 
           {/* Content */}
-          <div className="z-20 bg-red-900 bg-opacity-50 relative">
+          <div className="z-20 bg-red-900 bg-opacity-50 relative h-full flex flex-col">
             <div className="absolute w-full h-full top-0 left-0 border-4 z-30 border-white"></div>
-            <img className="w-full" src="/images/header-desktop-1.svg" alt="" />
-            <div className="relative">
+            <div className="grow bg-white w-full pb-16"></div>
+            <img className="w-full flex-none" src="/images/header-desktop-1.svg" alt="" />
+            <div className="relative flex-none">
               <img
                 className="w-full -mt-1"
                 src="/images/header-desktop-2.svg"
@@ -70,10 +71,11 @@ const Header = ({ t }: HeaderProps) => {
               </div>
             </div>
             <img
-              className="w-full -mt-1"
+              className="w-full flex-none -mt-1"
               src="/images/header-desktop-3.svg"
               alt=""
             />
+            <div className="grow bg-white w-full"></div>
           </div>
         </div>
 
