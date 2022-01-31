@@ -10,27 +10,27 @@ const ToggleData = [
   {
     name: "landing-home.data-token.tg-1-name",
     details: "landing-home.data-token.tg-1-details",
-    source: "/images/token-tab-simple.mp4",
+    source: "/images/token-tab-simple__.mp4",
   },
   {
     name: "landing-home.data-token.tg-2-name",
     details: "landing-home.data-token.tg-2-details",
-    source: "/images/token-tab-transparency.mp4",
+    source: "/images/token-tab-transparency__.mp4",
   },
   {
     name: "landing-home.data-token.tg-3-name",
     details: "landing-home.data-token.tg-3-details",
-    source: "/images/token-tab-efficient.mp4",
+    source: "/images/token-tab-efficient__.mp4",
   },
   {
     name: "landing-home.data-token.tg-4-name",
     details: "landing-home.data-token.tg-4-details",
-    source: "/images/token-tab-diversity.mp4",
+    source: "/images/token-tab-diversity__.mp4",
   },
   {
     name: "landing-home.data-token.tg-5-name",
     details: "landing-home.data-token.tg-5-details",
-    source: "/images/token-tab-unique.mp4",
+    source: "/images/token-tab-unique__.mp4",
   },
 ];
 

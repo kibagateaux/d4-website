@@ -62,6 +62,7 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
           style={{ backgroundColor: "#000" }}
         >
           <video
+            key="what-is-tab-people.mp4"
             controls={false}
             autoPlay
             playsInline
@@ -69,7 +70,7 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
             loop
             className="w-full z-0"
           >
-            <source src="/images/what-is-tab-people.mp4" type="video/mp4" />
+            <source src="/images/what-is-tab-people__.mp4" type="video/mp4" />
           </video>
           <div className="flex items-center justify-end absolute w-full bottom-0 space-x-4 px-4 mb-24">
             <p className="text-3xl text-center w-44">
@@ -110,6 +111,7 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
             {/* Main content */}
             <div className="w-full py-12 relative flex justify-end">
               <video
+                key="what-is-tab-people.mp4"
                 controls={false}
                 autoPlay
                 playsInline
@@ -117,7 +119,10 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
                 loop
                 className="max-w-sm z-0"
               >
-                <source src="/images/what-is-tab-people.mp4" type="video/mp4" />
+                <source
+                  src="/images/what-is-tab-people__.mp4"
+                  type="video/mp4"
+                />
               </video>
 
               <div className="flex items-center justify-end absolute w-full bottom-0 space-x-4 px-4 mb-24">

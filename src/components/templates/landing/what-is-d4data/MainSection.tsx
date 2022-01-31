@@ -24,7 +24,7 @@ const ToggleData = [
         loop
         className="w-full object-cover"
       >
-        <source src="/images/what-is-tab-data.mp4" type="video/mp4" />
+        <source src="/images/what-is-tab-data__.mp4" type="video/mp4" />
       </video>
     ),
   },
@@ -41,7 +41,7 @@ const ToggleData = [
         loop
         className="w-full object-cover"
       >
-        <source src="/images/what-is-tab-future.mp4" type="video/mp4" />
+        <source src="/images/what-is-tab-future__.mp4" type="video/mp4" />
       </video>
     ),
   },
@@ -58,7 +58,7 @@ const ToggleData = [
         loop
         className="w-full object-cover"
       >
-        <source src="/images/what-is-tab-people.mp4" type="video/mp4" />
+        <source src="/images/what-is-tab-people__.mp4" type="video/mp4" />
       </video>
     ),
   },
@@ -93,7 +93,7 @@ const MainSection = ({ t }: MainSectionProps) => {
               className="w-full h-full object-cover opacity-50"
             >
               <source
-                src="/images/what-is-d4data-cover.mp4"
+                src="/images/what-is-d4data-cover__.mp4"
                 type="video/mp4"
               />
             </video>
@@ -232,7 +232,7 @@ const MainSection = ({ t }: MainSectionProps) => {
               loop
               className="object-cover h-full w-full"
             >
-              <source src="/images/data-thomas-hepner.mp4" type="video/mp4" />
+              <source src="/images/data-thomas-hepner__.mp4" type="video/mp4" />
             </video>
             <p className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12 z-20">
               {t("landing-what-is-d4data.name-1")}
@@ -247,7 +247,7 @@ const MainSection = ({ t }: MainSectionProps) => {
               loop
               className="object-cover h-full w-full"
             >
-              <source src="/images/data-kiba-gateaux.mp4" type="video/mp4" />
+              <source src="/images/data-kiba-gateaux__.mp4" type="video/mp4" />
             </video>
             <p className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12">
               {t("landing-what-is-d4data.name-2")}

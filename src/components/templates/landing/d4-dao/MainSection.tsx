@@ -53,7 +53,7 @@ const MainSection = ({ t }: MainSectionProps) => {
               loop
               className="w-full h-full object-cover opacity-90"
             >
-              <source src="/images/d4dao-cover.mp4" type="video/mp4" />
+              <source src="/images/d4dao-cover__.mp4" type="video/mp4" />
             </video>
           </div>
         </div>
@@ -129,7 +129,7 @@ const MainSection = ({ t }: MainSectionProps) => {
             loop
             className="w-full object-cover"
           >
-            <source src="/images/d4dao-tab-defi.mp4" type="video/mp4" />
+            <source src="/images/d4dao-tab-defi__.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -171,7 +171,7 @@ const MainSection = ({ t }: MainSectionProps) => {
             loop
             className="w-full object-cover"
           >
-            <source src="/images/d4dao-tab-defi.mp4" type="video/mp4" />
+            <source src="/images/d4dao-tab-defi__.mp4" type="video/mp4" />
           </video>
         </div>
       </div>

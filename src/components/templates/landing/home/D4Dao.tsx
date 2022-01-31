@@ -65,7 +65,7 @@ const D4Dao = ({ t }: D4DaoProps) => {
             loop
             className="w-full max-w-xl mx-auto"
           >
-            <source src="/images/d4-dao-home.mp4" type="video/mp4" />
+            <source src="/images/d4-dao-home__.mp4" type="video/mp4" />
           </video>
         </div>
 
@@ -87,7 +87,7 @@ const D4Dao = ({ t }: D4DaoProps) => {
               loop
               className="max-w-2xl"
             >
-              <source src="/images/d4-dao-home.mp4" type="video/mp4" />
+              <source src="/images/d4-dao-home__.mp4" type="video/mp4" />
             </video>
 
             <div className="border-b border-theme-primary absolute bottom-48 mb-2 w-full z-10"></div>

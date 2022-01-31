@@ -40,7 +40,7 @@ const Header = ({ t }: HeaderProps) => {
               loop
               className="w-full h-full object-cover"
             >
-              <source src="/images/d4dao-tab-defi.mp4" type="video/mp4" />
+              <source src="/images/d4dao-tab-defi__.mp4" type="video/mp4" />
             </video>
           </div>
 
@@ -90,7 +90,7 @@ const Header = ({ t }: HeaderProps) => {
               loop
               className="w-full h-full object-cover"
             >
-              <source src="/images/d4dao-tab-defi.mp4" type="video/mp4" />
+              <source src="/images/d4dao-tab-defi__.mp4" type="video/mp4" />
             </video>
           </div>
 
