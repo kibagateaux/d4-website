@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { RecoilRoot } from "recoil";
+
+import { Analytics } from "components/elements";
 import { LandingLayout } from "./Landing/LandingLayout";
 
 export enum LayoutTypes {
@@ -33,6 +35,7 @@ const renderWithLayout = ({
 
 export const Layout = ({ name, bgColor, textColor, children }: LayoutProps) => (
   <RecoilRoot>
+    <Analytics trackerId={process.env.NEXT_PUBLIC_GA || ''} />
     <Head>
       <meta charSet="utf-8" />
       <meta content="text/html;charset=utf-8" httpEquiv="Content-Type" />
