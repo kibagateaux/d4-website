@@ -52,6 +52,12 @@ const MenuLink = ({
     setTimeout(() => getSelectedLinkSize(), 0);
   }, [linkRef.current]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      getSelectedLinkSize();
+    }, 100);
+  }, []);
+
   return (
     <div
       ref={linkRef}
@@ -119,18 +125,32 @@ const MenuLinks = ({
   );
 };
 
-const RRSSLinks = ({ t, ...props }: any) => (
-  <div {...props}>
-    <Link href={t("twitter-url")}>
-      <a target="_blank">
-        <img src="/images/twitter.svg" alt="Twitter" className="h-6" />
-      </a>
-    </Link>
-    <Link href={t("discord-url")}>
-      <a target="_blank">
-        <img src="/images/discord.svg" alt="Twitter" className="h-6" />
-      </a>
-    </Link>
+const RRSSLinks = ({ t, lightIcons, ...props }: any) => (
+  <div className="w-16">
+    <div {...props}>
+      <Link href={t("twitter-url")}>
+        <a target="_blank">
+          <img
+            src={
+              lightIcons ? "/images/twitter-light.svg" : "/images/twitter.svg"
+            }
+            alt="Twitter"
+            className="h-6"
+          />
+        </a>
+      </Link>
+      <Link href={t("discord-url")}>
+        <a target="_blank">
+          <img
+            src={
+              lightIcons ? "/images/discord-light.svg" : "/images/discord.svg"
+            }
+            alt="Discord"
+            className="h-6"
+          />
+        </a>
+      </Link>
+    </div>
   </div>
 );
 
@@ -190,7 +210,11 @@ const LandingHeader = ({
           />
           <div className="flex items-center space-x-4">
             <BuyDataLink t={t} />
-            <RRSSLinks className="flex items-center space-x-4" t={t} />
+            <RRSSLinks
+              className="flex items-center space-x-4"
+              lightIcons={bgColor.indexOf("black") >= 0}
+              t={t}
+            />
           </div>
         </div>
       </Container>
@@ -236,6 +260,7 @@ const LandingHeader = ({
           <div className="pl-4 pb-20 flex w-full">
             <RRSSLinks
               t={t}
+              lightIcons={false}
               className="grow flex justify-start space-x-8 py-8 border-t border-theme-primary"
               onClick={handleMobileRightMenu}
             />
