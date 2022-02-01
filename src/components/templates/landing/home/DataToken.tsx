@@ -111,7 +111,7 @@ const DataToken = ({ t }: DataTokenProps) => {
               )}
             </div>
 
-            <div className="absolute left-0 top-40 flex flex-col max-w-2xl">
+            <div className="absolute left-0 top-40 flex flex-col max-w-2xl xl:max-w-4xl">
               <div className="px-12 pb-20">
                 <Header t={t} />
 
@@ -124,7 +124,7 @@ const DataToken = ({ t }: DataTokenProps) => {
                     text={ToggleData.map((data) => t(data.name))}
                     onClick={(selected: number) => setToggleSelected(selected)}
                   />
-                  <div className="px-12 text-2xl py-8 flex-1 max-w-xl 2xl:max-w-xl">
+                  <div className="px-4 text-3xl py-8 flex-1">
                     {t(ToggleData[toggleSelected].details)}
                   </div>
                 </div>
