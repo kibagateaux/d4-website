@@ -195,7 +195,7 @@ const LandingHeader = ({
 
   return (
     <header
-      className={`fixed w-full lg:sticky top-0 z-50 ${bgColor} ${textColor} bg-opacity-50`}
+      className={`fixed w-full h-16 top-0 z-50 ${bgColor} ${textColor} bg-opacity-50`}
     >
       <Container>
         {/* Desktop header */}

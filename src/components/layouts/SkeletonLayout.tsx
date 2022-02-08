@@ -29,7 +29,9 @@ export const SkeletonLayout = ({
   };
 
   return (
-    <div className={`h-screen flex overflow-hidden ${bgColor} ${textColor}`}>
+    <div
+      className={`min-h-screen flex overflow-hidden ${bgColor} ${textColor}`}
+    >
       {/* Menu */}
       {menu && (
         <>
@@ -87,7 +89,7 @@ export const SkeletonLayout = ({
 
       <div className="flex flex-col w-0 flex-1 overflow-hidden">
         <>{header}</>
-        <main className="flex-1 relative overflow-y-auto focus:outline-none">
+        <main className="flex-1 relative overflow-y-auto lg:mt-16 focus:outline-none">
           {children}
         </main>
         <>{footer}</>
