@@ -67,7 +67,7 @@ const News = () => {
       className="bg-theme-base-100 text-theme-base-content py-20 px-4"
     >
       <Container>
-        <p className="text-7xl md:text-9xl font-alt font-bold">News</p>
+        <p className="text-7xl md:text-9xl font-alt font-bold">Blog</p>
 
         {/* Mobile version */}
         <div className="block md:hidden space-y-16">

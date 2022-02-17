@@ -36,7 +36,7 @@ const ToggleData = [
 
 const Header = ({ t }: { t: TFunction }) => (
   <div className="flex flex-col lg:flex-row items-center space-y-8 lg:space-x-8 mb-12 z-10">
-    <img src="/images/token-data-logo.svg" alt="" className="w-20 lg:w-24" />
+    <img src="/images/logo_alt.svg" alt="" className="w-20 lg:w-24" />
     <p className="text-white text-3xl lg:text-6xl">
       {t("landing-home.data-token.header")}
     </p>
@@ -59,7 +59,7 @@ const DataToken = ({ t }: DataTokenProps) => {
         {/* Mobile view */}
         <div className="flex flex-col justify-center lg:hidden max-w-sm mx-auto">
           <img
-            src="/images/token-data-logo.svg"
+            src="/images/logo_alt.svg"
             alt=""
             className="w-20 mx-auto"
           />
