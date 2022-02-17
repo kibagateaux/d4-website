@@ -2,6 +2,7 @@ import { AnimatedLink } from "components/modules";
 import { TFunction } from "next-i18next";
 import { useRecoilState } from "recoil";
 import { useState } from "react";
+import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
 import { Carousel } from "components/elements";
@@ -234,9 +235,14 @@ const MainSection = ({ t }: MainSectionProps) => {
             >
               <source src="/images/data-thomas-hepner__.mp4" type="video/mp4" />
             </video>
-            <p className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12 z-20">
-              {t("landing-what-is-d4data.name-1")}
-            </p>
+            <Link href={t("landing-what-is-d4data.name-1-twitter-url")}>
+              <a
+                target="_blank"
+                className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12 z-20"
+              >
+                {t("landing-what-is-d4data.name-1")}
+              </a>
+            </Link>
           </div>
           <div className="flex flex-col items-end place-self-center md:place-self-end max-w-xs relative">
             <video
@@ -249,9 +255,14 @@ const MainSection = ({ t }: MainSectionProps) => {
             >
               <source src="/images/data-kiba-gateaux__.mp4" type="video/mp4" />
             </video>
-            <p className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12">
-              {t("landing-what-is-d4data.name-2")}
-            </p>
+            <Link href={t("landing-what-is-d4data.name-2-twitter-url")}>
+              <a
+                target="_blank"
+                className="md:absolute md:bottom-0 md:right-0 text-xl md:text-3xl md:mb-5 md:-mr-12"
+              >
+                {t("landing-what-is-d4data.name-2")}
+              </a>
+            </Link>
           </div>
         </div>
       </div>
