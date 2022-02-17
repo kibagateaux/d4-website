@@ -15,14 +15,6 @@ const ToggleData = [
     name: "landing-d4-dao.tg-1-name",
     details: "landing-d4-dao.tg-1-details",
   },
-  {
-    name: "landing-d4-dao.tg-2-name",
-    details: "landing-d4-dao.tg-2-details",
-  },
-  {
-    name: "landing-d4-dao.tg-3-name",
-    details: "landing-d4-dao.tg-3-details",
-  },
 ];
 
 interface MainSectionProps {
@@ -30,7 +22,7 @@ interface MainSectionProps {
 }
 
 const MainSection = ({ t }: MainSectionProps) => {
-  const [toggleSelected, setToggleSelected] = useState(1);
+  const [toggleSelected, setToggleSelected] = useState(0);
   const [selectedItem] = useRecoilState<ElementBounds | null>(
     selectedItemHeaderAtom
   );
