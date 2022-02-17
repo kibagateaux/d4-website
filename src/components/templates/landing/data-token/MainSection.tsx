@@ -198,9 +198,17 @@ const MainSection = ({ t }: MainSectionProps) => {
             <h2 className="text-4xl font-bold font-alt mb-12">
               {t("landing-data-token.description-2-title")}
             </h2>
-            <p className="text-2xl md:text-3xl md:pl-20">
-              {t("landing-data-token.description-2-details")}
-            </p>
+            <div className="flex flex-col w-full items-start space-y-16 md:pl-20">
+              <p className="text-2xl md:text-3xl">
+                {t("landing-data-token.description-2-details")}
+              </p>
+              <AnimatedLink
+                text="discover more"
+                target="_blank"
+                href={t("landing-data-token.description-url")}
+                tagColor="bg-black"
+              />
+            </div>
           </div>
         </div>
       </div>

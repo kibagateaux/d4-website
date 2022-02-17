@@ -2,10 +2,11 @@
   "landing-data-token": {
     "title": "$DATA Token",
     "marquee-1": "DATA Index",
-    "marquee-2": "Always be Proud and Learning",
-    "description": "The Methodology is on this page under Token Inclusion Critieria, Index Weight Calculation, and Index Maintenance",
+    "marquee-2": "DATA Index",
+    "description": "Cultivate a more open, secure, and equitable internet where everyone, including robots, are equals when facing opportunities in Web3",
     "description-2-title": "Data-based Protocol",
-    "description-2-details": "An independent security audit should have been performed on the protocol and results reviewed by the product methodologist. In the case that no audit has been performed, the methodologist applies subjective judgement of the protocol based on assessment of the criteria above and communications with the team",
+    "description-2-details": "The Methodology is on this page under Token Inclusion Critieria, Index Weight Calculation, and Index Maintenance",
+    "description-url": "https://blog.titansofdata.org/investing-in-the-future-of-the-data-economy/",
     "tg-1-name": "Simplicity",
     "tg-1-details": "DATA is a convenient way for investors to gain exposure in a single ERC-20 token without having to constantly research and rebalance a portfolio.",
     "tg-2-name": "Uniqueness",
@@ -18,7 +19,7 @@
     "tg-5-details": "The index follows a transparent methodology to assess tokens for inclusion and removal.",
     "seo": {
       "title": "$DATA Token",
-      "description": "The Methodology is on this page under Token Inclusion Critieria, Index Weight Calculation, and Index Maintenance",
+      "description": "Cultivate a more open, secure, and equitable internet where everyone, including robots, are equals when facing opportunities in Web3",
       "keywords": "",
       "image": "",
       "author": "",
