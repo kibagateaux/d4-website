@@ -16,7 +16,6 @@ export const LandingHomeTemplate = ({ t }: LandingHomeTemplateProps) => {
   return (
     <>
       <Header
-        logo="/images/logo_alt.svg"
         bgColor="lg:bg-white lg:bg-opacity-50"
         textColor="text-theme-base-content"
       />
