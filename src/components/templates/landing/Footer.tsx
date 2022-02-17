@@ -61,9 +61,8 @@ const LandingFooter = ({
           <div className={`h-8 w-9/12 ${tagsBg}`}></div>
           <div className={`h-8 w-full ${tagsBg}`}></div>
 
-          <Link href={t("read-minds-url")}>
+          <Link href="/news">
             <a
-              target="_blank"
               className={`h-8 w-5/6 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 hover:opacity-80 cursor-pointer mr-12 font-bold`}
             >
               {t("read-minds")}
@@ -141,9 +140,8 @@ const LandingFooter = ({
                 {t("join-discord")}
               </a>
             </Link>
-            <Link href={t("read-minds-url")}>
+            <Link href="/news">
               <a
-                target="_blank"
                 className={`h-8 w-4/12 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 hover:opacity-80 cursor-pointer`}
               >
                 {t("read-minds")}
@@ -178,16 +176,21 @@ const LandingFooter = ({
           <div className="flex justify-between w-full font-alt text-theme-base-100">
             <div className={`h-8 md:w-2/5 ${tagsBg}`}></div>
             <div className="flex space-x-4 w-full md:w-2/5">
-              <div
+            <Link href={t("floc-url")}>
+              <a
+              target="_blank"
                 className={`h-8 w-1/2 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 leading-none`}
               >
                 {t("designed-by")}
-              </div>
-              <div
+              </a>
+              </Link>
+              <Link href={t("tutellus-url")}>
+              <a target="_blank"
                 className={`h-8 w-1/2 ${tagsBg} ${tagsColor} flex items-center justify-end px-4 py-2 leading-none`}
               >
                 {t("developed-by")}
-              </div>
+              </a>
+              </Link>
             </div>
           </div>
         </Container>

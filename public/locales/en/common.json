@@ -14,10 +14,11 @@
     "data-token": "$DATA Token",
     "news": "News"
   },
-  "twitter-url": "https://twitter.com/d4data",
-  "discord-url": "https://discord.gg/d4data",
-  "buy-data-url": "https://buy-data.example",
-  "read-minds-url": "https://read-minds.example",
+  "twitter-url": "https://twitter.com/DATA_Index",
+  "discord-url": "https://discord.gg/3r7n6rtGNv",
+  "buy-data-url": "https://app.indexcoop.com/data",
+  "floc-url": "https://wearefloc.com/en",
+  "tutellus-url": "https://www.tutellus.com/",
   "seo": {
     "title": "D4DATA",
     "description": "We show the Path of the Data",
