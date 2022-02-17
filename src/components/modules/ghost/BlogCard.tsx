@@ -31,7 +31,7 @@ export const BlogCard = ({
       <Link passHref as={urlAs} href={urlHref}>
         <a>
           {feature_image && (
-            <div className="w-full h-72 lg:h-96">
+            <div className="w-full h-auto">
               <img
                 alt={title}
                 src={feature_image}

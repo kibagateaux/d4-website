@@ -1,6 +1,6 @@
 export default function PostTitle({
   title,
-  fontSize = "text-3xl lg:text-7xl",
+  fontSize = "text-3xl lg:text-5xl",
   padding = "mb-2 lg:mb-4 p-2 lg:p-4",
 }: {
   title: string;
