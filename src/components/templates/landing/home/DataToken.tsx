@@ -83,8 +83,8 @@ const DataToken = ({ t }: DataTokenProps) => {
         {/* Desktop view */}
         <div className="hidden lg:block">
           <div className="flex items-center justify-end relative">
-            <div className="border-b border-theme-base-content absolute bottom-72 -mb-4 w-full z-10"></div>
-            <div className="max-w-sm xl:max-w-lg flex justify-end items-center h-screen">
+            <div className="border-b border-theme-base-content absolute bottom-64 -mb-4 w-full z-10"></div>
+            <div className="max-w-sm xl:max-w-md flex justify-end items-center h-screen">
               {ToggleData[toggleSelected].source.indexOf("mp4") >= 0 ? (
                 <video
                   key={ToggleData[toggleSelected].source}
@@ -116,7 +116,7 @@ const DataToken = ({ t }: DataTokenProps) => {
                 <Header t={t} />
 
                 {/* Main content */}
-                <div className="flex items-end space-x-8">
+                <div className="flex items-end space-x-4">
                   <ToggleBoxes
                     bgColor="bg-theme-base-content"
                     textColor="text-theme-base-100"
@@ -124,7 +124,7 @@ const DataToken = ({ t }: DataTokenProps) => {
                     text={ToggleData.map((data) => t(data.name))}
                     onClick={(selected: number) => setToggleSelected(selected)}
                   />
-                  <div className="px-4 text-3xl py-8 flex-1">
+                  <div className="px-8 text-3xl py-8 flex-1">
                     {t(ToggleData[toggleSelected].details)}
                   </div>
                 </div>

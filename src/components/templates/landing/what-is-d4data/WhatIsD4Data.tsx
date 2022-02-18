@@ -13,7 +13,7 @@ export const LandingWhatIsD4DataTemplate = ({
   t,
 }: LandingWhatIsD4DataTemplateProps) => {
   return (
-    <Container className="pb-12">
+    <>
       <Header
         logo="/images/logo-wid.svg"
         bgColor="bg-black bg-opacity-70"
@@ -25,6 +25,6 @@ export const LandingWhatIsD4DataTemplate = ({
         tagsColor="text-theme-primary-content"
         topTextColor="text-theme-base-100"
       />
-    </Container>
+    </>
   );
 };

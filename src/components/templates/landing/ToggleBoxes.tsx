@@ -9,7 +9,7 @@ const ToggleBoxSelected = ({
 }) => (
   <div
     className="flex flex-col"
-    style={{ width: `${(children.length + 5) * 15}px` }}
+    style={{ width: `${(children.length + 10) * 10}px` }}
   >
     <div className={`text-right ${bgColor} ${textColor} text-3xl px-2 py-1`}>
       {children}
@@ -43,7 +43,7 @@ const ToggleBoxes = ({
           ) : (
             <div
               className={`h-6 ${bgColor} hover:opacity-80 cursor-pointer`}
-              style={{ width: `${(t.length + 5) * 15}px` }}
+              style={{ width: `${(t.length + 10) * 10}px` }}
               onClick={() => onClick(index)}
             ></div>
           )}

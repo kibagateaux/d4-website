@@ -11,7 +11,7 @@ interface LandingD4DaoTemplateProps {
 
 export const LandingD4DaoTemplate = ({ t }: LandingD4DaoTemplateProps) => {
   return (
-    <Container className="pb-12">
+    <>
       <Header
         logo="/images/logo-d4.svg"
         bgColor="lg:bg-white lg:bg-opacity-50"
@@ -25,6 +25,6 @@ export const LandingD4DaoTemplate = ({ t }: LandingD4DaoTemplateProps) => {
         tagsColor="text-theme-primary"
         topTextColor="text-theme-primary"
       />
-    </Container>
+    </>
   );
 };

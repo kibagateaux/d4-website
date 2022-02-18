@@ -13,7 +13,7 @@ export const LandingDataTokenTemplate = ({
   t,
 }: LandingDataTokenTemplateProps) => {
   return (
-    <Container className="pb-12">
+    <>
       <Header
         logo="/images/logo-dt.svg"
         bgColor="text-black"
@@ -26,6 +26,6 @@ export const LandingDataTokenTemplate = ({
         tagsBg="bg-theme-primary-content"
         tagsColor="text-theme-primary"
       />
-    </Container>
+    </>
   );
 };

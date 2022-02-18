@@ -78,7 +78,7 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
             </p>
             <div className="bg-theme-primary text-white py-3 text-2xl font-alt font-bold flex items-center justify-center w-44">
               <TypeAnimation
-                text={[t("landing-home.what-is.slogan-2"), "Other", "Another"]}
+                text={[t("landing-home.what-is.slogan-2"), t("landing-home.what-is.slogan-3"), t("landing-home.what-is.slogan-4")]}
               />
             </div>
           </div>
@@ -131,8 +131,8 @@ const WhatIsD4Data = ({ t }: WhatIsD4DataProps) => {
                   <TypeAnimation
                     text={[
                       t("landing-home.what-is.slogan-2"),
-                      "Other",
-                      "Another",
+                      t("landing-home.what-is.slogan-3"),
+                      t("landing-home.what-is.slogan-4"),
                     ]}
                   />
                 </div>
