@@ -174,7 +174,7 @@ interface LandingHeaderProps {
 }
 
 const LandingHeader = ({
-  logo = "/images/logo.svg",
+  logo = "/images/logo-d4.svg",
   bgColor = "bg-white",
   textColor = "text-theme-base-content",
   bgSelectedColor = "bg-theme-primary",
