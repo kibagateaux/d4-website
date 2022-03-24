@@ -35,12 +35,15 @@ const renderWithLayout = ({
 
 export const Layout = ({ name, bgColor, textColor, children }: LayoutProps) => (
   <RecoilRoot>
-    <Analytics trackerId={process.env.NEXT_PUBLIC_GA || ''} />
+    <Analytics trackerId={process.env.NEXT_PUBLIC_GA || ""} />
     <Head>
       <meta charSet="utf-8" />
       <meta content="text/html;charset=utf-8" httpEquiv="Content-Type" />
       <meta content="utf-8" httpEquiv="encoding" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta
+        name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+      />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
     </Head>
     <div data-theme="d4data">
