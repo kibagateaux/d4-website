@@ -39,19 +39,25 @@
 
 @font-face {
     font-family: GT-America;
-    src: url("/fonts/GT-America/GT-America-Extended-Light.otf") format("opentype");
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: GT-America;
     src: url("/fonts/GT-America/GT-America-Light.otf") format("opentype");
     font-weight: 200;
 }
 
 @font-face {
     font-family: GT-America;
-    font-weight: bold;
+    src: url("/fonts/GT-America/GT-America-Extended-Light.otf") format("opentype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: GT-America;
+    src: url("/fonts/GT-America/GT-America-Medium.otf") format("opentype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: GT-America;
+    font-weight: 600;
     src: url("/fonts/GT-America/GT-America-Extended-Black.otf") format("opentype");
 }
 
