@@ -10,7 +10,7 @@ interface ListItemsProps {
 
 const ListItems = ({ description, content }: ListItemsProps) => (
   <>
-    <div className="bg-theme-base-100 px-8 py-8 u-text-format">
+    <div className="bg-theme-base-100 p-4 lg:p-8 u-text-format">
       {description && (
         <div
           dangerouslySetInnerHTML={{
