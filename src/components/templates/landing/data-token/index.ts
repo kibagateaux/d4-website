@@ -1,1 +1,1 @@
-export * from "./DataToken";
+export { default as LandingDataTokenTemplate } from "./DataToken";

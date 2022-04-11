@@ -222,8 +222,8 @@ const LandingHeader = ({
       {/* Mobile header */}
       <div className="flex items-center justify-between md:hidden top-0 w-full py-4">
         <Link href="/">
-          <a className="bg-theme-primary text-theme-primary-content px-4 py-2 hover:opacity-80 z-50 cursor-pointer">
-            <img src="/images/logo-symbol.svg" alt="" className="w-6" />
+          <a className="bg-theme-primary text-theme-primary-content px-4 py-3 -mt-1 hover:opacity-80 z-50 cursor-pointer">
+            <img src="/images/logo-d4.svg" alt="" className="w-12" />
           </a>
         </Link>
         <div

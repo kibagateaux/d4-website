@@ -17,6 +17,64 @@
     "tg-4-details": "The volatility of individual tokens is offset by holding an index and quarterly rebalances prevent overconcentration.",
     "tg-5-name": "Transparency",
     "tg-5-details": "The index follows a transparent methodology to assess tokens for inclusion and removal.",
+    "section-desc": {
+      "title": "Objective",
+      "description-1": "The Data Economy Index (DATA) is a digital asset index capturing the growth of data economies with significant economic activity.",
+      "description-2": "The DATA index is data centric and chain agnostic. DATA includes tokens from blockchain that provides data-based products or services."
+    },
+    "faqs": [
+      {
+        "name": "Token Inclusion Criteria",
+        "questions": [
+          {
+            "title": "Data-based Protocol:",
+            "details": "The protocol provides data-based services or products."
+          },
+          {
+            "title": "Ethereum Token:",
+            "details": "The token must be available on the Ethereum blockchain. This will be revised if the Set Protocol infrastructure becomes multi-chain."
+          },
+          {
+            "title": "Organic Network Activity or Usage:",
+            "details": "Protocol must have organic network activity or usage. On-chain transaction volume, Total Value Locked (TVL), and/or revenue paid to service providers are all examples of metrics that can be used to demonstrate organic network activity."
+          },
+          {
+            "title": "Market Capitalization:",
+            "details": "Circulating market capitalization must be over $100m. Decentralized Exchange (DEX) Liquidity: Protocol token must have sufficient DEX liquidity to support inclusion. If a token has insufficient liquidity, it will be removed from the index during the determination phase."
+          },
+          {
+            "title": "History:",
+            "details": "Protocol must have at least 3 months history of operation and its token must have at least 3 months of price and liquidity history."
+          },
+          {
+            "title": "Security:",
+            "details": "An independent security audit should have been performed on the protocol and results reviewed by the product methodologist. In the case that no audit has been performed, the methodologist applies subjective judgement of the protocol based on assessment of the criteria above and communications with the team."
+          }
+        ]
+      },
+      {
+        "name": "Index Weight Calculation",
+        "questions": [
+          {
+            "title": "Example 2.1:",
+            "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sequi delectus debitis, possimus voluptatibus quisquam quas atque nihil alias doloremque ad a dolore eos modi maiores error aspernatur fuga! Vitae."
+          }
+        ]
+      },
+      {
+        "name": "Index Maintenance",
+        "questions": [
+          {
+            "title": "Example 3.1:",
+            "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sequi delectus debitis, possimus voluptatibus quisquam quas atque nihil alias doloremque ad a dolore eos modi maiores error aspernatur fuga! Vitae."
+          },
+          {
+            "title": "Example 3.2:",
+            "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sequi delectus debitis, possimus voluptatibus quisquam quas atque nihil alias doloremque ad a dolore eos modi maiores error aspernatur fuga! Vitae."
+          }
+        ]
+      }
+    ],
     "seo": {
       "title": "$DATA Token",
       "description": "Cultivate a more open, secure, and equitable internet where everyone, including robots, are equals when facing opportunities in Web3",

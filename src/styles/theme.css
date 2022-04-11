@@ -20,7 +20,7 @@
     --color-neutral-content: #ffffff;
 
     --color-base-100: #ffffff;
-    --color-base-200: #ebebeb;
+    --color-base-200: #e5e5e5;
     --color-base-300: #d6d6d6;
     --color-base-400: #c2c2c2;
     --color-base-content: #000000;
@@ -62,6 +62,18 @@
 }
 
 @font-face {
+    font-family: GT-America;
+    font-weight: 700;
+    src: url("/fonts/GT-America/GT-America-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: GT-America;
+    font-weight: 900;
+    src: url("/fonts/GT-America/GT-America-Black.otf") format("opentype");
+}
+
+@font-face {
     font-family: GT-Mono;
     src: url("/fonts/GT-America/GT-America-Mono-Black.otf") format("opentype");
 }
@@ -81,6 +93,11 @@ body {
 .font-alt-post {
     font-family: GT-America;
     font-weight: 200;
+}
+
+.font-alt-bold {
+    font-family: GT-America;
+    font-weight: 900;
 }
 
 .font-monospace {
