@@ -112,7 +112,7 @@ const MainSection = ({ t }: MainSectionProps) => {
             />
 
             {/* Table with info */}
-            <div className="bg-theme-base-100 px-8 py-8">
+            <div className="bg-theme-base-100 p-4 lg:p-8">
               {faqs && (
                 <ListItems
                   description={faqs[tabSelected].description}
