@@ -1,22 +1,48 @@
 interface ListItem {
-  title: string;
+  title: string | null;
   details: string;
 }
 
 interface ListItemsProps {
-  items: ListItem[];
+  description?: string;
+  content: ListItem[] | string;
 }
 
-const ListItems = ({ items }: ListItemsProps) => (
+const ListItems = ({ description, content }: ListItemsProps) => (
   <>
-    <div className="bg-theme-base-100 u-text-format px-8 py-8">
-      <ol>
-        {items.map(({ title, details }, index) => (
-          <li key={index}>
-            <strong>{title}</strong> <br /> <span>{details}</span>
-          </li>
-        ))}
-      </ol>
+    <div className="bg-theme-base-100 px-8 py-8 u-text-format">
+      {description && (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: description as string,
+          }}
+        ></div>
+      )}
+      {Array.isArray(content) ? (
+        <ol>
+          {content.map(({ title, details }, index) => (
+            <li key={index}>
+              {title && (
+                <>
+                  <strong>{title}</strong> <br />
+                </>
+              )}{" "}
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: details,
+                }}
+              ></span>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <div
+          className="font-alt-post text-theme-base-content-muted text-base space-y-8"
+          dangerouslySetInnerHTML={{
+            __html: content as string,
+          }}
+        ></div>
+      )}
     </div>
 
     <style jsx>{`

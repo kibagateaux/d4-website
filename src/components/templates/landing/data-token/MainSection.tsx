@@ -11,10 +11,11 @@ import ListItems from "./partials/ListItems";
 
 interface FaqsItem {
   name: string;
-  questions: FaqItemQuestion[];
+  description?: string;
+  content: FaqItemQuestion[] | string;
 }
 interface FaqItemQuestion {
-  title: string;
+  title: string | null;
   details: string;
 }
 
@@ -111,7 +112,14 @@ const MainSection = ({ t }: MainSectionProps) => {
             />
 
             {/* Table with info */}
-            {faqs && <ListItems items={faqs[tabSelected].questions} />}
+            <div className="bg-theme-base-100 px-8 py-8">
+              {faqs && (
+                <ListItems
+                  description={faqs[tabSelected].description}
+                  content={faqs[tabSelected].content}
+                />
+              )}
+            </div>
           </div>
         </Container>
       </div>

@@ -25,7 +25,8 @@
     "faqs": [
       {
         "name": "Token Inclusion Criteria",
-        "questions": [
+        "description": null,
+        "content": [
           {
             "title": "Data-based Protocol:",
             "details": "The protocol provides data-based services or products."
@@ -54,23 +55,37 @@
       },
       {
         "name": "Index Weight Calculation",
-        "questions": [
+        "description": "DATA will use circulating market capitalization to determine the weight of each token included in the index. <br /> <br />The weight of each token within the index will be as follows:",
+        "content": [
           {
-            "title": "Example 2.1:",
-            "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sequi delectus debitis, possimus voluptatibus quisquam quas atque nihil alias doloremque ad a dolore eos modi maiores error aspernatur fuga! Vitae."
+            "title": null,
+            "details": "<img src='/images/index-weight-calculation.png' height='20px' />"
+          },
+          {
+            "title": null,
+            "details": "The Data Economy Index caps each token’s respective weight at 25%."
+          },
+          {
+            "title": null,
+            "details": "Excess weight for a given token will be redistributed to the remaining components of the Data Economy Index on a weighted basis."
+          },
+          {
+            "title": null,
+            "details": "This same process will be repeated for every token exceeding the 25% allocation cap."
           }
         ]
       },
       {
         "name": "Index Maintenance",
-        "questions": [
+        "description": "The index is maintained quarterly in two phases:",
+        "content": [
           {
-            "title": "Example 3.1:",
-            "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sequi delectus debitis, possimus voluptatibus quisquam quas atque nihil alias doloremque ad a dolore eos modi maiores error aspernatur fuga! Vitae."
+            "title": "Determination Phase:",
+            "details": "During the determination phase, the tokens being added and deleted from the index calculation are determined during the final week of the quarter and published before quarterly rebalancing."
           },
           {
-            "title": "Example 3.2:",
-            "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sequi delectus debitis, possimus voluptatibus quisquam quas atque nihil alias doloremque ad a dolore eos modi maiores error aspernatur fuga! Vitae."
+            "title": "Rebalancing Phase:",
+            "details": "Following publication of the determination phase outcome, the index composition will change to the new weights during the first week of the following quarter."
           }
         ]
       }
