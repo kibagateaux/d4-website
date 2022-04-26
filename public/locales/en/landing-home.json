@@ -1,5 +1,46 @@
 {
   "landing-home": {
-    "head": "D4Data (EN)"
+    "hero-video": "https://www.youtube.com/embed/ILofy-escS0",
+    "d4-dao": {
+      "details": "Chainlink is a secret ingredient to unlocking the potential of smart contract platforms and revolutionizing business and society",
+      "header": "Following the path of data",
+      "title": "DAO"
+    },
+    "data-token": {
+      "header": "Token",
+      "tg-1-name": "Simplicity",
+      "tg-1-details": "DATA is a convenient way for investors to gain exposure in a single ERC-20 token without having to constantly research and rebalance a portfolio.",
+      "tg-2-name": "Uniqueness",
+      "tg-2-details": "DATA is the first index in the market providing exposure to the Data Economy.",
+      "tg-3-name": "Efficiency",
+      "tg-3-details": "DATA provides reduced gas costs and tax-efficient rebalancing.",
+      "tg-4-name": "Diversity",
+      "tg-4-details": "The volatility of individual tokens is offset by holding an index and quarterly rebalances prevent overconcentration.",
+      "tg-5-name": "Transparency",
+      "tg-5-details": "The index follows a transparent methodology to assess tokens for inclusion and removal."
+    },
+    "header": {
+      "play": "play",
+      "title": "We show the Path of the Data"
+    },
+    "learn-more": "learn more",
+    "what-is": {
+      "details": "Web3 meets DeFi. We are crypto kids, asset investors with in-depth DeFi knowledge. Our value proposition? To help you identify the opportunities that Web3 has to offer.",
+      "header-1": "What is D4DATA",
+      "header-2": "Data Centric Chain Agnostic",
+      "slogan-1": "The Power of",
+      "slogan-2": "Data",
+      "slogan-3": "People",
+      "slogan-4": "Future"
+    },
+    "seo": {
+      "title": "D4DATA",
+      "description": "",
+      "keywords": "",
+      "image": "",
+      "author": "",
+      "twitterSite": "",
+      "twitterCreator": ""
+    }
   }
 }

@@ -1,0 +1,16 @@
+{
+  "news": {
+    "generic-error": "There was an error retrieving the post",
+    "loading": "Loading...",
+    "not-found": "Post not found",
+    "seo": {
+      "title": "Blog",
+      "description": "",
+      "keywords": "",
+      "image": "",
+      "author": "",
+      "twitterSite": "",
+      "twitterCreator": ""
+    }
+  }
+}

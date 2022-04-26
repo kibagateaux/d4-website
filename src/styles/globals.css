@@ -1,5 +1,12 @@
+/* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import './theme.css';
+/* PrimeReact */
+@import "~primeicons/primeicons.css";
+@import "~primereact/resources/themes/md-light-indigo/theme.css";
+@import "~primereact/resources/primereact.min.css";
+
+/* Custom */
+@import "./theme.css";

@@ -8,6 +8,8 @@ interface SkeletonLayoutProps {
   menu: boolean;
   menuBottom?: React.ReactNode;
   menuTop?: React.ReactNode;
+  bgColor?: string;
+  textColor?: string;
 }
 
 export const SkeletonLayout = ({
@@ -17,6 +19,8 @@ export const SkeletonLayout = ({
   menu = true,
   menuBottom,
   menuTop,
+  bgColor = "bg-theme-base-100",
+  textColor = "text-theme-base-content",
 }: SkeletonLayoutProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -25,7 +29,9 @@ export const SkeletonLayout = ({
   };
 
   return (
-    <div className="h-screen flex overflow-hidden bg-theme-base-100">
+    <div
+      className={`min-h-screen flex overflow-hidden ${bgColor} ${textColor}`}
+    >
       {/* Menu */}
       {menu && (
         <>
@@ -83,7 +89,7 @@ export const SkeletonLayout = ({
 
       <div className="flex flex-col w-0 flex-1 overflow-hidden">
         <>{header}</>
-        <main className="flex-1 relative overflow-y-auto focus:outline-none">
+        <main className="flex-1 relative overflow-y-auto lg:mt-16 focus:outline-none">
           {children}
         </main>
         <>{footer}</>
