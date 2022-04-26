@@ -1,6 +1,7 @@
 {
   "name": "d4data",
   "private": true,
+  "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
